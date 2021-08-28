@@ -5,11 +5,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+
     <title>Shifumi</title>
 </head>
 <body>
     <h1>SHIFUMI</h1>
-
+<div class="radioContainer">
+    <div class="radioContainer-round">
+        <div class="radioLabelContainer">
+            <input type="radio" name="score" id="" checked>
+            <label for="score">Training</label>
+        </div>
+        <div class="radioLabelContainer">
+            <input type="radio" name="score" id="">
+            <label for="score">3 points win</label>    
+        </div>
+        <div class="radioLabelContainer">
+            <input type="radio" name="score" id="">
+            <label for="score">10 points win</label>    
+        </div>
+        <div class="radioLabelContainer">
+            <input type="radio" name="score" id="">
+            <label for="score"><input type="number" name="xRnd" id="choseRnd" min="1" max="100"> points win</label>    
+        </div>
+    </div>
+    <div class="radioContainer-option">
+        <div class="radioContainer-option-difficulty">
+            <div class="radioLabelContainer">
+                <input type="radio" name="lvl" id="radioRandom" checked>
+                <label for="lvl">Random difficulty</label>
+            </div>
+            <div class="radioLabelContainer">
+                <input type="radio" name="lvl" id="radioNormal">
+                <label for="lvl">normal difficulty</label>
+            </div>
+        </div>
+        <div class="radioContainer-option-players">
+            <div class="radioLabelContainer">
+                <input type="radio" name="P" id="" checked>
+                <label for="P">Player vs Cpu</label>
+            </div>
+            <div class="radioLabelContainer">
+                <input type="radio" name="P" id="">
+                <label for="P">Player vs Player</label>
+            </div>
+        </div>
+    </div>
+</div>
     <div class="shifumi">
         <button class="rock">Rock</button>
         <button class="papper">Papper</button>

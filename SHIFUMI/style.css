@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.radioLabelContainer {
+  display: flex;
+}
+
+.radioContainer {
+  display: flex;
+}
+
+.radioContainer-round {
+  display: flex;
+  flex-direction: column;
+  border: 1px black solid;
+  border-radius: 10px 0 0 10px;
+  padding: 10px;
+  justify-content: space-around;
+}
+
+.radioContainer-option {
+  display: flex;
+  flex-direction: column;
+}
+
+.radioContainer-option-difficulty {
+  display: flex;
+  flex-direction: column;
+  border: 1px black solid;
+  border-radius: 0 10px 0 0;
+  padding: 10px;
+}
+
+.radioContainer-option-players {
+  display: flex;
+  flex-direction: column;
+  border: 1px black solid;
+  border-radius: 0 0 10px 0;
+  padding: 10px;
+}
+
+#choseRnd {
+  width: 40px;
+}
+
+label {
+  margin-left: 5px;
+  margin-top: 3px;
+}
+
+input[type="radio"] {
+  margin: 5px 0;
+}

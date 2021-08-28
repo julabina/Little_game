@@ -10,19 +10,22 @@ const resultP1 = document.querySelector(".resultP1");
 const resultP2 = document.querySelector(".resultP2");
 const resultContainer = document.querySelector(".resultContainer");
 const resultContainerLS = document.querySelector(".resultContainerLS");
-let choseCpu, result, status;
+const radioRandom = document.getElementById("radioRandom");
+const radioAI = document.getElementById("radioNormal");
+let choseCpu, result, status, choseAI, prevChoseOdd, prevChoseEven, prevChose;
 let scoreP1 = 0;
 let scoreP2 = 0;
 let scoreP1LS = 0;
 let scoreP2LS = 0;
 let choseP1 = undefined;
 let choseP1LS = undefined;
+let roundAI = 1;
 
 const random = (int) => {
   return Math.floor(Math.random() * int);
 };
 
-const p2Random = () => {
+const AIRandom = () => {
   a = random(3);
   if (a === 0) {
     choseCpu = "rock";
@@ -34,8 +37,115 @@ const p2Random = () => {
   return choseCpu;
 };
 
+const AIRPS = () => {
+  if (roundAI === 1) {
+    a = random(100);
+    if (a < 38) {
+      choseAI = "scissors";
+    } else if (a > 45) {
+      choseAI = "papper";
+    } else {
+      choseAI = "rock";
+    }
+  } else if (roundAI === 2) {
+    if (scoreP2 === 1) {
+      if (choseAI == "scissors") {
+        choseAI = "rock";
+      } else if (choseAI == "papper") {
+        choseAI = "scissors";
+      } else {
+        choseAI = "papper";
+      }
+    } else {
+      a = random(100);
+      if (a <= 35) {
+        choseAI = "rock";
+      } else if (a >= 65) {
+        choseAI = "scissors";
+      } else {
+        choseAI = "papper";
+      }
+    }
+  } else {
+    if (prevChoseEven == prevChoseOdd) {
+      if (prevChoseOdd == "rock") {
+        a = random(100);
+        if (a <= 50) {
+          choseAI = "papper";
+        } else {
+          choseAI = "scissors";
+        }
+      } else if (prevChoseOdd == "scissors") {
+        a = random(100);
+        if (a <= 50) {
+          choseAI = "papper";
+        } else {
+          choseAI = "rock";
+        }
+      } else {
+        a = random(100);
+        if (a <= 50) {
+          choseAI = "scissors";
+        } else {
+          choseAI = "rock";
+        }
+      }
+    } else if (result === 0) {
+      if (prevChose == "rock") {
+        b = random(100);
+        if (b <= 50) {
+          choseAI = "scissors";
+        } else if (b >= 75) {
+          choseAI = "papper";
+        } else {
+          choseAI = "rock";
+        }
+      } else if (prevChose == "scissors") {
+        b = random(100);
+        if (b <= 50) {
+          choseAI = "papper";
+        } else if (b >= 75) {
+          choseAI = "scissors";
+        } else {
+          choseAI = "rock";
+        }
+      } else {
+        b = random(100);
+        if (b <= 50) {
+          choseAI = "rock";
+        } else if (b >= 75) {
+          choseAI = "papper";
+        } else {
+          choseAI = "scissors";
+        }
+      }
+    } else {
+      b = random(100);
+      if (b <= 35) {
+        choseAI = "rock";
+      } else if (b >= 65) {
+        choseAI = "scissors";
+      } else {
+        choseAI = "papper";
+      }
+    }
+  }
+  if (roundAI % 2 == 0) {
+    prevChoseOdd = choseP1;
+  } else {
+    prevChoseEven = choseP1;
+  }
+  prevChose = choseP1;
+  roundAI++;
+  choseCpu = choseAI;
+};
+
 const resultRPS = () => {
-  p2Random();
+  if (radioAI.checked) {
+    AIRPS();
+  } else {
+    AIRandom();
+  }
   if (choseP1 == "rock") {
     if (choseCpu == "rock") {
       result = 1;
@@ -61,11 +171,10 @@ const resultRPS = () => {
       result = 1;
     }
   }
-  console.log(choseCpu);
   return result;
 };
 
-const playRPS = () => {
+const statusResultRPS = () => {
   resultRPS();
 
   if (result === 2) {
@@ -80,7 +189,7 @@ const playRPS = () => {
 };
 
 function displayRPS() {
-  playRPS();
+  statusResultRPS();
   resultContainer.innerHTML = `
   <p>Score : ${scoreP1} - ${scoreP2} : Score</p>
   <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
@@ -90,7 +199,7 @@ function displayRPS() {
 
 /* ----- Rock Papper Scissors Lizard Spock ----- */
 
-const p2RandomLizardSpock = () => {
+const AIRandomLizardSpock = () => {
   a = random(5);
   if (a === 0) {
     choseCpu = "rock";
@@ -107,7 +216,7 @@ const p2RandomLizardSpock = () => {
 };
 
 const resultLizardSpock = () => {
-  p2RandomLizardSpock();
+  AIRandomLizardSpock();
   if (choseP1LS == "rock") {
     if (choseCpu == "rock") {
       result = 1;
@@ -174,7 +283,7 @@ const resultLizardSpock = () => {
   return result;
 };
 
-const playLizardSpock = () => {
+const statusResultLizardSpock = () => {
   resultLizardSpock();
 
   if (result === 2) {
@@ -189,14 +298,16 @@ const playLizardSpock = () => {
 };
 
 function displayLizardSpock() {
-  playLizardSpock();
+  statusResultLizardSpock();
   resultContainerLS.innerHTML = `
   <p>Score : ${scoreP1LS} - ${scoreP2LS} : Score</p>
   <p>P1 : ${choseP1LS} - ${choseCpu} : CPU</p>
   <p>Player 1 ${status}</p>  
   `;
 }
-/* ----------------- */
+
+/* ----------------- event -----------------------*/
+
 rock.addEventListener("click", () => {
   choseP1 = "rock";
   displayRPS();
@@ -210,7 +321,7 @@ scissors.addEventListener("click", () => {
   displayRPS();
 });
 
-/* ----------------- */
+/* ------------------------------------------------*/
 
 rockLS.addEventListener("click", () => {
   choseP1LS = "rock";
