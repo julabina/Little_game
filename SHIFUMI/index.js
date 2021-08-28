@@ -83,7 +83,7 @@ const resultRdm = () => {
 
 const resultRndLizardSpock = () => {
   p2RandomLizardSpock();
-  if (choseP1 == "rock") {
+  if (choseP1LS == "rock") {
     if (choseCpu == "rock") {
       result = 1;
     } else if (choseCpu == "papper") {
@@ -96,7 +96,7 @@ const resultRndLizardSpock = () => {
       result = 0;
       console.log("test");
     }
-  } else if (choseP1 == "papper") {
+  } else if (choseP1LS == "papper") {
     if (choseCpu == "rock") {
       result = 2;
     } else if (choseCpu == "papper") {
@@ -108,7 +108,7 @@ const resultRndLizardSpock = () => {
     } else {
       result = 2;
     }
-  } else if (choseP1 == "scissors") {
+  } else if (choseP1LS == "scissors") {
     if (choseCpu == "rock") {
       result = 0;
     } else if (choseCpu == "papper") {
@@ -120,7 +120,7 @@ const resultRndLizardSpock = () => {
     } else {
       result = 0;
     }
-  } else if (choseP1 == "lizard") {
+  } else if (choseP1LS == "lizard") {
     if (choseCpu == "rock") {
       result = 0;
     } else if (choseCpu == "papper") {
