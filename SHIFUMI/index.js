@@ -34,23 +34,7 @@ const p2Random = () => {
   return choseCpu;
 };
 
-const p2RandomLizardSpock = () => {
-  a = random(5);
-  if (a === 0) {
-    choseCpu = "rock";
-  } else if (a === 1) {
-    choseCpu = "papper";
-  } else if (a === 2) {
-    choseCpu = "scissors";
-  } else if (a === 3) {
-    choseCpu = "lizard";
-  } else {
-    choseCpu = "spock";
-  }
-  return choseCpu;
-};
-
-const resultRdm = () => {
+const resultRPS = () => {
   p2Random();
   if (choseP1 == "rock") {
     if (choseCpu == "rock") {
@@ -81,7 +65,48 @@ const resultRdm = () => {
   return result;
 };
 
-const resultRndLizardSpock = () => {
+const playRPS = () => {
+  resultRPS();
+
+  if (result === 2) {
+    status = "win";
+    scoreP1++;
+  } else if (result === 0) {
+    status = "lose";
+    scoreP2++;
+  } else {
+    status = "equal";
+  }
+};
+
+function displayRPS() {
+  playRPS();
+  resultContainer.innerHTML = `
+  <p>Score : ${scoreP1} - ${scoreP2} : Score</p>
+  <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
+  <p>Player 1 ${status}</p>  
+  `;
+}
+
+/* ----- Rock Papper Scissors Lizard Spock ----- */
+
+const p2RandomLizardSpock = () => {
+  a = random(5);
+  if (a === 0) {
+    choseCpu = "rock";
+  } else if (a === 1) {
+    choseCpu = "papper";
+  } else if (a === 2) {
+    choseCpu = "scissors";
+  } else if (a === 3) {
+    choseCpu = "lizard";
+  } else {
+    choseCpu = "spock";
+  }
+  return choseCpu;
+};
+
+const resultLizardSpock = () => {
   p2RandomLizardSpock();
   if (choseP1LS == "rock") {
     if (choseCpu == "rock") {
@@ -149,22 +174,8 @@ const resultRndLizardSpock = () => {
   return result;
 };
 
-const playRdm = () => {
-  resultRdm();
-
-  if (result === 2) {
-    status = "win";
-    scoreP1++;
-  } else if (result === 0) {
-    status = "lose";
-    scoreP2++;
-  } else {
-    status = "equal";
-  }
-};
-
-const playRdmLizardSpock = () => {
-  resultRndLizardSpock();
+const playLizardSpock = () => {
+  resultLizardSpock();
 
   if (result === 2) {
     status = "win";
@@ -177,56 +188,47 @@ const playRdmLizardSpock = () => {
   }
 };
 
-function displayRdm() {
-  playRdm();
-  resultContainer.innerHTML = `
-  <p>Score : ${scoreP1} - ${scoreP2} : Score</p>
-  <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
-  <p>Player 1 ${status}</p>  
-  `;
-}
-
-function displayRdmLizardSpock() {
-  playRdmLizardSpock();
+function displayLizardSpock() {
+  playLizardSpock();
   resultContainerLS.innerHTML = `
   <p>Score : ${scoreP1LS} - ${scoreP2LS} : Score</p>
   <p>P1 : ${choseP1LS} - ${choseCpu} : CPU</p>
   <p>Player 1 ${status}</p>  
   `;
 }
-
+/* ----------------- */
 rock.addEventListener("click", () => {
   choseP1 = "rock";
-  displayRdm();
+  displayRPS();
 });
 papper.addEventListener("click", () => {
   choseP1 = "papper";
-  displayRdm();
+  displayRPS();
 });
 scissors.addEventListener("click", () => {
   choseP1 = "scissors";
-  displayRdm();
+  displayRPS();
 });
 
 /* ----------------- */
 
 rockLS.addEventListener("click", () => {
   choseP1LS = "rock";
-  displayRdmLizardSpock();
+  displayLizardSpock();
 });
 papperLS.addEventListener("click", () => {
   choseP1LS = "papper";
-  displayRdmLizardSpock();
+  displayLizardSpock();
 });
 scissorsLS.addEventListener("click", () => {
   choseP1LS = "scissors";
-  displayRdmLizardSpock();
+  displayLizardSpock();
 });
 lizardLS.addEventListener("click", () => {
   choseP1LS = "lizard";
-  displayRdmLizardSpock();
+  displayLizardSpock();
 });
 spockLS.addEventListener("click", () => {
   choseP1LS = "spock";
-  displayRdmLizardSpock();
+  displayLizardSpock();
 });
