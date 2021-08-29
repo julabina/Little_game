@@ -11,12 +11,65 @@ body {
   height: 100%;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 40px 0 80px 0;
+}
+
+.h2Title {
+  font-size: 1.3em;
+}
+
+.transform {
+  transform: translateX(-100%);
+}
+
+.topContainer {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.botContainer {
+  border: 1px black solid;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+}
+
+.botContainer-classic {
+  position: relative;
+  transition: transform 0.3s ease-out;
+  width: 100%;
+}
+
+.botContainer-lizardSpock {
+  position: absolute;
+  left: 100%;
+  width: 100%;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
 .radioLabelContainer {
   display: flex;
 }
 
 .radioContainer {
   display: flex;
+  margin-bottom: 80px;
 }
 
 .radioContainer-round {
@@ -56,4 +109,10 @@ label {
 
 input[type="radio"] {
   margin: 5px 0;
+}
+
+#modeChange {
+  width: 130px;
+  height: 40px;
+  margin-bottom: 40px;
 }

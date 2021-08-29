@@ -6,8 +6,6 @@ const papperLS = document.querySelector(".papperls");
 const scissorsLS = document.querySelector(".scissorsls");
 const lizardLS = document.querySelector(".lizard");
 const spockLS = document.querySelector(".spock");
-const resultP1 = document.querySelector(".resultP1");
-const resultP2 = document.querySelector(".resultP2");
 const resultContainer = document.querySelector(".resultContainer");
 const resultContainerLS = document.querySelector(".resultContainerLS");
 const radioRandom = document.getElementById("radioRandom");
@@ -16,6 +14,11 @@ const threePts = document.getElementById("radioThreePts");
 const tenPts = document.getElementById("radioTenPts");
 const XPts = document.getElementById("radioXPts");
 const training = document.getElementById("radioTraining");
+const playerPlay = document.querySelector(".playerPlay");
+const playerPlayLS = document.querySelector(".playerPlayLS");
+const radioPlayer = document.getElementById("radioPlayer");
+const modeBtn = document.getElementById("modeChange");
+const botClassic = document.querySelector(".botContainer-classic");
 let choseCpu,
   result,
   status,
@@ -31,10 +34,16 @@ let scoreP1 = 0;
 let scoreP2 = 0;
 let scoreP1LS = 0;
 let scoreP2LS = 0;
+let chose = undefined;
+let choseLS = undefined;
 let choseP1 = undefined;
+let choseP2 = undefined;
 let choseP1LS = undefined;
+let choseP2LS = undefined;
 let roundAI = 1;
 let roundAILS = 1;
+let roundVS = 1;
+let roundVSLS = 1;
 
 const random = (int) => {
   return Math.floor(Math.random() * int);
@@ -43,10 +52,13 @@ const random = (int) => {
 const reset = () => {
   scoreP1 = 0;
   scoreP2 = 0;
+  chose = undefined;
   choseP1 = undefined;
+  choseP2 = undefined;
   choseCpu = undefined;
   choseAI = undefined;
   roundAI = 1;
+  roundVS = 1;
   prevChose = undefined;
   prevChoseEven = undefined;
   prevChoseOdd = undefined;
@@ -55,10 +67,13 @@ const reset = () => {
 const resetLS = () => {
   scoreP1LS = 0;
   scoreP2LS = 0;
+  choseLS = undefined;
   choseP1LS = undefined;
+  choseP2LS = undefined;
   choseCpu = undefined;
   choseAILS = undefined;
   roundAILS = 1;
+  roundVSLS = 1;
   prevChoseLS = undefined;
   prevChoseEvenLS = undefined;
   prevChoseOddLS = undefined;
@@ -179,8 +194,25 @@ const AIRPS = () => {
   choseCpu = choseAI;
 };
 
+const vsPlayer = () => {
+  if (roundVS % 2 == 0) {
+    choseP2 = chose;
+    playerPlay.classList.add("invisible");
+  } else {
+    choseP1 = chose;
+    playerPlay.classList.remove("invisible");
+    playerPlay.innerHTML = `
+    <h3>Player 2 choice</h3> 
+    `;
+  }
+  roundVS++;
+};
+
 const resultRPS = () => {
-  if (radioAI.checked) {
+  if (radioPlayer.checked) {
+    vsPlayer();
+    choseCpu = choseP2;
+  } else if (radioAI.checked) {
     AIRPS();
   } else {
     AIRandom();
@@ -233,14 +265,14 @@ function displayRPS() {
   if (threePts.checked) {
     if (scoreP1 === 3 || scoreP2 === 3) {
       if (scoreP1 === 3) {
-        resultContainerLS.innerHTML = `
+        resultContainer.innerHTML = `
           <h2>PLAYER 1 WIN</h2>
           <p>Score : ${scoreP1} - ${scoreP2} : Score</p>
           <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
         `;
         reset();
       } else {
-        resultContainerLS.innerHTML = `
+        resultContainer.innerHTML = `
           <h2>PLAYER 2 WIN</h2>
           <p>Score : ${scoreP1} - ${scoreP2} : Score</p>
           <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
@@ -248,7 +280,7 @@ function displayRPS() {
         reset();
       }
     } else {
-      resultContainerLS.innerHTML = `
+      resultContainer.innerHTML = `
         <p>Score : ${scoreP1} - ${scoreP2} : Score</p>
         <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
         <p>Player 1 ${status}</p>  
@@ -257,14 +289,14 @@ function displayRPS() {
   } else if (tenPts.checked) {
     if (scoreP1 === 10 || scoreP2 === 10) {
       if (scoreP1 === 10) {
-        resultContainerLS.innerHTML = `
+        resultContainer.innerHTML = `
           <h2>PLAYER 1 WIN</h2>
           <p>Score : ${scoreP1} - ${scoreP2} : Score</p>
           <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
         `;
         reset();
       } else {
-        resultContainerLS.innerHTML = `
+        resultContainer.innerHTML = `
           <h2>PLAYER 2 WIN</h2>
           <p>Score : ${scoreP1} - ${scoreP2} : Score</p>
           <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
@@ -272,7 +304,7 @@ function displayRPS() {
         reset();
       }
     } else {
-      resultContainerLS.innerHTML = `
+      resultContainer.innerHTML = `
         <p>Score : ${scoreP1} - ${scoreP2} : Score</p>
         <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
         <p>Player 1 ${status}</p>  
@@ -281,14 +313,14 @@ function displayRPS() {
   } else if (XPts.checked) {
     if (scoreP1 === 25 || scoreP2 === 25) {
       if (scoreP1 === 25) {
-        resultContainerLS.innerHTML = `
+        resultContainer.innerHTML = `
           <h2>PLAYER 1 WIN</h2>
           <p>Score : ${scoreP1} - ${scoreP2} : Score</p>
           <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
         `;
         reset();
       } else {
-        resultContainerLS.innerHTML = `
+        resultContainer.innerHTML = `
           <h2>PLAYER 2 WIN</h2>
           <p>Score : ${scoreP1} - ${scoreP2} : Score</p>
           <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
@@ -296,14 +328,14 @@ function displayRPS() {
         reset();
       }
     } else {
-      resultContainerLS.innerHTML = `
+      resultContainer.innerHTML = `
         <p>Score : ${scoreP1} - ${scoreP2} : Score</p>
         <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
         <p>Player 1 ${status}</p>  
     `;
     }
   } else {
-    resultContainerLS.innerHTML = `
+    resultContainer.innerHTML = `
     <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
     <p>Player 1 ${status}</p>  
     `;
@@ -544,8 +576,25 @@ const AILizardSpock = () => {
   choseCpu = choseAiLS;
 };
 
+const vsPlayerLS = () => {
+  if (roundVSLS % 2 == 0) {
+    choseP2LS = chose;
+    playerPlayLS.classList.add("invisible");
+  } else {
+    choseP1LS = chose;
+    playerPlayLS.classList.remove("invisible");
+    playerPlayLS.innerHTML = `
+    <h3>Player 2 choice</h3> 
+    `;
+  }
+  roundVSLS++;
+};
+
 const resultLizardSpock = () => {
-  if (radioAI.checked) {
+  if (radioPlayer.checked) {
+    vsPlayerLS();
+    choseCpu = choseP2LS;
+  } else if (radioAI.checked) {
     AILizardSpock();
   } else {
     AIRandomLizardSpock();
@@ -722,40 +771,128 @@ function displayLizardSpock() {
   }
 }
 
+/*--------------- changeBtn ---------------------- */
+
+const changeMode = () => {
+  botClassic.classList.add("transform");
+};
+
 /* ----------------- event -----------------------*/
 
+modeBtn.addEventListener("click", () => changeMode());
+
 rock.addEventListener("click", () => {
-  choseP1 = "rock";
-  displayRPS();
+  if (radioPlayer.checked) {
+    if (roundVS % 2 == 0) {
+      chose = "rock";
+      displayRPS();
+    } else {
+      chose = "rock";
+      vsPlayer();
+    }
+  } else {
+    choseP1 = "rock";
+    displayRPS();
+  }
 });
 papper.addEventListener("click", () => {
-  choseP1 = "papper";
-  displayRPS();
+  if (radioPlayer.checked) {
+    if (roundVS % 2 == 0) {
+      chose = "papper";
+      displayRPS();
+    } else {
+      chose = "papper";
+      vsPlayer();
+    }
+  } else {
+    choseP1 = "papper";
+    displayRPS();
+  }
 });
 scissors.addEventListener("click", () => {
-  choseP1 = "scissors";
-  displayRPS();
+  if (radioPlayer.checked) {
+    if (roundVS % 2 == 0) {
+      chose = "scissors";
+      displayRPS();
+    } else {
+      chose = "scissors";
+      vsPlayer();
+    }
+  } else {
+    choseP1 = "scissors";
+    displayRPS();
+  }
 });
 
 /* ------------------------------------------------*/
 
 rockLS.addEventListener("click", () => {
-  choseP1LS = "rock";
-  displayLizardSpock();
+  if (radioPlayer.checked) {
+    if (roundVSLS % 2 == 0) {
+      chose = "rock";
+      displayLizardSpock();
+    } else {
+      chose = "rock";
+      vsPlayerLS();
+    }
+  } else {
+    choseP1LS = "rock";
+    displayLizardSpock();
+  }
 });
 papperLS.addEventListener("click", () => {
-  choseP1LS = "papper";
-  displayLizardSpock();
+  if (radioPlayer.checked) {
+    if (roundVSLS % 2 == 0) {
+      chose = "papper";
+      displayLizardSpock();
+    } else {
+      chose = "papper";
+      vsPlayerLS();
+    }
+  } else {
+    choseP1LS = "papper";
+    displayLizardSpock();
+  }
 });
 scissorsLS.addEventListener("click", () => {
-  choseP1LS = "scissors";
-  displayLizardSpock();
+  if (radioPlayer.checked) {
+    if (roundVSLS % 2 == 0) {
+      chose = "scissors";
+      displayLizardSpock();
+    } else {
+      chose = "scissors";
+      vsPlayerLS();
+    }
+  } else {
+    choseP1LS = "scissors";
+    displayLizardSpock();
+  }
 });
 lizardLS.addEventListener("click", () => {
-  choseP1LS = "lizard";
-  displayLizardSpock();
+  if (radioPlayer.checked) {
+    if (roundVSLS % 2 == 0) {
+      chose = "lizard";
+      displayLizardSpock();
+    } else {
+      chose = "lizard";
+      vsPlayerLS();
+    }
+  } else {
+    choseP1LS = "lizard";
+    displayLizardSpock();
+  }
 });
 spockLS.addEventListener("click", () => {
-  choseP1LS = "spock";
-  displayLizardSpock();
+  if (radioPlayer.checked) {
+    if (roundVSLS % 2 == 0) {
+      chose = "spock";
+      displayLizardSpock();
+    } else {
+      chose = "spock";
+      vsPlayerLS();
+    }
+  } else {
+    choseP1LS = "spock";
+    displayLizardSpock();
+  }
 });

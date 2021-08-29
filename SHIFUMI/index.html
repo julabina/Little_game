@@ -10,75 +10,84 @@
     <title>Shifumi</title>
 </head>
 <body>
-    <h1>SHIFUMI</h1>
-<div class="radioContainer">
-    <div class="radioContainer-round">
-        <div class="radioLabelContainer">
-            <input type="radio" name="score" id="radioTraining" checked>
-            <label for="score">Training</label>
-        </div>
-        <div class="radioLabelContainer">
-            <input type="radio" name="score" id="radioThreePts">
-            <label for="score">3 points win</label>    
-        </div>
-        <div class="radioLabelContainer">
-            <input type="radio" name="score" id="radioTenPts">
-            <label for="score">10 points win</label>    
-        </div>
-        <div class="radioLabelContainer">
-            <input type="radio" name="score" id="radioXPts">
-            <label for="score">25 points win</label>    
-        </div>
-    </div>
-    <div class="radioContainer-option">
-        <div class="radioContainer-option-difficulty">
-            <div class="radioLabelContainer">
-                <input type="radio" name="lvl" id="radioRandom" checked>
-                <label for="lvl">Random difficulty</label>
+    <main>
+        <section class="topContainer">
+            <h1>SHIFUMI</h1>
+        <div class="radioContainer">
+            <div class="radioContainer-round">
+                <div class="radioLabelContainer">
+                    <input type="radio" name="score" id="radioTraining" checked>
+                    <label for="score">Training</label>
+                </div>
+                <div class="radioLabelContainer">
+                    <input type="radio" name="score" id="radioThreePts">
+                    <label for="score">3 points win</label>    
+                </div>
+                <div class="radioLabelContainer">
+                    <input type="radio" name="score" id="radioTenPts">
+                    <label for="score">10 points win</label>    
+                </div>
+                <div class="radioLabelContainer">
+                    <input type="radio" name="score" id="radioXPts">
+                    <label for="score">25 points win</label>    
+                </div>
             </div>
-            <div class="radioLabelContainer">
-                <input type="radio" name="lvl" id="radioNormal">
-                <label for="lvl">normal difficulty</label>
+            <div class="radioContainer-option">
+                <div class="radioContainer-option-difficulty">
+                    <div class="radioLabelContainer">
+                        <input type="radio" name="lvl" id="radioRandom" checked>
+                        <label for="lvl">Random difficulty</label>
+                    </div>
+                    <div class="radioLabelContainer">
+                        <input type="radio" name="lvl" id="radioNormal">
+                        <label for="lvl">Normal difficulty</label>
+                    </div>
+                </div>
+                <div class="radioContainer-option-players">
+                    <div class="radioLabelContainer">
+                        <input type="radio" name="P" id="radioCpu" checked>
+                        <label for="P">Player vs Cpu</label>
+                    </div>
+                    <div class="radioLabelContainer">
+                        <input type="radio" name="P" id="radioPlayer">
+                        <label for="P">Player vs Player</label>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="radioContainer-option-players">
-            <div class="radioLabelContainer">
-                <input type="radio" name="P" id="" checked>
-                <label for="P">Player vs Cpu</label>
+        <button id="modeChange">Change game</button>
+    </section>
+    <section class="botContainer">
+        <div class="botContainer-classic">
+            <div class="shifumi">
+                <h2 class="h2Title">SHIFUMI CLASSIC</h2>
+                <button class="rock">Rock</button>
+                <button class="papper">Papper</button>
+                <button class="scissors">Scissors</button>
+                <div class="playerPlay invisible"></div>
+                <div class="resultContainer">
+                    
+                </div>
             </div>
-            <div class="radioLabelContainer">
-                <input type="radio" name="P" id="">
-                <label for="P">Player vs Player</label>
+        </div>
+        <div class="botContainer-lizardSpock">
+            <div class="lizardSpock">
+                <h2 class="h2Title">ROCK PAPPER SCISSORS LIZARD SPOCK</h2>
+                <button class="rockls">Rock</button>
+                <button class="papperls">Papper</button>
+                <button class="scissorsls">Scissors</button>
+                <button class="lizard">Lizard</button>
+                <button class="spock">Spock</button>
+                <div class="playerPlayLS invisible">
+                    
+                </div>
+                <div class="resultContainerLS">
+                    
+                </div>
             </div>
-        </div>
-    </div>
-</div>
-    <div class="shifumi">
-        <button class="rock">Rock</button>
-        <button class="papper">Papper</button>
-        <button class="scissors">Scissors</button>
-        <div class="result">
-            <div class="resultP1"></div>
-            <div class="resultP2"></div>
-        </div>
-        <div class="resultContainer">
-
-        </div>
-    </div>
-
-    <div class="lizardSpock">
-        <button class="rockls">Rock</button>
-        <button class="papperls">Papper</button>
-        <button class="scissorsls">Scissors</button>
-        <button class="lizard">Lizard</button>
-        <button class="spock">Spock</button>
-        <div class="result">
-            
-        </div>
-        <div class="resultContainerLS">
-
-        </div>
-    </div>
+        </div>    
+    </section>
+</main>
 
     <script src="index.js"></script>
 </body>
