@@ -19,6 +19,7 @@ const playerPlayLS = document.querySelector(".playerPlayLS");
 const radioPlayer = document.getElementById("radioPlayer");
 const modeBtn = document.getElementById("modeChange");
 const botClassic = document.querySelector(".botContainer-classic");
+const botLizardSpock = document.querySelector(".botContainer-lizardSpock");
 let choseCpu,
   result,
   status,
@@ -773,8 +774,21 @@ function displayLizardSpock() {
 
 /*--------------- changeBtn ---------------------- */
 
+let test;
 const changeMode = () => {
-  botClassic.classList.add("transform");
+  if (test === 2) {
+    botClassic.classList.remove("transform");
+    botLizardSpock.classList.remove("transform");
+    botLizardSpock.classList.add("transformReturn");
+    test = 1;
+  } else {
+    botClassic.classList.add("transform");
+    botClassic.classList.remove("transformReturn");
+    botLizardSpock.classList.add("transform");
+    botLizardSpock.classList.remove("transformReturn");
+    test = 2;
+  }
+  console.log(test);
 };
 
 /* ----------------- event -----------------------*/

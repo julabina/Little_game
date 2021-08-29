@@ -32,6 +32,10 @@ h1 {
   transform: translateX(-100%);
 }
 
+.transformReturn {
+  transform: translateX(100%);
+}
+
 .topContainer {
   height: 40%;
   display: flex;
@@ -45,6 +49,7 @@ h1 {
   height: 100%;
   overflow: hidden;
   display: flex;
+  position: relative;
 }
 
 .botContainer-classic {
