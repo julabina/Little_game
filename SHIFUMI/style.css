@@ -26,6 +26,7 @@ h1 {
 
 .h2Title {
   font-size: 1.3em;
+  margin: 20px 0 35px 0;
 }
 
 .transform {
@@ -45,6 +46,7 @@ h1 {
 
 .botContainer {
   border: 1px black solid;
+  border-radius: 15px;
   width: 50%;
   height: 100%;
   overflow: hidden;
@@ -56,12 +58,38 @@ h1 {
   position: relative;
   transition: transform 0.3s ease-out;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .botContainer-lizardSpock {
   position: absolute;
   left: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.botContainer-classic h2 {
+  text-align: center;
+}
+
+.botContainer-lizardSpock h2 {
+  text-align: center;
+}
+
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.choseBtn {
+  height: 50px;
+  width: 70px;
 }
 
 .invisible {
@@ -120,4 +148,66 @@ input[type="radio"] {
   width: 130px;
   height: 40px;
   margin-bottom: 40px;
+}
+
+.win {
+  text-align: center;
+}
+
+.score {
+  display: flex;
+  justify-content: space-around;
+}
+
+.scoreContainer {
+  border: 1px black solid;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px 0 10px;
+}
+
+.choseStatusContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  margin-bottom: 40px;
+}
+
+.choseStatus {
+  margin: 0 100px;
+  height: 100px;
+  width: 100px;
+  border: solid black 2px;
+  border-radius: 10px;
+  line-height: 100px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.winStatus {
+  text-align: center;
+  margin: 0 0 30px 0;
+  font-size: 1.2em;
+}
+
+@media screen and (max-width: 1180px) {
+  .botContainer {
+    width: 90%;
+  }
+
+  .choseStatus {
+    margin: initial;
+  }
+
+  .choseStatusContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 70px;
+    margin-bottom: 40px;
+  }
 }

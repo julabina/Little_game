@@ -267,78 +267,105 @@ function displayRPS() {
     if (scoreP1 === 3 || scoreP2 === 3) {
       if (scoreP1 === 3) {
         resultContainer.innerHTML = `
-          <h2>PLAYER 1 WIN</h2>
-          <p>Score : ${scoreP1} - ${scoreP2} : Score</p>
-          <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
-        `;
+          <h2 class="win">PLAYER 1 WIN</h2>
+          <div class="score">
+            <div><p class="scoreContainer">${scoreP1}</p></div>
+            <div><p class="scoreContainer">${scoreP2}</p></div>
+          </div>
+          <div class="choseStatusContainer"><p class="choseStatus">${choseP1}</p><p>-</p><p class="choseStatus">${choseCpu}</p></div>   
+         `;
         reset();
       } else {
         resultContainer.innerHTML = `
-          <h2>PLAYER 2 WIN</h2>
-          <p>Score : ${scoreP1} - ${scoreP2} : Score</p>
-          <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
+          <h2 class="win">PLAYER 2 WIN</h2>
+          <div class="score">
+            <div><p class="scoreContainer">${scoreP1}</p></div>
+            <div><p class="scoreContainer">${scoreP2}</p></div>
+          </div>
+          <div class="choseStatusContainer"><p class="choseStatus">${choseP1}</p><p>-</p><p class="choseStatus">${choseCpu}</p></div> 
         `;
         reset();
       }
     } else {
       resultContainer.innerHTML = `
-        <p>Score : ${scoreP1} - ${scoreP2} : Score</p>
-        <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
-        <p>Player 1 ${status}</p>  
+      <div class="score">
+        <div><p class="scoreContainer">${scoreP1}</p></div>
+        <div><p class="scoreContainer">${scoreP2}</p></div>
+      </div>
+      <div class="choseStatusContainer"><p class="choseStatus">${choseP1}</p><p>-</p><p class="choseStatus">${choseCpu}</p></div> 
+        <p class="winStatus">Player 1 ${status}</p>  
     `;
     }
   } else if (tenPts.checked) {
     if (scoreP1 === 10 || scoreP2 === 10) {
       if (scoreP1 === 10) {
         resultContainer.innerHTML = `
-          <h2>PLAYER 1 WIN</h2>
-          <p>Score : ${scoreP1} - ${scoreP2} : Score</p>
-          <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
+          <h2 class="win">PLAYER 1 WIN</h2>
+          <div class="score">
+            <div><p class="scoreContainer">${scoreP1}</p></div>
+            <div><p class="scoreContainer">${scoreP2}</p></div>
+          </div>
+          <div class="choseStatusContainer"><p class="choseStatus">${choseP1}</p><p>-</p><p class="choseStatus">${choseCpu}</p></div> 
         `;
         reset();
       } else {
         resultContainer.innerHTML = `
-          <h2>PLAYER 2 WIN</h2>
-          <p>Score : ${scoreP1} - ${scoreP2} : Score</p>
-          <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
+          <h2 class="win">PLAYER 2 WIN</h2>
+          <div class="score">
+            <div><p class="scoreContainer">${scoreP1}</p></div>
+            <div><p class="scoreContainer">${scoreP2}</p></div>
+          </div>
+          <div class="choseStatusContainer"><p class="choseStatus">${choseP1}</p><p>-</p><p class="choseStatus">${choseCpu}</p></div>   
         `;
         reset();
       }
     } else {
       resultContainer.innerHTML = `
-        <p>Score : ${scoreP1} - ${scoreP2} : Score</p>
-        <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
-        <p>Player 1 ${status}</p>  
+      <div class="score">
+        <div><p class="scoreContainer">${scoreP1}</p></div>
+        <div><p class="scoreContainer">${scoreP2}</p></div>
+      </div>
+      <div class="choseStatusContainer"><p class="choseStatus">${choseP1}</p><p>-</p><p class="choseStatus">${choseCpu}</p></div>
+        <p class="winStatus">Player 1 ${status}</p>  
     `;
     }
   } else if (XPts.checked) {
     if (scoreP1 === 25 || scoreP2 === 25) {
       if (scoreP1 === 25) {
         resultContainer.innerHTML = `
-          <h2>PLAYER 1 WIN</h2>
-          <p>Score : ${scoreP1} - ${scoreP2} : Score</p>
-          <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
+          <h2 class="win">PLAYER 1 WIN</h2>
+          <div class="score">
+            <div><p class="scoreContainer">${scoreP1}</p></div>
+            <div><p class="scoreContainer">${scoreP2}</p></div>
+          </div>
+          <div class="choseStatusContainer"><p class="choseStatus">${choseP1}</p><p>-</p><p class="choseStatus">${choseCpu}</p></div> 
         `;
         reset();
       } else {
         resultContainer.innerHTML = `
-          <h2>PLAYER 2 WIN</h2>
-          <p>Score : ${scoreP1} - ${scoreP2} : Score</p>
-          <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
+          <h2 class="win">PLAYER 2 WIN</h2>
+          <div class="score">
+            <div><p class="scoreContainer">${scoreP1}</p></div>
+            <div><p class="scoreContainer">${scoreP2}</p></div>
+          </div>
+          <div class="choseStatusContainer"><p class="choseStatus">${choseP1}</p><p>-</p><p class="choseStatus">${choseCpu}</p></div> 
         `;
         reset();
       }
     } else {
       resultContainer.innerHTML = `
-        <p>Score : ${scoreP1} - ${scoreP2} : Score</p>
-        <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
-        <p>Player 1 ${status}</p>  
+      <div class="score">
+        <div><p class="scoreContainer">${scoreP1}</p></div>
+        <div><p class="scoreContainer">${scoreP2}</p></div>
+      </div>
+      <div class="choseStatusContainer"><p class="choseStatus">${choseP1}</p><p>-</p><p class="choseStatus">${choseCpu}</p></div> 
+        <p class="winStatus">Player 1 ${status}</p>  
     `;
     }
   } else {
     resultContainer.innerHTML = `
-    <p>P1 : ${choseP1} - ${choseCpu} : CPU</p>
-    <p>Player 1 ${status}</p>  
+    <div class="choseStatusContainer"><p class="choseStatus">${choseP1}</p><p>-</p><p class="choseStatus">${choseCpu}</p></div> 
+        <p class="winStatus">Player 1 ${status}</p>   
     `;
     reset();
   }
@@ -695,78 +722,105 @@ function displayLizardSpock() {
     if (scoreP1LS === 3 || scoreP2LS === 3) {
       if (scoreP1LS === 3) {
         resultContainerLS.innerHTML = `
-          <h2>PLAYER 1 WIN</h2>
-          <p>Score : ${scoreP1LS} - ${scoreP2LS} : Score</p>
-          <p>P1 : ${choseP1LS} - ${choseCpu} : CPU</p>
+          <h2 class="win">PLAYER 1 WIN</h2>
+          <div class="score">
+        <div><p class="scoreContainer">${scoreP1LS}</p></div>
+        <div><p class="scoreContainer">${scoreP2LS}</p></div>
+      </div>
+      <div class="choseStatusContainer"><p class="choseStatus">${choseP1LS}</p><p>-</p><p class="choseStatus">${choseCpu}</p></div>
         `;
         resetLS();
       } else {
         resultContainerLS.innerHTML = `
-          <h2>PLAYER 2 WIN</h2>
-          <p>Score : ${scoreP1LS} - ${scoreP2LS} : Score</p>
-          <p>P1 : ${choseP1LS} - ${choseCpu} : CPU</p>
+          <h2 class="win">PLAYER 2 WIN</h2>
+          <div class="score">
+        <div><p class="scoreContainer">${scoreP1LS}</p></div>
+        <div><p class="scoreContainer">${scoreP2LS}</p></div>
+      </div>
+      <div class="choseStatusContainer"><p class="choseStatus">${choseP1LS}</p><p>-</p><p class="choseStatus">${choseCpu}</p></div>
         `;
         resetLS();
       }
     } else {
       resultContainerLS.innerHTML = `
-        <p>Score : ${scoreP1LS} - ${scoreP2LS} : Score</p>
-        <p>P1 : ${choseP1LS} - ${choseCpu} : CPU</p>
-        <p>Player 1 ${status}</p>  
+      <div class="score">
+        <div><p class="scoreContainer">${scoreP1LS}</p></div>
+        <div><p class="scoreContainer">${scoreP2LS}</p></div>
+      </div>
+      <div class="choseStatusContainer"><p class="choseStatus">${choseP1LS}</p><p>-</p><p class="choseStatus">${choseCpu}</p></div>
+        <p class="winStatus">Player 1 ${status}</p>  
     `;
     }
   } else if (tenPts.checked) {
     if (scoreP1LS === 10 || scoreP2LS === 10) {
       if (scoreP1LS === 10) {
         resultContainerLS.innerHTML = `
-          <h2>PLAYER 1 WIN</h2>
-          <p>Score : ${scoreP1LS} - ${scoreP2LS} : Score</p>
-          <p>P1 : ${choseP1LS} - ${choseCpu} : CPU</p>
+          <h2 class="win">PLAYER 1 WIN</h2>
+          <div class="score">
+        <div><p class="scoreContainer">${scoreP1LS}</p></div>
+        <div><p class="scoreContainer">${scoreP2LS}</p></div>
+      </div>
+      <div class="choseStatusContainer"><p class="choseStatus">${choseP1LS}</p><p>-</p><p class="choseStatus">${choseCpu}</p></div>
         `;
         resetLS();
       } else {
         resultContainerLS.innerHTML = `
-          <h2>PLAYER 2 WIN</h2>
-          <p>Score : ${scoreP1LS} - ${scoreP2LS} : Score</p>
-          <p>P1 : ${choseP1LS} - ${choseCpu} : CPU</p>
+          <h2 class="win">PLAYER 2 WIN</h2>
+          <div class="score">
+        <div><p class="scoreContainer">${scoreP1LS}</p></div>
+        <div><p class="scoreContainer">${scoreP2LS}</p></div>
+      </div>
+      <div class="choseStatusContainer"><p class="choseStatus">${choseP1LS}</p><p>-</p><p class="choseStatus">${choseCpu}</p></div>
         `;
         resetLS();
       }
     } else {
       resultContainerLS.innerHTML = `
-        <p>Score : ${scoreP1LS} - ${scoreP2LS} : Score</p>
-        <p>P1 : ${choseP1LS} - ${choseCpu} : CPU</p>
-        <p>Player 1 ${status}</p>  
+      <div class="score">
+        <div><p class="scoreContainer">${scoreP1LS}</p></div>
+        <div><p class="scoreContainer">${scoreP2LS}</p></div>
+      </div>
+      <div class="choseStatusContainer"><p class="choseStatus">${choseP1LS}</p><p>-</p><p class="choseStatus">${choseCpu}</p></div>
+        <p class="winStatus">Player 1 ${status}</p>  
     `;
     }
   } else if (XPts.checked) {
     if (scoreP1LS === 25 || scoreP2LS === 25) {
       if (scoreP1LS === 25) {
         resultContainerLS.innerHTML = `
-          <h2>PLAYER 1 WIN</h2>
-          <p>Score : ${scoreP1LS} - ${scoreP2LS} : Score</p>
-          <p>P1 : ${choseP1LS} - ${choseCpu} : CPU</p>
+          <h2 class="win">PLAYER 1 WIN</h2>
+          <div class="score">
+        <div><p class="scoreContainer">${scoreP1LS}</p></div>
+        <div><p class="scoreContainer">${scoreP2LS}</p></div>
+      </div>
+      <div class="choseStatusContainer"><p class="choseStatus">${choseP1LS}</p><p>-</p><p class="choseStatus">${choseCpu}</p>
         `;
         resetLS();
       } else {
         resultContainerLS.innerHTML = `
-          <h2>PLAYER 2 WIN</h2>
-          <p>Score : ${scoreP1LS} - ${scoreP2LS} : Score</p>
-          <p>P1 : ${choseP1LS} - ${choseCpu} : CPU</p>
+          <h2 class="win">PLAYER 2 WIN</h2>
+          <div class="score">
+        <div><p class="scoreContainer">${scoreP1LS}</p></div>
+        <div><p class="scoreContainer">${scoreP2LS}</p></div>
+      </div>
+      <div class="choseStatusContainer"><p class="choseStatus">${choseP1LS}</p><p>-</p><p class="choseStatus">${choseCpu}</p>
         `;
         resetLS();
       }
     } else {
       resultContainerLS.innerHTML = `
-        <p>Score : ${scoreP1LS} - ${scoreP2LS} : Score</p>
-        <p>P1 : ${choseP1LS} - ${choseCpu} : CPU</p>
-        <p>Player 1 ${status}</p>  
+      <div class="score">
+        <div><p class="scoreContainer">${scoreP1LS}</p></div>
+        <div><p class="scoreContainer">${scoreP2LS}</p></div>
+      </div>
+      <div class="choseStatusContainer"><p class="choseStatus">${choseP1LS}</p><p>-</p><p class="choseStatus">${choseCpu}</p>
+        <p class="winStatus">Player 1 ${status}</p>  
     `;
     }
   } else {
     resultContainerLS.innerHTML = `
-    <p>P1 : ${choseP1LS} - ${choseCpu} : CPU</p>
-    <p>Player 1 ${status}</p>  
+    <div class="choseStatusContainer"><p class="choseStatus">${choseP1LS}</p><p>-</p><p class="choseStatus">${choseCpu}</p>
+    <p class="winStatus">Player 1 ${status}</p
     `;
     resetLS();
   }
