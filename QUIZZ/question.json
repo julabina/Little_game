@@ -20,75 +20,75 @@
         },
         {
             "id":"question3",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
+            "title":"When did Donald Trump become the first US president to set foot in North Korea?",
+            "resp1":"12 june 2018",
+            "resp2":"28 may 2019",
+            "resp3":"30 june 2019",
+            "resp4":"3 july 2019",
+            "answer":"30 june 2019"
         },
         {
             "id":"question4",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
+            "title":"Which planet is closest to the sun?",
+            "resp1":"Jupiter",
+            "resp2":"Earth",
+            "resp3":"Venus",
+            "resp4":"Mercury",
+            "answer":"Mercury"
         },
         {
             "id":"question5",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
+            "title":"In what year did Albert Einstein die?",
+            "resp1":"1950",
+            "resp2":"1955",
+            "resp3":"1960",
+            "resp4":"1965",
+            "answer":"1955"
         },
         {
             "id":"question6",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
+            "title":"What is the capital of the state of California in the United States ?",
+            "resp1":"Montgomery",
+            "resp2":"Cleveland",
+            "resp3":"Sacramento",
+            "resp4":"Colombus",
+            "answer":"Sacramento"
         },
         {
             "id":"question7",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
+            "title":"In what year did the Titanic sink?",
+            "resp1":"1910",
+            "resp2":"1911",
+            "resp3":"1912",
+            "resp4":"1913",
+            "answer":"1912"
         },
         {
             "id":"question8",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
+            "title":"What is the capital of Brazil?",
+            "resp1":"Sao Paulo",
+            "resp2":"Brasilia",
+            "resp3":"Rio de Janero",
+            "resp4":"Salvador",
+            "answer":"Brasilia"
         },
         {
             "id":"question9",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
+            "title":"Which physicist gave his name to the unit measuring the intensity of electric current?",
+            "resp1":"Alessandro Volta",
+            "resp2":"James Watt",
+            "resp3":"Heinrich Hertz",
+            "resp4":"André-Marie Ampere",
+            "answer":"André-Marie Ampere"
         },
         {
             "id":"question10",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
+            "title":"In what year did Pierre and Marie Curie win the Nobel Prize in Physics?",
+            "resp1":"1893",
+            "resp2":"1903",
+            "resp3":"1913",
+            "resp4":"1923",
+            "answer":"1903"
         }
     ],
     "history": [
