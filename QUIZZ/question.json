@@ -186,66 +186,66 @@
     "classical": [
         {
             "id":"question1",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
+            "title":"How old did Beethoven die ?",
+            "resp1":"35",
+            "resp2":"47",
+            "resp3":"56",
+            "resp4":"64",
+            "answer":"56"
         },
         {
             "id":"question2",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
+            "title":"In what year did Ravel compose the Boléro?",
+            "resp1":"1903",
+            "resp2":"1928",
+            "resp3":"1945",
+            "resp4":"1964",
+            "answer":"1928"
         },
         {
             "id":"question3",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
+            "title":"What record did Neil Armstrong take on Apollo 11 ?",
+            "resp1":"Last Requiem by Mozart",
+            "resp2":"Symphony No. 9 by Beethoven",
+            "resp3":"New World symphony by dworak",
+            "resp4":"Symphony No. 1, TITAN by Mahler",
+            "answer":"New World symphony by dworak"
         },
         {
             "id":"question4",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
+            "title":"How many Consolations did Liszt compose?",
+            "resp1":"3",
+            "resp2":"4",
+            "resp3":"6",
+            "resp4":"7",
+            "answer":"6"
         },
         {
             "id":"question5",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
+            "title":"Who composed The Trout",
+            "resp1":"Liszt",
+            "resp2":"Beethoven",
+            "resp3":"Schubert",
+            "resp4":"Chopin",
+            "answer":"Schubert"
         },
         {
             "id":"question6",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
+            "title":"Who composed the music for the opera Guillaume Tell",
+            "resp1":"Donizetti",
+            "resp2":"Verdi",
+            "resp3":"Rossini",
+            "resp4":"Bizet",
+            "answer":"Rossini"
         },
         {
             "id":"question7",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
+            "title":"How old did Mozart die ?",
+            "resp1":"30",
+            "resp2":"35",
+            "resp3":"40",
+            "resp4":"45",
+            "answer":"35"
         },
         {
             "id":"question8",
@@ -258,21 +258,21 @@
         },
         {
             "id":"question9",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
+            "title":"For which instrument was Bach's Goldbreg Variation composed ?",
+            "resp1":"Oboe",
+            "resp2":"Organ",
+            "resp3":"Piano",
+            "resp4":"Harpsichord",
+            "answer":"Harpsichord"
         },
         {
             "id":"question10",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
+            "title":"How many children does Bach have",
+            "resp1":"5",
+            "resp2":"10",
+            "resp3":"15",
+            "resp4":"20",
+            "answer":"20"
         }
     ],
     "cinema": [
@@ -359,7 +359,7 @@
         },
         {
             "id":"question10",
-            "title":"In 12 MONKEYS, which actor is in a mental hospital",
+            "title":"In 12 MONKEYS, which actor is in a mental hospital ?",
             "resp1":"Bruce Willis",
             "resp2":"Tom Cruise",
             "resp3":"George Clooney",
