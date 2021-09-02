@@ -2,18 +2,18 @@
     "general": [
         {
             "id": "question1",
-            "title":"What is the capital city of China",
+            "title":"What is the capital city of China ?",
             "resp":[
                 {"chose":"Hong-kong"},
                 {"chose":"Beijing"},
                 {"chose":"Shenzhen"},
                 {"chose":"Shanghai"}
             ],            
-            "answer": "Beijing (Peking)"
+            "answer": "Beijing"
         },
         {
             "id":"question2",
-            "title":"Who invented the train",
+            "title":"Who invented the train ?",
             "resp":[
                 {"chose":"Nikola Tesla"},
                 {"chose":"James Watt"},
@@ -24,7 +24,7 @@
         },
         {
             "id":"question3",
-            "title":"When did Donald Trump become the first US president to set foot in North Korea?",
+            "title":"When did Donald Trump become the first US president to set foot in North Korea ?",
             "resp":[
                 {"chose":"12 june 2018"},
                 {"chose":"28 may 2019"},
@@ -35,7 +35,7 @@
         },
         {
             "id":"question4",
-            "title":"Which planet is closest to the sun?",
+            "title":"Which planet is closest to the sun ?",
             "resp":[
                 {"chose":"Jupiter"},
                 {"chose":"Earth"},
@@ -47,7 +47,7 @@
         },
         {
             "id":"question5",
-            "title":"In what year did Albert Einstein die?",
+            "title":"In what year did Albert Einstein die ?",
             "resp":[
                 {"chose":"1950"},
                 {"chose":"1955"},
@@ -69,7 +69,7 @@
         },
         {
             "id":"question7",
-            "title":"In what year did the Titanic sink?",
+            "title":"In what year did the Titanic sink ?",
             "resp":[    
                 {"chose":"1910"},
                 {"chose":"1911"},
@@ -80,7 +80,7 @@
         },
         {
             "id":"question8",
-            "title":"What is the capital of Brazil?",
+            "title":"What is the capital of Brazil ?",
             "resp":[
                 {"chose":"Sao Paulo"},
                 {"chose":"Brasilia"},
@@ -91,7 +91,7 @@
         },
         {
             "id":"question9",
-            "title":"Which physicist gave his name to the unit measuring the intensity of electric current?",
+            "title":"Which physicist gave his name to the unit measuring the intensity of electric current ?",
             "resp":[
                 {"chose":"Alessandro Volta"},
                 {"chose":"James Watt"},
@@ -102,7 +102,7 @@
         },
         {
             "id":"question10",
-            "title":"In what year did Pierre and Marie Curie win the Nobel Prize in Physics?",
+            "title":"In what year did Pierre and Marie Curie win the Nobel Prize in Physics ?",
             "resp":[
                 {"chose":"1893"},
                 {"chose":"1903"},
@@ -126,7 +126,7 @@
         },
         {
             "id":"question2",
-            "title":"In what year did Ravel compose the Boléro?",
+            "title":"In what year did Ravel compose the Boléro ?",
             "resp":[
                 {"chose":"1903"},
                 {"chose":"1928"},
@@ -148,7 +148,7 @@
         },
         {
             "id":"question4",
-            "title":"How many Consolations did Liszt compose?",
+            "title":"How many Consolations did Liszt compose ?",
             "resp":[
                 {"chose":"3"},
                 {"chose":"4"},
@@ -159,7 +159,7 @@
         },
         {
             "id":"question5",
-            "title":"Who composed The Trout",
+            "title":"Who composed The Trout ?",
             "resp":[
                 {"chose":"Liszt"},
                 {"chose":"Beethoven"},
@@ -170,7 +170,7 @@
         },
         {
             "id":"question6",
-            "title":"Who composed the music for the opera Guillaume Tell",
+            "title":"Who composed the music for the opera Guillaume Tell ?",
             "resp":[
                 {"chose":"Donizetti"},
                 {"chose":"Verdi"},
@@ -192,7 +192,7 @@
         },
         {
             "id":"question8",
-            "title":"which movie hans zimmer did not compose the soundtrack for",
+            "title":"which movie hans zimmer did not compose the soundtrack for ?",
             "resp":[
                 {"chose":"Schindler's List"},
                 {"chose":"The rock"},
@@ -214,7 +214,7 @@
         },
         {
             "id":"question10",
-            "title":"How many children does Bach have",
+            "title":"How many children does Bach have ?",
             "resp":[
                 {"chose":"5"},
                 {"chose":"10"},
@@ -282,7 +282,7 @@
         },
         {
             "id":"question6",
-            "title":"In Sergio Leone's movie, there is the good one played by Clint Eastwood, the bad one played by Lee Van Cleef but which actor has the role of the ugly?",
+            "title":"In Sergio Leone's movie, there is the good one played by Clint Eastwood, the bad one played by Lee Van Cleef but which actor has the role of the ugly ?",
             "resp":[
                 {"chose":"Steve McQueen"},
                 {"chose":"Charles Bronson"},
