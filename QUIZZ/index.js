@@ -2,6 +2,9 @@ const select = document.getElementById("quizSelect");
 const containers = document.querySelectorAll(".questionContainer");
 const btn = document.getElementById("verifyBtn");
 const resultContainer = document.querySelector(".result");
+const error = document.querySelector(".errorEmpty");
+const answers = document.querySelectorAll(".answer");
+const resp1 = document.querySelectorAll(".resp1");
 let questions;
 let title, radios, labels;
 let check = 0;
@@ -13,10 +16,38 @@ fetch("question.json")
     displayQuestion("general");
   });
 
+const reset = () => {
+  error.textContent = "";
+  resultContainer.innerHTML = ``;
+  for (i = 0; i < resp1.length; i++) {
+    resp1[i].checked = true;
+    resp1[i].checked = false;
+  }
+  for (i = 0; i < answers.length; i++) {
+    answers[i].textContent = "";
+  }
+  for (i = 0; i < containers.length; i++) {
+    containers[i].classList.remove("answerBad");
+    containers[i].classList.remove("answerGood");
+  }
+};
+
+const smallReset = () => {
+  error.textContent = "";
+  resultContainer.innerHTML = ``;
+
+  for (i = 0; i < answers.length; i++) {
+    answers[i].textContent = "";
+  }
+  for (i = 0; i < containers.length; i++) {
+    containers[i].classList.remove("answerBad");
+    containers[i].classList.remove("answerGood");
+  }
+};
+
 const emptyCheck = (theme) => {
   console.log(theme);
   check = 0;
-  const error = document.querySelector(".errorEmpty");
   for (let i = 0; i < containers.length; i++) {
     test = 0;
     radios = containers[i].querySelectorAll("input");
@@ -26,17 +57,15 @@ const emptyCheck = (theme) => {
       }
     }
     if (test === 4) {
-      console.log("2165454165446544654985");
+      error.textContent = "All answers must be checked";
     } else {
       check++;
       console.log("ok");
     }
   }
-  console.log(check);
   if (check === 10) {
     verifyAnswerPrologue(theme);
   } else {
-    console.log("test");
   }
 };
 
@@ -58,7 +87,7 @@ const displayQuestion = (theme) => {
   }
 };
 
-const verifyAnswerPrologue = (theme) => {
+const verifyAnswerPrologue = (theme, e) => {
   result = 0;
   for (let i = 0; i < containers.length; i++) {
     title = containers[i].querySelector(".title");
@@ -79,35 +108,42 @@ const verifyAnswer = (question, theme) => {
   for (i = 0; i < radios.length; i++) {
     if (radios[i].checked) {
       if (radios[i].value == answer) {
-        containers[question].classList.add("test");
-        containers[question].classList.remove("test2");
+        containers[question].classList.add("answerGood");
+        containers[question].classList.remove("answerBad");
         result++;
       } else {
-        containers[question].classList.add("test2");
-        containers[question].classList.remove("test");
+        containers[question].classList.add("answerBad");
+        containers[question].classList.remove("answerGood");
         answerContainer.textContent = "The good answer is " + answer;
       }
-    } else {
     }
   }
 };
 
-select.addEventListener("change", () => {
+select.addEventListener("change", (e) => {
+  e.preventDefault();
   if (select.selectedIndex === 0) {
+    reset();
     displayQuestion("general");
   } else if (select.selectedIndex === 1) {
+    reset();
     displayQuestion("classical");
   } else {
+    reset();
     displayQuestion("cinema");
   }
 });
 
-btn.addEventListener("click", () => {
+btn.addEventListener("click", (e) => {
+  e.preventDefault();
   if (select.selectedIndex === 0) {
+    smallReset();
     emptyCheck("general");
   } else if (select.selectedIndex === 1) {
+    smallReset();
     emptyCheck("classical");
   } else {
+    smallReset();
     emptyCheck("cinema");
   }
 });
