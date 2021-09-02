@@ -28,3 +28,7 @@ select {
   border-radius: 5px;
   padding: 7px 25px;
 }
+
+.test {
+  background: green;
+}

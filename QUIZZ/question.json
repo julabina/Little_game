@@ -3,367 +3,336 @@
         {
             "id": "question1",
             "title":"What is the capital city of China",
-            "resp1":"Hong-kong",
-            "resp2":"Beijing",
-            "resp3":"Shenzhen",
-            "resp4":"Shanghai",
+            "resp":[
+                {"chose":"Hong-kong"},
+                {"chose":"Beijing"},
+                {"chose":"Shenzhen"},
+                {"chose":"Shanghai"}
+            ],            
             "answer": "Beijing (Peking)"
         },
         {
             "id":"question2",
             "title":"Who invented the train",
-            "resp1":"Nikola Tesla",
-            "resp2":"James Watt",
-            "resp3":"Leonardo DeVinci",
-            "resp4":"Richard Trevithick",
+            "resp":[
+                {"chose":"Nikola Tesla"},
+                {"chose":"James Watt"},
+                {"chose":"Leonardo DeVinci"},
+                {"chose":"Richard Trevithick"}
+            ],      
             "answer":"Richard Trevithick"
         },
         {
             "id":"question3",
             "title":"When did Donald Trump become the first US president to set foot in North Korea?",
-            "resp1":"12 june 2018",
-            "resp2":"28 may 2019",
-            "resp3":"30 june 2019",
-            "resp4":"3 july 2019",
+            "resp":[
+                {"chose":"12 june 2018"},
+                {"chose":"28 may 2019"},
+                {"chose":"30 june 2019"},
+                {"chose":"3 july 2019"}
+            ],         
             "answer":"30 june 2019"
         },
         {
             "id":"question4",
             "title":"Which planet is closest to the sun?",
-            "resp1":"Jupiter",
-            "resp2":"Earth",
-            "resp3":"Venus",
-            "resp4":"Mercury",
+            "resp":[
+                {"chose":"Jupiter"},
+                {"chose":"Earth"},
+                {"chose":"Venus"},
+                {"chose":"Mercury"}
+
+            ],
             "answer":"Mercury"
         },
         {
             "id":"question5",
             "title":"In what year did Albert Einstein die?",
-            "resp1":"1950",
-            "resp2":"1955",
-            "resp3":"1960",
-            "resp4":"1965",
+            "resp":[
+                {"chose":"1950"},
+                {"chose":"1955"},
+                {"chose":"1960"},
+                {"chose":"1965"}
+            ],            
             "answer":"1955"
         },
         {
             "id":"question6",
             "title":"What is the capital of the state of California in the United States ?",
-            "resp1":"Montgomery",
-            "resp2":"Cleveland",
-            "resp3":"Sacramento",
-            "resp4":"Colombus",
+            "resp":[
+                {"chose":"Montgomery"},
+                {"chose":"Cleveland"},
+                {"chose":"Sacramento"},
+                {"chose":"Colombus"}
+            ],            
             "answer":"Sacramento"
         },
         {
             "id":"question7",
             "title":"In what year did the Titanic sink?",
-            "resp1":"1910",
-            "resp2":"1911",
-            "resp3":"1912",
-            "resp4":"1913",
+            "resp":[    
+                {"chose":"1910"},
+                {"chose":"1911"},
+                {"chose":"1912"},
+                {"chose":"1913"}
+            ],            
             "answer":"1912"
         },
         {
             "id":"question8",
             "title":"What is the capital of Brazil?",
-            "resp1":"Sao Paulo",
-            "resp2":"Brasilia",
-            "resp3":"Rio de Janero",
-            "resp4":"Salvador",
+            "resp":[
+                {"chose":"Sao Paulo"},
+                {"chose":"Brasilia"},
+                {"chose":"Rio de Janero"},
+                {"chose":"Salvador"}                                                       
+            ],
             "answer":"Brasilia"
         },
         {
             "id":"question9",
             "title":"Which physicist gave his name to the unit measuring the intensity of electric current?",
-            "resp1":"Alessandro Volta",
-            "resp2":"James Watt",
-            "resp3":"Heinrich Hertz",
-            "resp4":"André-Marie Ampere",
+            "resp":[
+                {"chose":"Alessandro Volta"},
+                {"chose":"James Watt"},
+                {"chose":"Heinrich Hertz"},
+                {"chose":"André-Marie Ampere"}
+            ],
             "answer":"André-Marie Ampere"
         },
         {
             "id":"question10",
             "title":"In what year did Pierre and Marie Curie win the Nobel Prize in Physics?",
-            "resp1":"1893",
-            "resp2":"1903",
-            "resp3":"1913",
-            "resp4":"1923",
+            "resp":[
+                {"chose":"1893"},
+                {"chose":"1903"},
+                {"chose":"1913"},
+                {"chose":"1923"}
+            ],
             "answer":"1903"
-        }
-    ],
-    "history": [
-        {
-            "id":"question1",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
-        },
-        {
-            "id":"question2",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
-        },
-        {
-            "id":"question3",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
-        },
-        {
-            "id":"question4",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
-        },
-        {
-            "id":"question5",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
-        },
-        {
-            "id":"question6",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
-        },
-        {
-            "id":"question7",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
-        },
-        {
-            "id":"question8",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
-        },
-        {
-            "id":"question9",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
-        },
-        {
-            "id":"question10",
-            "title":"",
-            "resp1":"",
-            "resp2":"",
-            "resp3":"",
-            "resp4":"",
-            "answer":""
         }
     ],
     "classical": [
         {
             "id":"question1",
             "title":"How old did Beethoven die ?",
-            "resp1":"35",
-            "resp2":"47",
-            "resp3":"56",
-            "resp4":"64",
+            "resp":[
+                {"chose":"35"},
+                {"chose":"47"},
+                {"chose":"56"},
+                {"chose":"64"}
+            ],            
             "answer":"56"
         },
         {
             "id":"question2",
             "title":"In what year did Ravel compose the Boléro?",
-            "resp1":"1903",
-            "resp2":"1928",
-            "resp3":"1945",
-            "resp4":"1964",
+            "resp":[
+                {"chose":"1903"},
+                {"chose":"1928"},
+                {"chose":"1945"},
+                {"chose":"1964"}
+            ],   
             "answer":"1928"
         },
         {
             "id":"question3",
             "title":"What record did Neil Armstrong take on Apollo 11 ?",
-            "resp1":"Last Requiem by Mozart",
-            "resp2":"Symphony No. 9 by Beethoven",
-            "resp3":"New World symphony by dworak",
-            "resp4":"Symphony No. 1, TITAN by Mahler",
+            "resp":[
+                {"chose":"Last Requiem by Mozart"},
+                {"chose":"Symphony No. 9 by Beethoven"},
+                {"chose":"New World symphony by dworak"},
+                {"chose":"Symphony No. 1, TITAN by Mahler"}
+            ],   
             "answer":"New World symphony by dworak"
         },
         {
             "id":"question4",
             "title":"How many Consolations did Liszt compose?",
-            "resp1":"3",
-            "resp2":"4",
-            "resp3":"6",
-            "resp4":"7",
+            "resp":[
+                {"chose":"3"},
+                {"chose":"4"},
+                {"chose":"6"},
+                {"chose":"7"}
+            ],
             "answer":"6"
         },
         {
             "id":"question5",
             "title":"Who composed The Trout",
-            "resp1":"Liszt",
-            "resp2":"Beethoven",
-            "resp3":"Schubert",
-            "resp4":"Chopin",
+            "resp":[
+                {"chose":"Liszt"},
+                {"chose":"Beethoven"},
+                {"chose":"Schubert"},
+                {"chose":"Chopin"}
+            ],  
             "answer":"Schubert"
         },
         {
             "id":"question6",
             "title":"Who composed the music for the opera Guillaume Tell",
-            "resp1":"Donizetti",
-            "resp2":"Verdi",
-            "resp3":"Rossini",
-            "resp4":"Bizet",
+            "resp":[
+                {"chose":"Donizetti"},
+                {"chose":"Verdi"},
+                {"chose":"Rossini"},
+                {"chose":"Bizet"}
+            ],   
             "answer":"Rossini"
         },
         {
             "id":"question7",
             "title":"How old did Mozart die ?",
-            "resp1":"30",
-            "resp2":"35",
-            "resp3":"40",
-            "resp4":"45",
+            "resp":[
+                {"chose":"30"},
+                {"chose":"35"},
+                {"chose":"40"},
+                {"chose":"45"}
+            ],
             "answer":"35"
         },
         {
             "id":"question8",
             "title":"which movie hans zimmer did not compose the soundtrack for",
-            "resp1":"Schindler's List",
-            "resp2":"The rock",
-            "resp3":"Dunkirk",
-            "resp4":"The thin red line",
+            "resp":[
+                {"chose":"Schindler's List"},
+                {"chose":"The rock"},
+                {"chose":"Dunkirk"},
+                {"chose":"The thin red line"}
+            ],
             "answer":"Schindler's List"
         },
         {
             "id":"question9",
             "title":"For which instrument was Bach's Goldbreg Variation composed ?",
-            "resp1":"Oboe",
-            "resp2":"Organ",
-            "resp3":"Piano",
-            "resp4":"Harpsichord",
+            "resp":[
+                {"chose":"Oboe"},
+                {"chose":"Organ"},
+                {"chose":"Piano"},
+                {"chose":"Harpsichord"}
+            ],            
             "answer":"Harpsichord"
         },
         {
             "id":"question10",
             "title":"How many children does Bach have",
-            "resp1":"5",
-            "resp2":"10",
-            "resp3":"15",
-            "resp4":"20",
+            "resp":[
+                {"chose":"5"},
+                {"chose":"10"},
+                {"chose":"15"},
+                {"chose":"20"}
+            ],
             "answer":"20"
         }
     ],
     "cinema": [
         {
             "id":"question1",
-            "title":"Who made HEAT",
-            "resp1":"Ridley Scott",
-            "resp2":"Michael Mann",
-            "resp3":"Michael Bay",
-            "resp4":"Zack Snyder",
+            "title":"Who made HEAT ?",
+            "resp":[
+                {"chose":"Ridley Scott"},
+                {"chose":"Michael Mann"},
+                {"chose":"Michael Bay"},
+                {"chose":"Zack Snyder"}
+            ],
             "answer":"Michael Mann"
         },
         {
             "id":"question2",
             "title":"What is the last sin in SEVEN ?",
-            "resp1":"Sloth",
-            "resp2":"Anger",
-            "resp3":"Envy",
-            "resp4":"Luxury",
+            "resp":[
+                {"chose":"Sloth"},
+                {"chose":"Anger"},
+                {"chose":"Envy"},
+                {"chose":"Luxury"}
+            ],
             "answer":"Anger"
         },
         {
             "id":"question3",
             "title":"Which of these actors have never played Batman ?",
-            "resp1":"Hugh Jackman",
-            "resp2":"Robert Pattinson",
-            "resp3":"Michael Keaton",
-            "resp4":"Val Kilmer",
+            "resp":[
+                {"chose":"Hugh Jackman"},
+                {"chose":"Robert Pattinson"},
+                {"chose":"Michael Keaton"},
+                {"chose":"Val Kilmer"}
+            ],
             "answer":"Hugh Jackman"
         },
         {
             "id":"question4",
             "title":"What is Brad Pitt selling in SNATCH movie ?",
-            "resp1":"Caravan",
-            "resp2":"Guns",
-            "resp3":"Wine",
-            "resp4":"Car",
+            "resp":[
+                {"chose":"Caravan"},
+                {"chose":"Guns"},
+                {"chose":"Wine"},
+                {"chose":"Car"}
+            ],        
             "answer":"Caravan"
         },
         {
             "id":"question5",
             "title":"Who is alive ? it's alive, it's alive !",
-            "resp1":"Dracula",
-            "resp2":"Frankenstein",
-            "resp3":"Casper",
-            "resp4":"C3PO",
+            "resp":[
+                {"chose":"Dracula"},
+                {"chose":"Frankenstein"},
+                {"chose":"Casper"},
+                {"chose":"C3PO"}
+            ],           
             "answer":"Frankenstein"
         },
         {
             "id":"question6",
             "title":"In Sergio Leone's movie, there is the good one played by Clint Eastwood, the bad one played by Lee Van Cleef but which actor has the role of the ugly?",
-            "resp1":"Steve McQueen",
-            "resp2":"Charles Bronson",
-            "resp3":"Dean Martin",
-            "resp4":"Eli Wallach",
+            "resp":[
+                {"chose":"Steve McQueen"},
+                {"chose":"Charles Bronson"},
+                {"chose":"Dean Martin"},
+                {"chose":"Eli Wallach"}
+            ],           
             "answer":"Eli Wallach"
         },
         {
             "id":"question7",
             "title":"Who is the taxi driver in the movie of the same name ?",
-            "resp1":"Al Pacino",
-            "resp2":"Joe Pesci",
-            "resp3":"Val Kilmer",
-            "resp4":"Robert DeNiro",
+            "resp":[
+                {"chose":"Al Pacino"},
+                {"chose":"Joe Pesci"},
+                {"chose":"Val Kilmer"},
+                {"chose":"Robert DeNiro"}
+            ],
             "answer":"Robert DeNiro"
         },
         {
             "id":"question8",
             "title":"Which movie is not from a novel ?",
-            "resp1":"Jurassic Park",
-            "resp2":"Mulan",
-            "resp3":"Hunger Games",
-            "resp4":"The Green Mile",
+            "resp":[
+                {"chose":"Jurassic Park"},
+                {"chose":"Mulan"},
+                {"chose":"Hunger Games"},
+                {"chose":"The Green Mile"} 
+            ],  
             "answer":"Mulan"
         },
-        {
-            "id":"question9",
-            "title":"Which actor embodies the role of joel in ETERNAL SUNSHINE OF SPOTLESS MIND ?",
-            "resp1":"Elijah Wood",
-            "resp2":"Adam Sandler",
-            "resp3":"Jim Carrey",
-            "resp4":"Noah Emmerich",
-            "answer":"Jim Carrey"
+        { 
+            "id":"question9", 
+            "title":"Which actor embodies the role of joel in ETERNAL SUNSHINE OF SPOTLESS MIND ?", 
+            "resp":[ 
+                {"chose":"Elijah Wood"}, 
+                {"chose":"Adam Sandler"}, 
+                {"chose":"Jim Carrey"}, 
+                {"chose":"Noah Emmerich"} 
+            ], 
+                "answer":"Jim Carrey" 
         },
         {
             "id":"question10",
             "title":"In 12 MONKEYS, which actor is in a mental hospital ?",
-            "resp1":"Bruce Willis",
-            "resp2":"Tom Cruise",
-            "resp3":"George Clooney",
-            "resp4":"Matt Damon",
+            "resp":[
+                {"chose":"Bruce Willis"},
+                {"chose":"Tom Cruise"},
+                {"chose":"George Clooney"},
+                {"chose":"Matt Damon"}
+            ],          
             "answer":"Bruce Willis"
         }
     ]
