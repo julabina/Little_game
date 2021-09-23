@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+   
+    <title>The Price is Right</title>
+</head>
+<body>
+    <h1>The price is right</h1>
+
+    <nav>
+        <div class="navDiv nav-turnByTurn">
+            <h2>Turn mod</h2>
+            <div class="radioContainer">
+                <div class="radioContainer-container">
+                    <input type="radio" name="gameMod" id="turn1" checked>
+                    <label for="">20</label>
+                </div>
+                <div class="radioContainer-container">
+                    <input type="radio" name="gameMod" id="turn2">
+                    <label for="">10</label>
+                </div>
+            </div>
+        </div>
+        <div class="navDiv nav-timer">
+            <h2>Timer mod</h2>
+            <div class="radioContainer">
+                <div class="radioContainer-container">
+                    <input type="radio" name="gameMod" id="timer1">
+                    <label for="">5 min</label>
+                </div>
+                <div class="radioContainer-container">
+                    <input type="radio" name="gameMod" id="timer2">
+                    <label for="">2 min</label>
+                </div>
+            </div>
+        </div>
+        <div class="navDiv nav-player">
+            <h2>Player</h2>
+            <div class="radioContainer">
+                <div class="radioContainer-container">
+                    <input type="radio" name="players" id="player1" checked>
+                    <label for="">1 Player</label>
+                </div>
+                <div class="radioContainer-container">
+                    <input type="radio" name="players" id="player2">
+                    <label for="">2 Players</label>
+                </div>
+            </div>
+        </div>
+        <div class="navDiv nav-lvl">
+            <h2>Difficulty</h2>
+            <div class="radioContainer">
+                <div class="radioContainer-container">
+                    <input type="radio" name="lvl" id="lvl1" checked>
+                    <label for="">100</label>
+                </div>
+                <div class="radioContainer-container">
+                    <input type="radio" name="lvl" id="lvl2">
+                    <label for="">1000</label>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <input type="number" name="" id="playerPropose">
+        <h3 class="lastPropose"></h3>
+        <p class="resultStatus"></p>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
