@@ -38,11 +38,11 @@ const countdown = (int) => {
   countdownVal = int - 1;
   count.textContent = countdownVal;
   if (countdownVal === 0) {
-    resultStatus.textContent = "LOSE";
+    resultStatus.textContent = "YOU LOSE - The good price was " + goodPrice;
   }
 };
 
-function hotOrFrozen(val) {
+function hotOrFrozen() {
   if (currentPricePropose < goodPrice) {
     resultStatus.textContent = "plus";
   } else {
@@ -50,30 +50,31 @@ function hotOrFrozen(val) {
   }
 }
 
-function test(val) {
+function verify(val) {
   currentPricePropose = val;
   lastPropose.textContent = currentPricePropose;
   if (currentPricePropose === goodPrice) {
-    resultStatus.textContent = "WIN";
+    resultStatus.textContent = "YOU WIN";
   } else {
-    hotOrFrozen(currentPricePropose);
+    hotOrFrozen();
   }
 }
 
 submit.addEventListener("click", () => {
   if (gameMod === 1) {
     let valInput = parseInt(playerPropose.value);
-    test(valInput);
+    verify(valInput);
     playerPropose.value = "";
     countdown(countdownVal);
   } else {
     let valInput = parseInt(playerPropose.value);
-    test(valInput);
+    verify(valInput);
     playerPropose.value = "";
   }
 });
 
 startBtn.addEventListener("click", () => {
+  reset();
   if (radios[0].checked) {
     count.textContent = 20;
     countdownVal = 20;
@@ -82,6 +83,33 @@ startBtn.addEventListener("click", () => {
     count.textContent = 10;
     countdownVal = 10;
     gameMod = 1;
+  } else if (radios[2].checked) {
+    count.textContent = 5;
+    countdownVal = 5;
+    gameMod = 1;
+  } else if (radios[3].checked) {
+    count.textContent = 3;
+    countdownVal = 3;
+    gameMod = 1;
+  } else if (radios[4].checked) {
+    gameMod = 2;
+  } else if (radios[5].checked) {
+    gameMod = 2;
+  } else if (radios[6].checked) {
+    gameMod = 2;
+  } else if (radios[7].checked) {
+    gameMod = 2;
   }
-  randomPrice(1000);
+
+  /* difficulty */
+
+  if (radios[10].checked) {
+    randomPrice(100);
+  } else if (radios[11].checked) {
+    randomPrice(1000);
+  } else if (radios[12].checked) {
+    randomPrice(10000);
+  } else if (radios[13].checked) {
+    randomPrice(100000);
+  }
 });
