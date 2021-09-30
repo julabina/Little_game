@@ -42,7 +42,7 @@ nav {
 
 main {
   display: grid;
-  grid-template: 45px 7px 100px 20px 40px 10px 40px 20px / repeat(5, 1fr);
+  grid-template: 45px 7px 100px 20px 40px 10px 40px 20px / repeat(3, 1fr);
   width: 60%;
   border: 1px black solid;
   border-radius: 10px;
@@ -52,7 +52,7 @@ main {
   width: auto;
   height: auto;
   background: cyan;
-  grid-column: 2 / 5;
+  grid-column: 2 / 3;
   grid-row: 3 / 4;
   border-radius: 5px;
 }
@@ -77,30 +77,50 @@ main {
 
 .lastPropose {
   grid-row: 5 / 6;
-  grid-column: 2 / 5;
+  grid-column: 2 / 3;
   text-align: center;
   font-size: 2.5em;
 }
 
 #playerPropose {
-  grid-column: 2 / 5;
+  grid-column: 2 / 3;
   margin-top: 7px;
+  font-size: 1.4em;
   text-align: center;
 }
 
-.statusLeft {
+.leftContainer {
   grid-row: 5 / 6;
+  display: flex;
+  justify-content: center;
+}
+
+.statusLeft {
+  text-align: center;
+  line-height: 40px;
+  width: 100px;
+  background: red;
+  border-radius: 5px;
+}
+
+.rightContainer {
+  grid-row: 5 / 6;
+  grid-column: 3;
+  display: flex;
+  justify-content: center;
 }
 
 .statusRight {
-  grid-row: 5 / 6;
-  grid-column: 5;
-  text-align: end;
+  text-align: center;
+  line-height: 40px;
+  width: 100px;
+  background: red;
+  border-radius: 5px;
 }
 
 .resultStatus {
   grid-row: 7 / 8;
-  grid-column: 2 / 5;
+  grid-column: 2 / 3;
   text-align: center;
   line-height: 40px;
   white-space: nowrap;
@@ -112,4 +132,8 @@ main {
   line-height: 45px;
   white-space: nowrap;
   margin-left: 10px;
+}
+
+.invisible {
+  display: none;
 }

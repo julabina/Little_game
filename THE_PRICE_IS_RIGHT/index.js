@@ -5,6 +5,8 @@ const submit = document.querySelector(".submitBtn");
 const startBtn = document.querySelector(".startGameBtn");
 const count = document.querySelector(".count");
 const radios = document.querySelectorAll("input[type=radio]");
+const more = document.querySelector(".rightContainer");
+const less = document.querySelector(".leftContainer");
 console.log(radios);
 
 let goodPrice, currentPricePropose, countdownVal, gameMod;
@@ -15,14 +17,6 @@ const randomPrice = (int) => {
   console.log(goodPrice);
 };
 
-const game = () => {
-  let finish = false;
-  randomPrice(1000);
-  do {
-    finish = true;
-  } while (finish === false);
-};
-
 const reset = () => {
   resultStatus.textContent = "";
   count.textContent = "";
@@ -31,6 +25,8 @@ const reset = () => {
   currentPricePropose = undefined;
   countdownVal = undefined;
   gameMod = undefined;
+  more.classList.add("invisible");
+  less.classList.add("invisible");
 };
 
 const countdown = (int) => {
@@ -38,15 +34,19 @@ const countdown = (int) => {
   countdownVal = int - 1;
   count.textContent = countdownVal;
   if (countdownVal === 0) {
+    more.classList.add("invisible");
+    less.classList.add("invisible");
     resultStatus.textContent = "YOU LOSE - The good price was " + goodPrice;
   }
 };
 
 function hotOrFrozen() {
   if (currentPricePropose < goodPrice) {
-    resultStatus.textContent = "plus";
+    more.classList.remove("invisible");
+    less.classList.add("invisible");
   } else {
-    resultStatus.textContent = "moin";
+    more.classList.add("invisible");
+    less.classList.remove("invisible");
   }
 }
 
@@ -54,9 +54,12 @@ function verify(val) {
   currentPricePropose = val;
   lastPropose.textContent = currentPricePropose;
   if (currentPricePropose === goodPrice) {
+    more.classList.add("invisible");
+    less.classList.add("invisible");
     resultStatus.textContent = "YOU WIN";
   } else {
     hotOrFrozen();
+    countdown(countdownVal);
   }
 }
 
@@ -65,7 +68,6 @@ submit.addEventListener("click", () => {
     let valInput = parseInt(playerPropose.value);
     verify(valInput);
     playerPropose.value = "";
-    countdown(countdownVal);
   } else {
     let valInput = parseInt(playerPropose.value);
     verify(valInput);
