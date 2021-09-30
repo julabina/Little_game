@@ -27,6 +27,7 @@ const reset = () => {
   gameMod = undefined;
   more.classList.add("invisible");
   less.classList.add("invisible");
+  lastPropose.classList.remove("green");
 };
 
 const countdown = (int) => {
@@ -36,7 +37,9 @@ const countdown = (int) => {
   if (countdownVal === 0) {
     more.classList.add("invisible");
     less.classList.add("invisible");
-    resultStatus.textContent = "YOU LOSE - The good price was " + goodPrice;
+    resultStatus.textContent = "YOU LOSE";
+    lastPropose.textContent = goodPrice;
+    lastPropose.classList.add("green");
   }
 };
 
@@ -57,6 +60,7 @@ function verify(val) {
     more.classList.add("invisible");
     less.classList.add("invisible");
     resultStatus.textContent = "YOU WIN";
+    lastPropose.classList.add("green");
   } else {
     hotOrFrozen();
     countdown(countdownVal);

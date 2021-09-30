@@ -51,10 +51,29 @@ main {
 .submitBtn {
   width: auto;
   height: auto;
-  background: cyan;
+  background: rgb(98, 182, 98);
   grid-column: 2 / 3;
   grid-row: 3 / 4;
   border-radius: 5px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submitIntern {
+  border-radius: 5px;
+  border: 2px solid black;
+  height: 80%;
+  width: 93%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submitIntern p {
+  font-weight: bold;
+  font-size: 2.5em;
 }
 
 .startGameBtn {
@@ -101,6 +120,8 @@ main {
   width: 100px;
   background: red;
   border-radius: 5px;
+  font-weight: bold;
+  border: 1px black solid;
 }
 
 .rightContainer {
@@ -116,6 +137,8 @@ main {
   width: 100px;
   background: red;
   border-radius: 5px;
+  font-weight: bold;
+  border: 1px black solid;
 }
 
 .resultStatus {
@@ -124,6 +147,8 @@ main {
   text-align: center;
   line-height: 40px;
   white-space: nowrap;
+  font-weight: bold;
+  font-size: 1.8em;
 }
 
 .count {
@@ -136,4 +161,8 @@ main {
 
 .invisible {
   display: none;
+}
+
+.green {
+  color: green;
 }
