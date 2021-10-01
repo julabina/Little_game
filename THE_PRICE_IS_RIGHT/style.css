@@ -166,3 +166,39 @@ main {
 .green {
   color: green;
 }
+
+@media screen and (max-width: 950px) {
+  nav {
+    display: grid;
+    grid-template: 35px 30px 35px 30px 35px 30px 35px 30px 40px 20px / repeat(
+        4,
+        1fr
+      );
+  }
+
+  .nav-turnByTurn h1 {
+    grid-row-start: 1;
+  }
+
+  .radioContainer {
+    display: flex;
+    justify-content: space-between;
+    grid-column: 1/5;
+  }
+
+  .radioContainerTurn {
+    grid-row: 2 / 3;
+  }
+
+  .startGameBtn {
+    height: auto;
+    width: auto;
+    grid-column: 3 / 4;
+    grid-row: 9 / 11;
+  }
+
+  /* .navDiv {
+    display: flex;
+    flex-direction: row;
+  } */
+}
