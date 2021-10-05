@@ -151,12 +151,13 @@ main {
   font-size: 1.8em;
 }
 
-.count {
+.countContainer {
   grid-column: 1;
   grid-row: 1;
   line-height: 45px;
   white-space: nowrap;
   margin-left: 10px;
+  display: flex;
 }
 
 .invisible {
@@ -167,38 +168,122 @@ main {
   color: green;
 }
 
+.recovery {
+  position: fixed;
+  z-index: 100;
+  height: 40%;
+  width: 60%;
+  background: rgba(0, 0, 0, 0.322);
+}
+
+/* MQ 950px */
+
 @media screen and (max-width: 950px) {
+  main {
+    width: 90%;
+  }
+
+  .recovery {
+    width: 90%;
+  }
+
   nav {
     display: grid;
     grid-template: 35px 30px 35px 30px 35px 30px 35px 30px 40px 20px / repeat(
-        4,
+        6,
         1fr
       );
   }
 
-  .nav-turnByTurn h1 {
-    grid-row-start: 1;
+  h2 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+
+  label {
+    line-height: 13px;
+    margin-left: 2px;
+    margin-right: 13px;
+  }
+
+  .nav-turnByTurn {
+    grid-row: 1 / 2;
+    grid-column: 2/6;
+  }
+
+  .nav-timer {
+    grid-row: 3 / 4;
+    grid-column: 2/6;
+  }
+
+  .nav-player {
+    grid-row: 5 / 6;
+    grid-column: 2/6;
+  }
+
+  .nav-lvl {
+    grid-row: 7 / 8;
+    grid-column: 2/6;
   }
 
   .radioContainer {
     display: flex;
     justify-content: space-between;
-    grid-column: 1/5;
   }
 
-  .radioContainerTurn {
-    grid-row: 2 / 3;
+  .radioContainer-container {
+    display: flex;
   }
 
   .startGameBtn {
     height: auto;
     width: auto;
-    grid-column: 3 / 4;
+    grid-column: 2 / 6;
     grid-row: 9 / 11;
   }
+}
 
-  /* .navDiv {
-    display: flex;
-    flex-direction: row;
-  } */
+/* MQ 600px */
+
+@media screen and (max-width: 600px) {
+  main {
+    width: 90%;
+    grid-template-columns: 30px 1fr 150px 1fr 30px;
+  }
+
+  .leftCount {
+    display: none;
+  }
+
+  #playerPropose {
+    grid-column: 3 / 4;
+  }
+
+  .submitBtn {
+    grid-column: 3 / 4;
+  }
+
+  .resultStatus {
+    grid-column: 3 / 4;
+  }
+
+  .lastPropose {
+    grid-column: 3 / 4;
+  }
+
+  .leftContainer {
+    grid-column: 2 / 3;
+  }
+
+  .statusLeft {
+    width: auto;
+  }
+
+  .rightContainer {
+    grid-column: 4 / 5;
+  }
+
+  .statusRight {
+    width: auto;
+  }
 }

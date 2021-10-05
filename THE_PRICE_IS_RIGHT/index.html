@@ -62,11 +62,11 @@
             <div class="radioContainer">
                 <div class="radioContainer-container">
                     <input type="radio" name="players" id="player1" checked>
-                    <label for="">1 Player</label>
+                    <label for="">1</label>
                 </div>
                 <div class="radioContainer-container">
                     <input type="radio" name="players" id="player2">
-                    <label for="">2 Players</label>
+                    <label for="">2</label>
                 </div>
             </div>
         </div>
@@ -94,6 +94,7 @@
     </nav>
     <!-- <div class="transparentBg"></div> -->
     <main>
+        <div class="recovery invisible"></div>
         <input type="text" name="" id="playerPropose" placeholder="Enter the good price"> 
         <div class="submitBtn"> <div class="submitIntern"><p>$</p></div> </div>
         <h3 class="lastPropose"></h3>
@@ -104,7 +105,10 @@
         <div class="rightContainer invisible">
             <p class="statusRight">MORE</p>
         </div>
-        <p class="count"></p>
+        <div class="countContainer">
+            <p class="leftCount">Play left : </p>
+            <p class="count"></p>
+        </div>
     </main>
 
     <script src="index.js"></script>
