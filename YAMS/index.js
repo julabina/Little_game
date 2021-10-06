@@ -1,9 +1,18 @@
 const dicesNumber = document.querySelectorAll(".diceNumber");
 const dices = document.querySelectorAll(".dice");
 const launchBtn = document.querySelector(".launchDice");
+const previewContainer = document.querySelectorAll(".score-preview-container");
 const preview = document.querySelectorAll(".score-preview");
+console.log(previewContainer);
 
 let value = [0, 0, 0, 0, 0, 0];
+let one = 0,
+  two = 0,
+  three = 0,
+  four = 0,
+  five = 0,
+  six = 0;
+let count;
 console.log(preview);
 
 const randomizeDice = () => {
@@ -13,6 +22,206 @@ const randomizeDice = () => {
 
 const resetVal = () => {
   value = [0, 0, 0, 0, 0, 0];
+};
+
+const verifyThree = () => {
+  if (
+    value[0] > 2 ||
+    value[1] > 2 ||
+    value[3] > 2 ||
+    value[4] > 2 ||
+    value[5] > 2 ||
+    value[2] > 2
+  ) {
+    let a =
+      value[0] +
+      value[1] * 2 +
+      value[2] * 3 +
+      value[3] * 4 +
+      value[4] * 5 +
+      value[5] * 6;
+    preview[6].textContent = a;
+  } else {
+    preview[6].textContent = "0";
+  }
+};
+
+const verifyFour = () => {
+  if (
+    value[0] > 3 ||
+    value[1] > 3 ||
+    value[3] > 3 ||
+    value[4] > 3 ||
+    value[5] > 3 ||
+    value[2] > 3
+  ) {
+    let a =
+      value[0] +
+      value[1] * 2 +
+      value[2] * 3 +
+      value[3] * 4 +
+      value[4] * 5 +
+      value[5] * 6;
+    preview[7].textContent = a;
+  } else {
+    preview[7].textContent = "0";
+  }
+};
+
+const verifyFull = () => {
+  if (
+    (value[0] == 3 && value[1] == 2) ||
+    (value[0] == 3 && value[2] == 2) ||
+    (value[0] == 3 && value[3] == 2) ||
+    (value[0] == 3 && value[4] == 2) ||
+    (value[0] == 3 && value[5] == 2)
+  ) {
+    preview[8].textContent = "25";
+  } else if (
+    (value[1] == 3 && value[0] == 2) ||
+    (value[1] == 3 && value[2] == 2) ||
+    (value[1] == 3 && value[3] == 2) ||
+    (value[1] == 3 && value[4] == 2) ||
+    (value[1] == 3 && value[5] == 2)
+  ) {
+    preview[8].textContent = "25";
+  } else if (
+    (value[2] == 3 && value[1] == 2) ||
+    (value[2] == 3 && value[0] == 2) ||
+    (value[2] == 3 && value[3] == 2) ||
+    (value[2] == 3 && value[4] == 2) ||
+    (value[2] == 3 && value[5] == 2)
+  ) {
+    preview[8].textContent = "25";
+  } else if (
+    (value[3] == 3 && value[1] == 2) ||
+    (value[3] == 3 && value[2] == 2) ||
+    (value[3] == 3 && value[0] == 2) ||
+    (value[3] == 3 && value[4] == 2) ||
+    (value[3] == 3 && value[5] == 2)
+  ) {
+    preview[8].textContent = "25";
+  } else if (
+    (value[4] == 3 && value[1] == 2) ||
+    (value[4] == 3 && value[2] == 2) ||
+    (value[4] == 3 && value[3] == 2) ||
+    (value[4] == 3 && value[0] == 2) ||
+    (value[4] == 3 && value[5] == 2)
+  ) {
+    preview[8].textContent = "25";
+  } else if (
+    (value[5] == 3 && value[1] == 2) ||
+    (value[5] == 3 && value[2] == 2) ||
+    (value[5] == 3 && value[3] == 2) ||
+    (value[5] == 3 && value[4] == 2) ||
+    (value[5] == 3 && value[0] == 2)
+  ) {
+    preview[8].textContent = "25";
+  } else if (
+    value[0] == 5 ||
+    value[1] == 5 ||
+    value[2] == 5 ||
+    value[3] == 5 ||
+    value[4] == 5 ||
+    value[5] == 5
+  ) {
+    preview[8].textContent = "25";
+  } else {
+    preview[8].textContent = "0";
+  }
+};
+
+const verifySmall = () => {
+  if (value[0] == 1 && value[1] == 1 && value[2] == 1 && value[3] == 1) {
+    preview[9].textContent = "30";
+  } else if (value[0] == 2 && value[1] == 1 && value[2] == 1 && value[3] == 1) {
+  } else if (value[0] == 1 && value[1] == 2 && value[2] == 1 && value[3] == 1) {
+    preview[9].textContent = "30";
+  } else if (value[0] == 1 && value[1] == 1 && value[2] == 2 && value[3] == 1) {
+    preview[9].textContent = "30";
+  } else if (value[0] == 1 && value[1] == 1 && value[2] == 1 && value[3] == 2) {
+    preview[9].textContent = "30";
+  } else if (value[1] == 1 && value[2] == 1 && value[3] == 1 && value[4] == 1) {
+    preview[9].textContent = "30";
+  } else if (value[1] == 2 && value[2] == 1 && value[3] == 1 && value[4] == 1) {
+    preview[9].textContent = "30";
+  } else if (value[1] == 1 && value[2] == 2 && value[3] == 1 && value[4] == 1) {
+    preview[9].textContent = "30";
+  } else if (value[1] == 1 && value[2] == 1 && value[3] == 2 && value[4] == 1) {
+    preview[9].textContent = "30";
+  } else if (value[1] == 1 && value[2] == 1 && value[3] == 1 && value[4] == 2) {
+    preview[9].textContent = "30";
+  } else if (value[2] == 1 && value[3] == 1 && value[4] == 1 && value[5] == 1) {
+    preview[9].textContent = "30";
+  } else if (value[2] == 2 && value[3] == 1 && value[4] == 1 && value[5] == 1) {
+    preview[9].textContent = "30";
+  } else if (value[2] == 1 && value[3] == 2 && value[4] == 1 && value[5] == 1) {
+    preview[9].textContent = "30";
+  } else if (value[2] == 1 && value[3] == 1 && value[4] == 2 && value[5] == 1) {
+    preview[9].textContent = "30";
+  } else if (value[2] == 1 && value[3] == 1 && value[4] == 1 && value[5] == 2) {
+    preview[9].textContent = "30";
+  } else {
+    preview[9].textContent = "0";
+  }
+};
+
+const verifyLarge = () => {
+  if (
+    value[0] == 1 &&
+    value[1] == 1 &&
+    value[2] == 1 &&
+    value[3] == 1 &&
+    value[4] == 1
+  ) {
+    preview[10].textContent = "40";
+  } else if (
+    value[1] == 1 &&
+    value[2] == 1 &&
+    value[3] == 1 &&
+    value[4] == 1 &&
+    value[5] == 1
+  ) {
+    preview[10].textContent = "40";
+  } else {
+    preview[10].textContent = "0";
+  }
+};
+
+const verifyYams = () => {
+  if (
+    value[0] == 5 ||
+    value[1] == 5 ||
+    value[2] == 5 ||
+    value[3] == 5 ||
+    value[4] == 5 ||
+    value[5] == 5
+  ) {
+    preview[11].textContent = "50";
+  } else {
+    preview[11].textContent = "0";
+  }
+};
+
+const verifyLuck = () => {
+  let a =
+    value[0] +
+    value[1] * 2 +
+    value[2] * 3 +
+    value[3] * 4 +
+    value[4] * 5 +
+    value[5] * 6;
+
+  preview[12].textContent = a;
+};
+
+const verifyBonus = () => {
+  a = one + two + three + four + five + six;
+  if (a > 62) {
+    preview[13].textContent = "35";
+  } else {
+    preview[13].textContent = a + "/63";
+  }
 };
 
 const verifyNumber = () => {
@@ -25,6 +234,7 @@ const verifyNumber = () => {
       }
     }
   }
+  console.log(value);
 };
 
 const verifyPts = () => {
@@ -72,54 +282,14 @@ const verifyPts = () => {
   preview[5].textContent = val * 6;
   val = 0;
   verifyNumber();
-  /* three of kind */
-  if (
-    value[0] > 2 ||
-    value[1] > 2 ||
-    value[3] > 2 ||
-    value[4] > 2 ||
-    value[5] > 2 ||
-    value[2] > 2
-  ) {
-    let a =
-      value[0] +
-      value[1] * 2 +
-      value[2] * 3 +
-      value[3] * 4 +
-      value[4] * 5 +
-      value[5] * 6;
-    preview[6].textContent = a;
-  } else {
-    preview[6].textContent = "0";
-  }
-  /* four of kind  */
-  if (
-    value[0] > 3 ||
-    value[1] > 3 ||
-    value[3] > 3 ||
-    value[4] > 3 ||
-    value[5] > 3 ||
-    value[2] > 3
-  ) {
-    let a =
-      value[0] +
-      value[1] * 2 +
-      value[2] * 3 +
-      value[3] * 4 +
-      value[4] * 5 +
-      value[5] * 6;
-    preview[7].textContent = a;
-  } else {
-    preview[7].textContent = "0";
-  }
-  /* full */
-  if (
-    
-  ) {
-    preview[8].textContent = "25";
-  } else {
-    preview[8].textContent = "0";
-  }
+  verifyThree();
+  verifyFour();
+  verifyFull();
+  verifySmall();
+  verifyLarge();
+  verifyYams();
+  verifyLuck();
+  verifyBonus();
   resetVal();
 };
 
@@ -171,4 +341,22 @@ launchBtn.addEventListener("click", () => {
     }
   }
   verifyPts();
+  if (count == undefined) {
+    count = 1;
+  } else if (count < 2) {
+    count++;
+  } else {
+    count = 0;
+  }
+});
+
+const resetFocused = () => {};
+
+previewContainer[0].addEventListener("click", () => {
+  resetFocused();
+  if (previewContainer[0].classList.contains("focused")) {
+    previewContainer[0].classList.remove("focused");
+  } else {
+    previewContainer[0].classList.add("focused");
+  }
 });

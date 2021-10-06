@@ -44,6 +44,16 @@ body {
   background-color: blueviolet;
 }
 
+.play {
+  border: solid black 1px;
+  width: 150px;
+  text-align: center;
+}
+
+.play:hover {
+  background-color: blueviolet;
+}
+
 .scoreContainer {
   display: grid;
   grid-template: repeat(7, 100px) / repeat(2, 1fr);
@@ -87,4 +97,8 @@ body {
   line-height: 80px;
   white-space: nowrap;
   margin-left: 25px;
+}
+
+.focused {
+  background: rgb(44, 42, 42);
 }
