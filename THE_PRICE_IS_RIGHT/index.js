@@ -10,7 +10,6 @@ const more = document.querySelector(".rightContainer");
 const less = document.querySelector(".leftContainer");
 const recovery = document.querySelector(".recovery");
 const display = document.getElementById("timer");
-console.log(radios);
 
 let goodPrice, currentPricePropose, countdownVal, newTime;
 let vsMode = false;
@@ -19,7 +18,6 @@ let stopInterval = false;
 const randomPrice = (int) => {
   val = Math.random() * int;
   goodPrice = Math.round(val);
-  console.log(goodPrice);
 };
 
 const P2Price = (int) => {
@@ -114,7 +112,6 @@ const reset = () => {
 };
 
 const countdown = (int) => {
-  console.log(countdownVal);
   countdownVal = int - 1;
   count.textContent = " " + countdownVal;
   if (countdownVal === 0) {
@@ -172,7 +169,6 @@ submit.addEventListener("click", () => {
         vsMode = false;
         playerPropose.value = "";
         resetStatusText();
-        console.log(goodPrice);
       }
     } else if (radios[11].checked) {
       if (playerPropose.value > 1000) {
@@ -183,7 +179,6 @@ submit.addEventListener("click", () => {
         vsMode = false;
         playerPropose.value = "";
         resetStatusText();
-        console.log(goodPrice);
       }
     } else if (radios[12].checked) {
       if (playerPropose.value > 10000) {
@@ -194,7 +189,6 @@ submit.addEventListener("click", () => {
         vsMode = false;
         playerPropose.value = "";
         resetStatusText();
-        console.log(goodPrice);
       }
     } else {
       if (playerPropose.value > 100000) {
@@ -205,7 +199,6 @@ submit.addEventListener("click", () => {
         vsMode = false;
         playerPropose.value = "";
         resetStatusText();
-        console.log(goodPrice);
       }
     }
   } else {

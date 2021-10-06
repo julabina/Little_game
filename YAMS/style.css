@@ -10,3 +10,80 @@ html,
 body {
   height: 100%;
 }
+
+.diceContainer {
+  display: flex;
+}
+
+.dice {
+  height: 100px;
+  width: 100px;
+  background: cyan;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.diceNumber {
+  font-size: 4em;
+  text-align: center;
+  line-height: 100px;
+  white-space: nowrap;
+}
+
+.diceSelected {
+  background: blue;
+}
+
+.launchDice {
+  border: solid black 1px;
+  width: 150px;
+  text-align: center;
+}
+
+.launchDice:hover {
+  background-color: blueviolet;
+}
+
+.scoreContainer {
+  display: grid;
+  grid-template: repeat(7, 100px) / repeat(2, 1fr);
+}
+
+.score,
+.bonus {
+  display: flex;
+}
+
+.score-img {
+  width: 80px;
+  height: 80px;
+  background: orange;
+  border-radius: 5px;
+}
+
+.score-img p {
+  text-align: center;
+  line-height: 80px;
+  white-space: nowrap;
+  font-size: 1.2em;
+}
+
+.score-preview-container {
+  margin-left: 15px;
+  height: 80px;
+  width: 80px;
+  background: rgba(128, 128, 128, 0.363);
+  border-radius: 5px;
+}
+
+.score-preview {
+  text-align: center;
+  line-height: 80px;
+  white-space: nowrap;
+}
+
+.score-name {
+  line-height: 80px;
+  white-space: nowrap;
+  margin-left: 25px;
+}
