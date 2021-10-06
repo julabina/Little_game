@@ -175,6 +175,19 @@ main {
   width: 60%;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
+#timer {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  text-align: end;
+  line-height: 40px;
+  margin-right: 10px;
+  font-size: 1.1em;
+}
+
 /* MQ 950px */
 
 @media screen and (max-width: 950px) {

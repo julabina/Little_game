@@ -4,14 +4,17 @@ const resultStatus = document.querySelector(".resultStatus");
 const submit = document.querySelector(".submitBtn");
 const startBtn = document.querySelector(".startGameBtn");
 const count = document.querySelector(".count");
+const countContainer = document.querySelector(".countContainer");
 const radios = document.querySelectorAll("input[type=radio]");
 const more = document.querySelector(".rightContainer");
 const less = document.querySelector(".leftContainer");
 const recovery = document.querySelector(".recovery");
+const display = document.getElementById("timer");
 console.log(radios);
 
-let goodPrice, currentPricePropose, countdownVal, gameMod, newTime;
+let goodPrice, currentPricePropose, countdownVal, newTime;
 let vsMode = false;
+let stopInterval = false;
 
 const randomPrice = (int) => {
   val = Math.random() * int;
@@ -47,36 +50,37 @@ const P2Price = (int) => {
   }
 };
 
-const test = (time) => {
-  setInterval((newTime2) => {
-    newTime2 = time - 1;
-    newTime = newTime2;
-    if (newTime > 0) {
-      console.log(newTime);
-    } else {
-      console.log("fin");
+const startTimer = (duration, display) => {
+  let timer = duration,
+    minutes,
+    seconds;
+  let interval = setInterval(() => {
+    minutes = parseInt(timer / 60, 10);
+    seconds = parseInt(timer % 60, 10);
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    display.textContent = minutes + ":" + seconds;
+
+    if (stopInterval == true) {
+      clearInterval(interval);
+    } else if (--timer < 0) {
+      more.classList.add("invisible");
+      less.classList.add("invisible");
+      resultStatus.textContent = "YOU LOSE";
+      lastPropose.textContent = goodPrice;
+      lastPropose.classList.add("green");
+      recoveryOn();
+      clearInterval(interval);
     }
   }, 1000);
 };
 
-/* const test1 = (time) => {
-  newTime = time;
-  if (newTime > 0) {
-    newTime = time - 1;
-
-    setTimeout(console.log(newTime), 1000);
-    test(newTime);
-  } else {
-    console.log(newTime);
-    console.log("fin");
-    timerStart = false;
-  }
-}; */
-
 const startLoad = () => {
   count.textContent = " " + 20;
   countdownVal = 20;
-  gameMod = 1;
+
   count.textContent = " " + countdownVal;
   randomPrice(100);
 };
@@ -97,15 +101,16 @@ const reset = () => {
   lastPropose.textContent = "";
   playerPropose.value = "";
   goodPrice = undefined;
+  newTime = undefined;
   currentPricePropose = undefined;
   countdownVal = undefined;
-  gameMod = undefined;
   more.classList.add("invisible");
   less.classList.add("invisible");
   lastPropose.classList.remove("green");
   vsMode = false;
   document.querySelector(".lastPropose").style.fontSize = "40px";
   document.querySelector(".resultStatus").style.fontSize = "28.8px";
+  stopInterval = false;
 };
 
 const countdown = (int) => {
@@ -141,6 +146,7 @@ function verify(val) {
     less.classList.add("invisible");
     resultStatus.textContent = "YOU WIN";
     lastPropose.classList.add("green");
+    stopInterval = true;
   } else {
     hotOrFrozen();
     countdown(countdownVal);
@@ -203,67 +209,104 @@ submit.addEventListener("click", () => {
       }
     }
   } else {
-    if (gameMod === 1) {
-      let valInput = parseInt(playerPropose.value);
-      verify(valInput);
-      playerPropose.value = "";
-    } else {
-      let valInput = parseInt(playerPropose.value);
-      verify(valInput);
-      playerPropose.value = "";
-    }
+    let valInput = parseInt(playerPropose.value);
+    verify(valInput);
+    playerPropose.value = "";
   }
 });
 
 startBtn.addEventListener("click", () => {
-  reset();
-  recoveryOff();
-  if (radios[0].checked) {
-    count.textContent = " " + 20;
-    countdownVal = 20;
-    gameMod = 1;
-  } else if (radios[1].checked) {
-    count.textContent = " " + 10;
-    countdownVal = 10;
-    gameMod = 1;
-  } else if (radios[2].checked) {
-    count.textContent = " " + 5;
-    countdownVal = 5;
-    gameMod = 1;
-  } else if (radios[3].checked) {
-    count.textContent = " " + 3;
-    countdownVal = 3;
-    gameMod = 1;
-  } else if (radios[4].checked) {
-    gameMod = 2;
-  } else if (radios[5].checked) {
-    gameMod = 2;
-  } else if (radios[6].checked) {
-    gameMod = 2;
-  } else if (radios[7].checked) {
-    gameMod = 2;
-  }
+  stopInterval = true;
+  setTimeout(() => {
+    reset();
+    recoveryOff();
+    if (radios[0].checked) {
+      display.classList.add("hidden");
+      countContainer.classList.remove("hidden");
+      count.textContent = " " + 20;
+      countdownVal = 20;
+    } else if (radios[1].checked) {
+      display.classList.add("hidden");
+      countContainer.classList.remove("hidden");
+      count.textContent = " " + 10;
+      countdownVal = 10;
+    } else if (radios[2].checked) {
+      display.classList.add("hidden");
+      countContainer.classList.remove("hidden");
+      count.textContent = " " + 5;
+      countdownVal = 5;
+    } else if (radios[3].checked) {
+      display.classList.add("hidden");
+      countContainer.classList.remove("hidden");
+      count.textContent = " " + 3;
+      countdownVal = 3;
+    } else if (radios[4].checked) {
+      newTime = 60 * 2;
+      display.classList.remove("hidden");
+      countContainer.classList.add("hidden");
+      if (radios[9].checked) {
+        setTimeout(() => {
+          startTimer(newTime, display);
+        }, 7000);
+      } else {
+        startTimer(newTime, display);
+      }
+    } else if (radios[5].checked) {
+      newTime = 60;
+      display.classList.remove("hidden");
+      countContainer.classList.add("hidden");
+      if (radios[9].checked) {
+        setTimeout(() => {
+          startTimer(newTime, display);
+        }, 7000);
+      } else {
+        startTimer(newTime, display);
+      }
+    } else if (radios[6].checked) {
+      newTime = 40;
+      display.classList.remove("hidden");
+      countContainer.classList.add("hidden");
+      if (radios[9].checked) {
+        setTimeout(() => {
+          startTimer(newTime, display);
+        }, 7000);
+      } else {
+        startTimer(newTime, display);
+      }
+    } else if (radios[7].checked) {
+      newTime = 20;
+      display.classList.remove("hidden");
+      countContainer.classList.add("hidden");
+      if (radios[9].checked) {
+        setTimeout(() => {
+          startTimer(newTime, display);
+        }, 7000);
+      } else {
+        startTimer(newTime, display);
+      }
+    }
 
-  /* difficulty */
-  if (radios[9].checked) {
-    if (radios[10].checked) {
-      P2Price(1);
-    } else if (radios[11].checked) {
-      P2Price(2);
-    } else if (radios[12].checked) {
-      P2Price(3);
-    } else if (radios[13].checked) {
-      P2Price(4);
+    /* difficulty */
+    if (radios[9].checked) {
+      if (radios[10].checked) {
+        P2Price(1);
+      } else if (radios[11].checked) {
+        P2Price(2);
+      } else if (radios[12].checked) {
+        P2Price(3);
+      } else if (radios[13].checked) {
+        P2Price(4);
+      }
+    } else {
+      if (radios[10].checked) {
+        randomPrice(100);
+      } else if (radios[11].checked) {
+        randomPrice(1000);
+      } else if (radios[12].checked) {
+        randomPrice(10000);
+      } else if (radios[13].checked) {
+        randomPrice(100000);
+      }
     }
-  } else {
-    if (radios[10].checked) {
-      randomPrice(100);
-    } else if (radios[11].checked) {
-      randomPrice(1000);
-    } else if (radios[12].checked) {
-      randomPrice(10000);
-    } else if (radios[13].checked) {
-      randomPrice(100000);
-    }
-  }
+  }, 800);
 });
