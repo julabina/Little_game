@@ -72,13 +72,14 @@ const verifyPts = () => {
   preview[5].textContent = val * 6;
   val = 0;
   verifyNumber();
+  /* three of kind */
   if (
     value[0] > 2 ||
     value[1] > 2 ||
     value[3] > 2 ||
     value[4] > 2 ||
     value[5] > 2 ||
-    value[6] > 2
+    value[2] > 2
   ) {
     let a =
       value[0] +
@@ -87,10 +88,37 @@ const verifyPts = () => {
       value[3] * 4 +
       value[4] * 5 +
       value[5] * 6;
-    console.log(a);
     preview[6].textContent = a;
   } else {
     preview[6].textContent = "0";
+  }
+  /* four of kind  */
+  if (
+    value[0] > 3 ||
+    value[1] > 3 ||
+    value[3] > 3 ||
+    value[4] > 3 ||
+    value[5] > 3 ||
+    value[2] > 3
+  ) {
+    let a =
+      value[0] +
+      value[1] * 2 +
+      value[2] * 3 +
+      value[3] * 4 +
+      value[4] * 5 +
+      value[5] * 6;
+    preview[7].textContent = a;
+  } else {
+    preview[7].textContent = "0";
+  }
+  /* full */
+  if (
+    
+  ) {
+    preview[8].textContent = "25";
+  } else {
+    preview[8].textContent = "0";
   }
   resetVal();
 };
