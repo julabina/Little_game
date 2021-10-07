@@ -1,6 +1,9 @@
 const dicesNumber = document.querySelectorAll(".diceNumber");
 const dices = document.querySelectorAll(".dice");
 const launchBtn = document.querySelector(".launchDice");
+const playBtn = document.querySelector(".play");
+const coverLaunch = document.querySelector(".coverLaunchDice");
+const coverPlay = document.querySelector(".coverPlay");
 const previewContainer = document.querySelectorAll(".score-preview-container");
 const preview = document.querySelectorAll(".score-preview");
 console.log(previewContainer);
@@ -12,6 +15,7 @@ let one = 0,
   four = 0,
   five = 0,
   six = 0;
+let bre, carre, full, small, large, yams, luck, bonus;
 let count;
 console.log(preview);
 
@@ -22,6 +26,21 @@ const randomizeDice = () => {
 
 const resetVal = () => {
   value = [0, 0, 0, 0, 0, 0];
+};
+
+const resetFocused = () => {
+  for (i = 0; i < previewContainer.length; i++) {
+    previewContainer[i].classList.remove("focused");
+  }
+};
+
+const verifyFocus = () => {
+  for (let i = 0; i < previewContainer.length; i++) {
+    if (previewContainer[i].classList.contains("focused")) {
+      previewContainer[i].classList.remove("focused");
+      previewContainer[i].classList.add("selected");
+    }
+  }
 };
 
 const verifyThree = () => {
@@ -234,7 +253,6 @@ const verifyNumber = () => {
       }
     }
   }
-  console.log(value);
 };
 
 const verifyPts = () => {
@@ -294,46 +312,62 @@ const verifyPts = () => {
 };
 
 dices[0].addEventListener("click", () => {
-  if (dices[0].classList.contains("diceSelected")) {
-    dices[0].classList.remove("diceSelected");
+  if (count == undefined) {
   } else {
-    dices[0].classList.add("diceSelected");
+    if (dices[0].classList.contains("diceSelected")) {
+      dices[0].classList.remove("diceSelected");
+    } else {
+      dices[0].classList.add("diceSelected");
+    }
   }
 });
 
 dices[1].addEventListener("click", () => {
-  if (dices[1].classList.contains("diceSelected")) {
-    dices[1].classList.remove("diceSelected");
+  if (count == undefined) {
   } else {
-    dices[1].classList.add("diceSelected");
+    if (dices[1].classList.contains("diceSelected")) {
+      dices[1].classList.remove("diceSelected");
+    } else {
+      dices[1].classList.add("diceSelected");
+    }
   }
 });
 
 dices[2].addEventListener("click", () => {
-  if (dices[2].classList.contains("diceSelected")) {
-    dices[2].classList.remove("diceSelected");
+  if (count == undefined) {
   } else {
-    dices[2].classList.add("diceSelected");
+    if (dices[2].classList.contains("diceSelected")) {
+      dices[2].classList.remove("diceSelected");
+    } else {
+      dices[2].classList.add("diceSelected");
+    }
   }
 });
 
 dices[3].addEventListener("click", () => {
-  if (dices[3].classList.contains("diceSelected")) {
-    dices[3].classList.remove("diceSelected");
+  if (count == undefined) {
   } else {
-    dices[3].classList.add("diceSelected");
+    if (dices[3].classList.contains("diceSelected")) {
+      dices[3].classList.remove("diceSelected");
+    } else {
+      dices[3].classList.add("diceSelected");
+    }
   }
 });
 
 dices[4].addEventListener("click", () => {
-  if (dices[4].classList.contains("diceSelected")) {
-    dices[4].classList.remove("diceSelected");
+  if (count == undefined) {
   } else {
-    dices[4].classList.add("diceSelected");
+    if (dices[4].classList.contains("diceSelected")) {
+      dices[4].classList.remove("diceSelected");
+    } else {
+      dices[4].classList.add("diceSelected");
+    }
   }
 });
 
 launchBtn.addEventListener("click", () => {
+  resetFocused();
   for (let i = 0; i < dicesNumber.length; i++) {
     if (!dices[i].classList.contains("diceSelected")) {
       randomizeDice();
@@ -343,20 +377,113 @@ launchBtn.addEventListener("click", () => {
   verifyPts();
   if (count == undefined) {
     count = 1;
+    coverPlay.classList.add("invisible");
+    playBtn.classList.remove("readOnly");
   } else if (count < 2) {
     count++;
   } else {
     count = 0;
+    launchBtn.classList.add("readOnly");
+    coverLaunch.classList.remove("invisible");
   }
+  console.log(count);
 });
 
-const resetFocused = () => {};
+const ptsAttribute = () => {
+  if (previewContainer[0].classList.contains("selected")) {
+    one = previewContainer[0].textContent;
+  } else if (previewContainer[1].classList.contains("selected")) {
+    two = previewContainer[1].textContent;
+  } else if (previewContainer[2].classList.contains("selected")) {
+    three = previewContainer[2].textContent;
+  } else if (previewContainer[3].classList.contains("selected")) {
+    four = previewContainer[3].textContent;
+  } else if (previewContainer[4].classList.contains("selected")) {
+    five = previewContainer[4].textContent;
+  } else if (previewContainer[5].classList.contains("selected")) {
+    six = previewContainer[5].textContent;
+  } else if (previewContainer[6].classList.contains("selected")) {
+  } else if (previewContainer[7].classList.contains("selected")) {
+  } else if (previewContainer[8].classList.contains("selected")) {
+  } else if (previewContainer[9].classList.contains("selected")) {
+  } else if (previewContainer[10].classList.contains("selected")) {
+  } else if (previewContainer[11].classList.contains("selected")) {
+  } else if (previewContainer[12].classList.contains("selected")) {
+  } else if (previewContainer[13].classList.contains("selected")) {
+  } else {
+  }
+};
+
+playBtn.addEventListener("click", () => {
+  verifyFocus();
+  ptsAttribute();
+});
+
+const previewEvent = (e) => {
+  console.log();
+  if (count == undefined) {
+  } else {
+    if (previewContainer[e].classList.contains("focused")) {
+      previewContainer[e].classList.remove("focused");
+    } else {
+      resetFocused();
+      previewContainer[e].classList.add("focused");
+    }
+  }
+};
 
 previewContainer[0].addEventListener("click", () => {
-  resetFocused();
-  if (previewContainer[0].classList.contains("focused")) {
-    previewContainer[0].classList.remove("focused");
-  } else {
-    previewContainer[0].classList.add("focused");
-  }
+  previewEvent(0);
+});
+
+previewContainer[1].addEventListener("click", () => {
+  previewEvent(1);
+});
+
+previewContainer[2].addEventListener("click", () => {
+  previewEvent(2);
+});
+
+previewContainer[3].addEventListener("click", () => {
+  previewEvent(3);
+});
+
+previewContainer[4].addEventListener("click", () => {
+  previewEvent(4);
+});
+
+previewContainer[5].addEventListener("click", () => {
+  previewEvent(5);
+});
+
+previewContainer[6].addEventListener("click", () => {
+  previewEvent(6);
+});
+
+previewContainer[7].addEventListener("click", () => {
+  previewEvent(7);
+});
+
+previewContainer[8].addEventListener("click", () => {
+  previewEvent(8);
+});
+
+previewContainer[9].addEventListener("click", () => {
+  previewEvent(9);
+});
+
+previewContainer[10].addEventListener("click", () => {
+  previewEvent(10);
+});
+
+previewContainer[11].addEventListener("click", () => {
+  previewEvent(11);
+});
+
+previewContainer[12].addEventListener("click", () => {
+  previewEvent(12);
+});
+
+previewContainer[13].addEventListener("click", () => {
+  previewEvent(13);
 });

@@ -34,24 +34,46 @@ body {
   background: blue;
 }
 
+.coverLaunchDice {
+  position: fixed;
+  width: 150px;
+  height: 40px;
+  z-index: 100;
+}
+
+.coverPlay {
+  position: fixed;
+  width: 150px;
+  height: 40px;
+  z-index: 100;
+}
+
 .launchDice {
   border: solid black 1px;
   width: 150px;
+  height: 40px;
   text-align: center;
+  line-height: 40px;
+  white-space: nowrap;
 }
 
 .launchDice:hover {
   background-color: blueviolet;
+  cursor: pointer;
 }
 
 .play {
   border: solid black 1px;
   width: 150px;
+  height: 40px;
   text-align: center;
+  line-height: 40px;
+  white-space: nowrap;
 }
 
 .play:hover {
   background-color: blueviolet;
+  cursor: pointer;
 }
 
 .scoreContainer {
@@ -101,4 +123,25 @@ body {
 
 .focused {
   background: rgb(44, 42, 42);
+}
+
+.btnContainer {
+  display: flex;
+}
+
+.readOnly {
+  color: gray;
+}
+
+.readOnly:hover {
+  background: white;
+}
+
+.invisible {
+  display: none;
+}
+
+.selected {
+  background: rgb(16, 16, 156);
+  color: white;
 }
