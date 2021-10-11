@@ -17,6 +17,7 @@ let one = 0,
   six = 0;
 let bre, carre, full, small, large, yams, luck, bonus;
 let count;
+let yamsValid = false;
 console.log(preview);
 
 const randomizeDice = () => {
@@ -44,36 +45,282 @@ const verifyFocus = () => {
 };
 
 const verifyThree = () => {
-  if (
-    value[0] > 2 ||
-    value[1] > 2 ||
-    value[3] > 2 ||
-    value[4] > 2 ||
-    value[5] > 2 ||
-    value[2] > 2
-  ) {
-    let a =
-      value[0] +
-      value[1] * 2 +
-      value[2] * 3 +
-      value[3] * 4 +
-      value[4] * 5 +
-      value[5] * 6;
-    preview[6].textContent = a;
+  if (previewContainer[6].classList.contains("selected")) {
+    preview[6].textContent = bre;
   } else {
-    preview[6].textContent = "0";
+    if (
+      value[0] > 2 ||
+      value[1] > 2 ||
+      value[3] > 2 ||
+      value[4] > 2 ||
+      value[5] > 2 ||
+      value[2] > 2
+    ) {
+      let a =
+        value[0] +
+        value[1] * 2 +
+        value[2] * 3 +
+        value[3] * 4 +
+        value[4] * 5 +
+        value[5] * 6;
+      preview[6].textContent = a;
+    } else {
+      preview[6].textContent = "0";
+    }
   }
 };
 
 const verifyFour = () => {
-  if (
-    value[0] > 3 ||
-    value[1] > 3 ||
-    value[3] > 3 ||
-    value[4] > 3 ||
-    value[5] > 3 ||
-    value[2] > 3
-  ) {
+  if (previewContainer[7].classList.contains("selected")) {
+    preview[7].textContent = carre;
+  } else {
+    if (
+      value[0] > 3 ||
+      value[1] > 3 ||
+      value[3] > 3 ||
+      value[4] > 3 ||
+      value[5] > 3 ||
+      value[2] > 3
+    ) {
+      let a =
+        value[0] +
+        value[1] * 2 +
+        value[2] * 3 +
+        value[3] * 4 +
+        value[4] * 5 +
+        value[5] * 6;
+      preview[7].textContent = a;
+    } else {
+      preview[7].textContent = "0";
+    }
+  }
+};
+
+const verifyFull = () => {
+  if (previewContainer[8].classList.contains("selected")) {
+    preview[8].textContent = full;
+  } else {
+    if (
+      (value[0] == 3 && value[1] == 2) ||
+      (value[0] == 3 && value[2] == 2) ||
+      (value[0] == 3 && value[3] == 2) ||
+      (value[0] == 3 && value[4] == 2) ||
+      (value[0] == 3 && value[5] == 2)
+    ) {
+      preview[8].textContent = "25";
+    } else if (
+      (value[1] == 3 && value[0] == 2) ||
+      (value[1] == 3 && value[2] == 2) ||
+      (value[1] == 3 && value[3] == 2) ||
+      (value[1] == 3 && value[4] == 2) ||
+      (value[1] == 3 && value[5] == 2)
+    ) {
+      preview[8].textContent = "25";
+    } else if (
+      (value[2] == 3 && value[1] == 2) ||
+      (value[2] == 3 && value[0] == 2) ||
+      (value[2] == 3 && value[3] == 2) ||
+      (value[2] == 3 && value[4] == 2) ||
+      (value[2] == 3 && value[5] == 2)
+    ) {
+      preview[8].textContent = "25";
+    } else if (
+      (value[3] == 3 && value[1] == 2) ||
+      (value[3] == 3 && value[2] == 2) ||
+      (value[3] == 3 && value[0] == 2) ||
+      (value[3] == 3 && value[4] == 2) ||
+      (value[3] == 3 && value[5] == 2)
+    ) {
+      preview[8].textContent = "25";
+    } else if (
+      (value[4] == 3 && value[1] == 2) ||
+      (value[4] == 3 && value[2] == 2) ||
+      (value[4] == 3 && value[3] == 2) ||
+      (value[4] == 3 && value[0] == 2) ||
+      (value[4] == 3 && value[5] == 2)
+    ) {
+      preview[8].textContent = "25";
+    } else if (
+      (value[5] == 3 && value[1] == 2) ||
+      (value[5] == 3 && value[2] == 2) ||
+      (value[5] == 3 && value[3] == 2) ||
+      (value[5] == 3 && value[4] == 2) ||
+      (value[5] == 3 && value[0] == 2)
+    ) {
+      preview[8].textContent = "25";
+    } else if (
+      value[0] == 5 ||
+      value[1] == 5 ||
+      value[2] == 5 ||
+      value[3] == 5 ||
+      value[4] == 5 ||
+      value[5] == 5
+    ) {
+      preview[8].textContent = "25";
+    } else {
+      preview[8].textContent = "0";
+    }
+  }
+};
+
+const verifySmall = () => {
+  if (previewContainer[9].classList.contains("selected")) {
+    preview[9].textContent = small;
+  } else {
+    if (value[0] == 1 && value[1] == 1 && value[2] == 1 && value[3] == 1) {
+      preview[9].textContent = "30";
+    } else if (
+      value[0] == 2 &&
+      value[1] == 1 &&
+      value[2] == 1 &&
+      value[3] == 1
+    ) {
+    } else if (
+      value[0] == 1 &&
+      value[1] == 2 &&
+      value[2] == 1 &&
+      value[3] == 1
+    ) {
+      preview[9].textContent = "30";
+    } else if (
+      value[0] == 1 &&
+      value[1] == 1 &&
+      value[2] == 2 &&
+      value[3] == 1
+    ) {
+      preview[9].textContent = "30";
+    } else if (
+      value[0] == 1 &&
+      value[1] == 1 &&
+      value[2] == 1 &&
+      value[3] == 2
+    ) {
+      preview[9].textContent = "30";
+    } else if (
+      value[1] == 1 &&
+      value[2] == 1 &&
+      value[3] == 1 &&
+      value[4] == 1
+    ) {
+      preview[9].textContent = "30";
+    } else if (
+      value[1] == 2 &&
+      value[2] == 1 &&
+      value[3] == 1 &&
+      value[4] == 1
+    ) {
+      preview[9].textContent = "30";
+    } else if (
+      value[1] == 1 &&
+      value[2] == 2 &&
+      value[3] == 1 &&
+      value[4] == 1
+    ) {
+      preview[9].textContent = "30";
+    } else if (
+      value[1] == 1 &&
+      value[2] == 1 &&
+      value[3] == 2 &&
+      value[4] == 1
+    ) {
+      preview[9].textContent = "30";
+    } else if (
+      value[1] == 1 &&
+      value[2] == 1 &&
+      value[3] == 1 &&
+      value[4] == 2
+    ) {
+      preview[9].textContent = "30";
+    } else if (
+      value[2] == 1 &&
+      value[3] == 1 &&
+      value[4] == 1 &&
+      value[5] == 1
+    ) {
+      preview[9].textContent = "30";
+    } else if (
+      value[2] == 2 &&
+      value[3] == 1 &&
+      value[4] == 1 &&
+      value[5] == 1
+    ) {
+      preview[9].textContent = "30";
+    } else if (
+      value[2] == 1 &&
+      value[3] == 2 &&
+      value[4] == 1 &&
+      value[5] == 1
+    ) {
+      preview[9].textContent = "30";
+    } else if (
+      value[2] == 1 &&
+      value[3] == 1 &&
+      value[4] == 2 &&
+      value[5] == 1
+    ) {
+      preview[9].textContent = "30";
+    } else if (
+      value[2] == 1 &&
+      value[3] == 1 &&
+      value[4] == 1 &&
+      value[5] == 2
+    ) {
+      preview[9].textContent = "30";
+    } else {
+      preview[9].textContent = "0";
+    }
+  }
+};
+
+const verifyLarge = () => {
+  if (previewContainer[10].classList.contains("selected")) {
+    preview[10].textContent = large;
+  } else {
+    if (
+      value[0] == 1 &&
+      value[1] == 1 &&
+      value[2] == 1 &&
+      value[3] == 1 &&
+      value[4] == 1
+    ) {
+      preview[10].textContent = "40";
+    } else if (
+      value[1] == 1 &&
+      value[2] == 1 &&
+      value[3] == 1 &&
+      value[4] == 1 &&
+      value[5] == 1
+    ) {
+      preview[10].textContent = "40";
+    } else {
+      preview[10].textContent = "0";
+    }
+  }
+};
+
+const verifyYams = () => {
+  if (previewContainer[11].classList.contains("selected")) {
+    preview[11].textContent = yams;
+  } else {
+    if (
+      value[0] == 5 ||
+      value[1] == 5 ||
+      value[2] == 5 ||
+      value[3] == 5 ||
+      value[4] == 5 ||
+      value[5] == 5
+    ) {
+      preview[11].textContent = "50";
+    } else {
+      preview[11].textContent = "0";
+    }
+  }
+};
+
+const verifyLuck = () => {
+  if (previewContainer[12].classList.contains("selected")) {
+    preview[12].textContent = luck;
+  } else {
     let a =
       value[0] +
       value[1] * 2 +
@@ -81,165 +328,21 @@ const verifyFour = () => {
       value[3] * 4 +
       value[4] * 5 +
       value[5] * 6;
-    preview[7].textContent = a;
-  } else {
-    preview[7].textContent = "0";
+
+    preview[12].textContent = a;
   }
-};
-
-const verifyFull = () => {
-  if (
-    (value[0] == 3 && value[1] == 2) ||
-    (value[0] == 3 && value[2] == 2) ||
-    (value[0] == 3 && value[3] == 2) ||
-    (value[0] == 3 && value[4] == 2) ||
-    (value[0] == 3 && value[5] == 2)
-  ) {
-    preview[8].textContent = "25";
-  } else if (
-    (value[1] == 3 && value[0] == 2) ||
-    (value[1] == 3 && value[2] == 2) ||
-    (value[1] == 3 && value[3] == 2) ||
-    (value[1] == 3 && value[4] == 2) ||
-    (value[1] == 3 && value[5] == 2)
-  ) {
-    preview[8].textContent = "25";
-  } else if (
-    (value[2] == 3 && value[1] == 2) ||
-    (value[2] == 3 && value[0] == 2) ||
-    (value[2] == 3 && value[3] == 2) ||
-    (value[2] == 3 && value[4] == 2) ||
-    (value[2] == 3 && value[5] == 2)
-  ) {
-    preview[8].textContent = "25";
-  } else if (
-    (value[3] == 3 && value[1] == 2) ||
-    (value[3] == 3 && value[2] == 2) ||
-    (value[3] == 3 && value[0] == 2) ||
-    (value[3] == 3 && value[4] == 2) ||
-    (value[3] == 3 && value[5] == 2)
-  ) {
-    preview[8].textContent = "25";
-  } else if (
-    (value[4] == 3 && value[1] == 2) ||
-    (value[4] == 3 && value[2] == 2) ||
-    (value[4] == 3 && value[3] == 2) ||
-    (value[4] == 3 && value[0] == 2) ||
-    (value[4] == 3 && value[5] == 2)
-  ) {
-    preview[8].textContent = "25";
-  } else if (
-    (value[5] == 3 && value[1] == 2) ||
-    (value[5] == 3 && value[2] == 2) ||
-    (value[5] == 3 && value[3] == 2) ||
-    (value[5] == 3 && value[4] == 2) ||
-    (value[5] == 3 && value[0] == 2)
-  ) {
-    preview[8].textContent = "25";
-  } else if (
-    value[0] == 5 ||
-    value[1] == 5 ||
-    value[2] == 5 ||
-    value[3] == 5 ||
-    value[4] == 5 ||
-    value[5] == 5
-  ) {
-    preview[8].textContent = "25";
-  } else {
-    preview[8].textContent = "0";
-  }
-};
-
-const verifySmall = () => {
-  if (value[0] == 1 && value[1] == 1 && value[2] == 1 && value[3] == 1) {
-    preview[9].textContent = "30";
-  } else if (value[0] == 2 && value[1] == 1 && value[2] == 1 && value[3] == 1) {
-  } else if (value[0] == 1 && value[1] == 2 && value[2] == 1 && value[3] == 1) {
-    preview[9].textContent = "30";
-  } else if (value[0] == 1 && value[1] == 1 && value[2] == 2 && value[3] == 1) {
-    preview[9].textContent = "30";
-  } else if (value[0] == 1 && value[1] == 1 && value[2] == 1 && value[3] == 2) {
-    preview[9].textContent = "30";
-  } else if (value[1] == 1 && value[2] == 1 && value[3] == 1 && value[4] == 1) {
-    preview[9].textContent = "30";
-  } else if (value[1] == 2 && value[2] == 1 && value[3] == 1 && value[4] == 1) {
-    preview[9].textContent = "30";
-  } else if (value[1] == 1 && value[2] == 2 && value[3] == 1 && value[4] == 1) {
-    preview[9].textContent = "30";
-  } else if (value[1] == 1 && value[2] == 1 && value[3] == 2 && value[4] == 1) {
-    preview[9].textContent = "30";
-  } else if (value[1] == 1 && value[2] == 1 && value[3] == 1 && value[4] == 2) {
-    preview[9].textContent = "30";
-  } else if (value[2] == 1 && value[3] == 1 && value[4] == 1 && value[5] == 1) {
-    preview[9].textContent = "30";
-  } else if (value[2] == 2 && value[3] == 1 && value[4] == 1 && value[5] == 1) {
-    preview[9].textContent = "30";
-  } else if (value[2] == 1 && value[3] == 2 && value[4] == 1 && value[5] == 1) {
-    preview[9].textContent = "30";
-  } else if (value[2] == 1 && value[3] == 1 && value[4] == 2 && value[5] == 1) {
-    preview[9].textContent = "30";
-  } else if (value[2] == 1 && value[3] == 1 && value[4] == 1 && value[5] == 2) {
-    preview[9].textContent = "30";
-  } else {
-    preview[9].textContent = "0";
-  }
-};
-
-const verifyLarge = () => {
-  if (
-    value[0] == 1 &&
-    value[1] == 1 &&
-    value[2] == 1 &&
-    value[3] == 1 &&
-    value[4] == 1
-  ) {
-    preview[10].textContent = "40";
-  } else if (
-    value[1] == 1 &&
-    value[2] == 1 &&
-    value[3] == 1 &&
-    value[4] == 1 &&
-    value[5] == 1
-  ) {
-    preview[10].textContent = "40";
-  } else {
-    preview[10].textContent = "0";
-  }
-};
-
-const verifyYams = () => {
-  if (
-    value[0] == 5 ||
-    value[1] == 5 ||
-    value[2] == 5 ||
-    value[3] == 5 ||
-    value[4] == 5 ||
-    value[5] == 5
-  ) {
-    preview[11].textContent = "50";
-  } else {
-    preview[11].textContent = "0";
-  }
-};
-
-const verifyLuck = () => {
-  let a =
-    value[0] +
-    value[1] * 2 +
-    value[2] * 3 +
-    value[3] * 4 +
-    value[4] * 5 +
-    value[5] * 6;
-
-  preview[12].textContent = a;
 };
 
 const verifyBonus = () => {
-  a = one + two + three + four + five + six;
-  if (a > 62) {
-    preview[13].textContent = "35";
+  if (previewContainer[13].classList.contains("selected")) {
+    preview[13].textContent = bonus;
   } else {
-    preview[13].textContent = a + "/63";
+    a = one + two + three + four + five + six;
+    if (a > 62) {
+      preview[13].textContent = "35";
+    } else {
+      preview[13].textContent = a + "/63";
+    }
   }
 };
 
@@ -256,48 +359,72 @@ const verifyNumber = () => {
 };
 
 const verifyPts = () => {
-  let val = 0;
-  for (let i = 0; i < dicesNumber.length; i++) {
-    if (dicesNumber[i].textContent == 1) {
-      val++;
+  if (previewContainer[0].classList.contains("selected")) {
+    preview[0].textContent = one;
+  } else {
+    let val = 0;
+    for (let i = 0; i < dicesNumber.length; i++) {
+      if (dicesNumber[i].textContent == 1) {
+        val++;
+      }
     }
+    preview[0].textContent = val;
   }
-  preview[0].textContent = val;
-  val = 0;
-  for (let i = 0; i < dicesNumber.length; i++) {
-    if (dicesNumber[i].textContent == 2) {
-      val++;
+  if (previewContainer[1].classList.contains("selected")) {
+    preview[1].textContent = two;
+  } else {
+    val = 0;
+    for (let i = 0; i < dicesNumber.length; i++) {
+      if (dicesNumber[i].textContent == 2) {
+        val++;
+      }
     }
+    preview[1].textContent = val * 2;
   }
-  preview[1].textContent = val * 2;
-  val = 0;
-  for (let i = 0; i < dicesNumber.length; i++) {
-    if (dicesNumber[i].textContent == 3) {
-      val++;
+  if (previewContainer[2].classList.contains("selected")) {
+    preview[2].textContent = three;
+  } else {
+    val = 0;
+    for (let i = 0; i < dicesNumber.length; i++) {
+      if (dicesNumber[i].textContent == 3) {
+        val++;
+      }
     }
+    preview[2].textContent = val * 3;
   }
-  preview[2].textContent = val * 3;
-  val = 0;
-  for (let i = 0; i < dicesNumber.length; i++) {
-    if (dicesNumber[i].textContent == 4) {
-      val++;
+  if (previewContainer[3].classList.contains("selected")) {
+    preview[3].textContent = four;
+  } else {
+    val = 0;
+    for (let i = 0; i < dicesNumber.length; i++) {
+      if (dicesNumber[i].textContent == 4) {
+        val++;
+      }
     }
+    preview[3].textContent = val * 4;
   }
-  preview[3].textContent = val * 4;
-  val = 0;
-  for (let i = 0; i < dicesNumber.length; i++) {
-    if (dicesNumber[i].textContent == 5) {
-      val++;
+  if (previewContainer[4].classList.contains("selected")) {
+    preview[4].textContent = five;
+  } else {
+    val = 0;
+    for (let i = 0; i < dicesNumber.length; i++) {
+      if (dicesNumber[i].textContent == 5) {
+        val++;
+      }
     }
+    preview[4].textContent = val * 5;
   }
-  preview[4].textContent = val * 5;
-  val = 0;
-  for (let i = 0; i < dicesNumber.length; i++) {
-    if (dicesNumber[i].textContent == 6) {
-      val++;
+  if (previewContainer[5].classList.contains("selected")) {
+    preview[5].textContent = six;
+  } else {
+    val = 0;
+    for (let i = 0; i < dicesNumber.length; i++) {
+      if (dicesNumber[i].textContent == 6) {
+        val++;
+      }
     }
+    preview[5].textContent = val * 6;
   }
-  preview[5].textContent = val * 6;
   val = 0;
   verifyNumber();
   verifyThree();
@@ -403,13 +530,22 @@ const ptsAttribute = () => {
   } else if (previewContainer[5].classList.contains("selected")) {
     six = previewContainer[5].textContent;
   } else if (previewContainer[6].classList.contains("selected")) {
+    bre = previewContainer[6].textContent;
   } else if (previewContainer[7].classList.contains("selected")) {
+    carre = previewContainer[7].textContent;
   } else if (previewContainer[8].classList.contains("selected")) {
+    full = previewContainer[8].textContent;
   } else if (previewContainer[9].classList.contains("selected")) {
+    small = previewContainer[9].textContent;
   } else if (previewContainer[10].classList.contains("selected")) {
+    large = previewContainer[10].textContent;
   } else if (previewContainer[11].classList.contains("selected")) {
+    yams = previewContainer[11].textContent;
+    yamsValid = true;
   } else if (previewContainer[12].classList.contains("selected")) {
+    luck = previewContainer[12].textContent;
   } else if (previewContainer[13].classList.contains("selected")) {
+    bonus = previewContainer[13].textContent;
   } else {
   }
 };
