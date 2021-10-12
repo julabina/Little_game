@@ -299,8 +299,14 @@ body {
   }
 
   .scoreTotal {
-    width: 80%;
+    width: 40%;
     margin-bottom: 10px;
+    height: 30px;
+  }
+
+  .scoreTotal p {
+    line-height: 30px;
+    font-size: 1.4em;
   }
 
   .scoreContainer {
@@ -322,6 +328,7 @@ body {
 
   .score-img p {
     line-height: 50px;
+    font-size: 1em;
   }
 
   .score-preview-container {
@@ -359,6 +366,12 @@ body {
 
   .launchDice {
     width: 80px;
+    height: 60px;
+  }
+
+  .launchDice p {
+    line-height: 60px;
+    white-space: nowrap;
   }
 
   .launchDice:hover {
@@ -368,7 +381,12 @@ body {
 
   .play {
     width: 80px;
-    height: 40px;
+    height: 60px;
+  }
+
+  .play p {
+    line-height: 60px;
+    white-space: nowrap;
   }
 
   .play:hover {
@@ -376,8 +394,29 @@ body {
     cursor: initial;
   }
 
+  .reset {
+    height: 60px;
+  }
+
+  .reset p {
+    line-height: 60px;
+    white-space: nowrap;
+  }
+
   .reset:hover {
     background-color: initial;
     cursor: initial;
+  }
+
+  .focused {
+    color: white;
+  }
+
+  .readOnly {
+    color: red;
+  }
+
+  .readOnly:hover {
+    background: initial;
   }
 }
