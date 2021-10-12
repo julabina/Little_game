@@ -103,7 +103,9 @@ const verifyFocus = () => {
 
 const verifyThree = () => {
   if (previewContainer[6].classList.contains("selectedForTotal")) {
-    preview[6].textContent = bre;
+    bre > 30
+      ? (preview[6].textContent = bre - 50)
+      : (preview[6].textContent = bre);
   } else {
     if (
       value[0] > 2 ||
@@ -129,7 +131,9 @@ const verifyThree = () => {
 
 const verifyFour = () => {
   if (previewContainer[7].classList.contains("selectedForTotal")) {
-    preview[7].textContent = carre;
+    carre > 30
+      ? (preview[7].textContent = carre - 50)
+      : (preview[7].textContent = carre);
   } else {
     if (
       value[0] > 3 ||
@@ -155,7 +159,9 @@ const verifyFour = () => {
 
 const verifyFull = () => {
   if (previewContainer[8].classList.contains("selectedForTotal")) {
-    preview[8].textContent = full;
+    full > 25
+      ? (preview[8].textContent = full - 50)
+      : (preview[8].textContent = full);
   } else {
     if (
       (value[0] == 3 && value[1] == 2) ||
@@ -222,7 +228,9 @@ const verifyFull = () => {
 
 const verifySmall = () => {
   if (previewContainer[9].classList.contains("selectedForTotal")) {
-    preview[9].textContent = small;
+    small > 30
+      ? (preview[9].textContent = small - 50)
+      : (preview[9].textContent = small);
   } else {
     if (value[0] == 1 && value[1] == 1 && value[2] == 1 && value[3] == 1) {
       preview[9].textContent = "30";
@@ -331,7 +339,9 @@ const verifySmall = () => {
 
 const verifyLarge = () => {
   if (previewContainer[10].classList.contains("selectedForTotal")) {
-    preview[10].textContent = large;
+    large > 40
+      ? (preview[10].textContent = large - 50)
+      : (preview[10].textContent = large);
   } else {
     if (
       value[0] == 1 &&
@@ -376,7 +386,9 @@ const verifyYams = () => {
 
 const verifyLuck = () => {
   if (previewContainer[12].classList.contains("selectedForTotal")) {
-    preview[12].textContent = luck;
+    luck > 30
+      ? (preview[12].textContent = luck - 50)
+      : (preview[12].textContent = luck);
   } else {
     let a =
       value[0] +
@@ -391,7 +403,21 @@ const verifyLuck = () => {
 };
 
 const verifyBonus = () => {
-  a = one + two + three + four + five + six;
+  let one1 = 0,
+    two1 = 0,
+    three1 = 0,
+    four1 = 0,
+    five1 = 0,
+    six1 = 0;
+  one > 5 ? (one1 = one - 50) : (one1 = one);
+  two > 10 ? (two1 = two - 50) : (two1 = two);
+  three > 15 ? (three1 = three - 50) : (three1 = three);
+  four > 20 ? (four1 = four - 50) : (four1 = four);
+  five > 25 ? (five1 = five - 50) : (five1 = five);
+  six > 30 ? (six1 = six - 50) : (six1 = six);
+
+  a = one1 + two1 + three1 + four1 + five1 + six1;
+
   if (a > 62) {
     preview[13].textContent = "35";
     bonusValid = true;
@@ -414,7 +440,9 @@ const verifyNumber = () => {
 
 const verifyPts = () => {
   if (previewContainer[0].classList.contains("selectedForTotal")) {
-    preview[0].textContent = one;
+    one > 5
+      ? (preview[0].textContent = one - 50)
+      : (preview[0].textContent = one);
   } else {
     let val = 0;
     for (let i = 0; i < dicesNumber.length; i++) {
@@ -425,7 +453,9 @@ const verifyPts = () => {
     preview[0].textContent = val;
   }
   if (previewContainer[1].classList.contains("selectedForTotal")) {
-    preview[1].textContent = two;
+    two > 10
+      ? (preview[1].textContent = two - 50)
+      : (preview[1].textContent = two);
   } else {
     val = 0;
     for (let i = 0; i < dicesNumber.length; i++) {
@@ -436,7 +466,9 @@ const verifyPts = () => {
     preview[1].textContent = val * 2;
   }
   if (previewContainer[2].classList.contains("selectedForTotal")) {
-    preview[2].textContent = three;
+    three > 15
+      ? (preview[2].textContent = three - 50)
+      : (preview[2].textContent = three);
   } else {
     val = 0;
     for (let i = 0; i < dicesNumber.length; i++) {
@@ -447,7 +479,9 @@ const verifyPts = () => {
     preview[2].textContent = val * 3;
   }
   if (previewContainer[3].classList.contains("selectedForTotal")) {
-    preview[3].textContent = four;
+    four > 20
+      ? (preview[3].textContent = four - 50)
+      : (preview[3].textContent = four);
   } else {
     val = 0;
     for (let i = 0; i < dicesNumber.length; i++) {
@@ -458,7 +492,9 @@ const verifyPts = () => {
     preview[3].textContent = val * 4;
   }
   if (previewContainer[4].classList.contains("selectedForTotal")) {
-    preview[4].textContent = five;
+    five > 25
+      ? (preview[4].textContent = five - 50)
+      : (preview[4].textContent = five);
   } else {
     val = 0;
     for (let i = 0; i < dicesNumber.length; i++) {
@@ -469,7 +505,10 @@ const verifyPts = () => {
     preview[4].textContent = val * 5;
   }
   if (previewContainer[5].classList.contains("selectedForTotal")) {
-    preview[5].textContent = six;
+    six > 30
+      ? (preview[5].textContent = six - 300)
+      : (preview[5].textContent = six);
+    30;
   } else {
     val = 0;
     for (let i = 0; i < dicesNumber.length; i++) {
