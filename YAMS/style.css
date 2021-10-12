@@ -21,6 +21,7 @@ body {
   background: cyan;
   border-radius: 5px;
   margin-right: 5px;
+  cursor: pointer;
 }
 
 .diceNumber {
@@ -76,6 +77,21 @@ body {
   cursor: pointer;
 }
 
+.reset {
+  border: solid black 1px;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.reset:hover {
+  background-color: blueviolet;
+  cursor: pointer;
+}
+
 .scoreContainer {
   display: grid;
   grid-template: repeat(7, 100px) / repeat(2, 1fr);
@@ -107,6 +123,7 @@ body {
   background: rgba(128, 128, 128, 0.363);
   border-radius: 5px;
   font-size: 1.3em;
+  cursor: pointer;
 }
 
 .score-preview {
@@ -115,10 +132,18 @@ body {
   white-space: nowrap;
 }
 
+.coverScorePreview {
+  position: absolute;
+  z-index: 100;
+  margin-left: 15px;
+  height: 80px;
+  width: 80px;
+}
+
 .score-name {
   line-height: 80px;
   white-space: nowrap;
-  margin-left: 25px;
+  margin-left: 15px;
 }
 
 .focused {
@@ -144,4 +169,35 @@ body {
 .selected {
   background: rgb(16, 16, 156);
   color: white;
+}
+
+.selectedForTotal {
+  background: rgb(16, 16, 156);
+  color: white;
+}
+
+.scoreTotal {
+  width: 300px;
+  height: 50px;
+  border: black 2px solid;
+}
+
+.scoreTotal p {
+  text-align: center;
+  font-size: 2em;
+  line-height: 45px;
+  white-space: nowrap;
+}
+
+.bonusYamsValid {
+  width: 20px;
+  white-space: nowrap;
+  line-height: 20px;
+  margin: 31px 0 0 10px;
+}
+
+.bonusYamsValidDisplay {
+  font-size: 0.7em;
+  background: yellow;
+  border-radius: 20px;
 }

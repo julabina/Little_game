@@ -4,9 +4,12 @@ const launchBtn = document.querySelector(".launchDice");
 const playBtn = document.querySelector(".play");
 const coverLaunch = document.querySelector(".coverLaunchDice");
 const coverPlay = document.querySelector(".coverPlay");
+const coverPreview = document.querySelectorAll(".coverScorePreview");
 const previewContainer = document.querySelectorAll(".score-preview-container");
 const preview = document.querySelectorAll(".score-preview");
-console.log(previewContainer);
+const totalContainer = document.getElementById("total");
+const resetBtn = document.querySelector(".reset");
+const displayBonusYams = document.querySelectorAll(".bonusYamsValidDisplay");
 
 let value = [0, 0, 0, 0, 0, 0];
 let one = 0,
@@ -14,16 +17,69 @@ let one = 0,
   three = 0,
   four = 0,
   five = 0,
-  six = 0;
-let bre, carre, full, small, large, yams, luck, bonus;
+  six = 0,
+  bre = 0,
+  carre = 0,
+  full = 0,
+  small = 0,
+  large = 0,
+  yams = 0,
+  luck = 0,
+  bonus = 0,
+  scoreTotal = 0,
+  yamsValidBonus = 0,
+  focused = 0;
 let count;
 let yamsValid = false;
-console.log(preview);
+let diceFocused = false;
+let bonusValid = false;
+let yamsBonus = false;
 
 const randomizeDice = () => {
   val = Math.ceil(Math.random() * 6);
   return val;
 };
+
+function reset() {
+  yamsValid = false;
+  diceFocused = false;
+  bonusValid = false;
+  yamsBonus = false;
+  count = undefined;
+  resetVal();
+  resetFocused();
+  one = 0;
+  two = 0;
+  three = 0;
+  four = 0;
+  five = 0;
+  six = 0;
+  bre = 0;
+  carre = 0;
+  full = 0;
+  small = 0;
+  large = 0;
+  yams = 0;
+  luck = 0;
+  bonus = 0;
+  scoreTotal = 0;
+  for (let i = 0; i < dices.length; i++) {
+    dicesNumber[i].textContent = "";
+    dices[i].classList.remove("diceSelected");
+  }
+  for (let i = 0; i < previewContainer.length; i++) {
+    preview[i].textContent = "0";
+    previewContainer[i].classList.remove("selected");
+    previewContainer[i].classList.remove("selectedForTotal");
+    coverPreview[i].classList.add("invisible");
+    displayBonusYams[i].classList.add("invisible");
+  }
+  playBtn.classList.add("readOnly");
+  coverPlay.classList.remove("invisible");
+  launchBtn.classList.remove("readOnly");
+  coverLaunch.classList.add("invisible");
+  totalContainer.textContent = "";
+}
 
 const resetVal = () => {
   value = [0, 0, 0, 0, 0, 0];
@@ -40,12 +96,13 @@ const verifyFocus = () => {
     if (previewContainer[i].classList.contains("focused")) {
       previewContainer[i].classList.remove("focused");
       previewContainer[i].classList.add("selected");
+      diceFocused = true;
     }
   }
 };
 
 const verifyThree = () => {
-  if (previewContainer[6].classList.contains("selected")) {
+  if (previewContainer[6].classList.contains("selectedForTotal")) {
     preview[6].textContent = bre;
   } else {
     if (
@@ -71,7 +128,7 @@ const verifyThree = () => {
 };
 
 const verifyFour = () => {
-  if (previewContainer[7].classList.contains("selected")) {
+  if (previewContainer[7].classList.contains("selectedForTotal")) {
     preview[7].textContent = carre;
   } else {
     if (
@@ -97,7 +154,7 @@ const verifyFour = () => {
 };
 
 const verifyFull = () => {
-  if (previewContainer[8].classList.contains("selected")) {
+  if (previewContainer[8].classList.contains("selectedForTotal")) {
     preview[8].textContent = full;
   } else {
     if (
@@ -164,7 +221,7 @@ const verifyFull = () => {
 };
 
 const verifySmall = () => {
-  if (previewContainer[9].classList.contains("selected")) {
+  if (previewContainer[9].classList.contains("selectedForTotal")) {
     preview[9].textContent = small;
   } else {
     if (value[0] == 1 && value[1] == 1 && value[2] == 1 && value[3] == 1) {
@@ -273,7 +330,7 @@ const verifySmall = () => {
 };
 
 const verifyLarge = () => {
-  if (previewContainer[10].classList.contains("selected")) {
+  if (previewContainer[10].classList.contains("selectedForTotal")) {
     preview[10].textContent = large;
   } else {
     if (
@@ -299,7 +356,7 @@ const verifyLarge = () => {
 };
 
 const verifyYams = () => {
-  if (previewContainer[11].classList.contains("selected")) {
+  if (previewContainer[11].classList.contains("selectedForTotal")) {
     preview[11].textContent = yams;
   } else {
     if (
@@ -318,7 +375,7 @@ const verifyYams = () => {
 };
 
 const verifyLuck = () => {
-  if (previewContainer[12].classList.contains("selected")) {
+  if (previewContainer[12].classList.contains("selectedForTotal")) {
     preview[12].textContent = luck;
   } else {
     let a =
@@ -334,15 +391,12 @@ const verifyLuck = () => {
 };
 
 const verifyBonus = () => {
-  if (previewContainer[13].classList.contains("selected")) {
-    preview[13].textContent = bonus;
+  a = one + two + three + four + five + six;
+  if (a > 62) {
+    preview[13].textContent = "35";
+    bonusValid = true;
   } else {
-    a = one + two + three + four + five + six;
-    if (a > 62) {
-      preview[13].textContent = "35";
-    } else {
-      preview[13].textContent = a + "/63";
-    }
+    preview[13].textContent = a + "/63";
   }
 };
 
@@ -359,7 +413,7 @@ const verifyNumber = () => {
 };
 
 const verifyPts = () => {
-  if (previewContainer[0].classList.contains("selected")) {
+  if (previewContainer[0].classList.contains("selectedForTotal")) {
     preview[0].textContent = one;
   } else {
     let val = 0;
@@ -370,7 +424,7 @@ const verifyPts = () => {
     }
     preview[0].textContent = val;
   }
-  if (previewContainer[1].classList.contains("selected")) {
+  if (previewContainer[1].classList.contains("selectedForTotal")) {
     preview[1].textContent = two;
   } else {
     val = 0;
@@ -381,7 +435,7 @@ const verifyPts = () => {
     }
     preview[1].textContent = val * 2;
   }
-  if (previewContainer[2].classList.contains("selected")) {
+  if (previewContainer[2].classList.contains("selectedForTotal")) {
     preview[2].textContent = three;
   } else {
     val = 0;
@@ -392,7 +446,7 @@ const verifyPts = () => {
     }
     preview[2].textContent = val * 3;
   }
-  if (previewContainer[3].classList.contains("selected")) {
+  if (previewContainer[3].classList.contains("selectedForTotal")) {
     preview[3].textContent = four;
   } else {
     val = 0;
@@ -403,7 +457,7 @@ const verifyPts = () => {
     }
     preview[3].textContent = val * 4;
   }
-  if (previewContainer[4].classList.contains("selected")) {
+  if (previewContainer[4].classList.contains("selectedForTotal")) {
     preview[4].textContent = five;
   } else {
     val = 0;
@@ -414,7 +468,7 @@ const verifyPts = () => {
     }
     preview[4].textContent = val * 5;
   }
-  if (previewContainer[5].classList.contains("selected")) {
+  if (previewContainer[5].classList.contains("selectedForTotal")) {
     preview[5].textContent = six;
   } else {
     val = 0;
@@ -435,6 +489,9 @@ const verifyPts = () => {
   verifyYams();
   verifyLuck();
   verifyBonus();
+  if (yamsValid == true) {
+    ptsYamsValid();
+  }
   resetVal();
 };
 
@@ -513,46 +570,254 @@ launchBtn.addEventListener("click", () => {
     launchBtn.classList.add("readOnly");
     coverLaunch.classList.remove("invisible");
   }
-  console.log(count);
 });
+
+const ptsYamsValid = () => {
+  console.log(value);
+  if (
+    value[0] == 5 ||
+    value[1] == 5 ||
+    value[2] == 5 ||
+    value[3] == 5 ||
+    value[4] == 5 ||
+    value[5] == 5
+  ) {
+    yamsValidBonus = 50;
+    yamsBonus = true;
+  }
+};
+
+const resetYamsBonus = () => {
+  yamsValidBonus = 0;
+  yamsBonus = false;
+};
 
 const ptsAttribute = () => {
   if (previewContainer[0].classList.contains("selected")) {
-    one = previewContainer[0].textContent;
+    one = parseInt(previewContainer[0].textContent);
+    if (yamsValid == true) {
+      let val = one + yamsValidBonus;
+      one = val;
+      if (yamsBonus == true) {
+        displayBonusYams[0].classList.remove("invisible");
+      }
+      resetYamsBonus();
+    }
+    previewContainer[0].classList.add("selectedForTotal");
+    previewContainer[0].classList.remove("selected");
+    coverPreview[0].classList.remove("invisible");
   } else if (previewContainer[1].classList.contains("selected")) {
-    two = previewContainer[1].textContent;
+    two = parseInt(previewContainer[1].textContent);
+    if (yamsValid == true) {
+      let val = two + yamsValidBonus;
+      two = val;
+      if (yamsBonus == true) {
+        displayBonusYams[1].classList.remove("invisible");
+      }
+      resetYamsBonus();
+    }
+    previewContainer[1].classList.add("selectedForTotal");
+    previewContainer[1].classList.remove("selected");
+    coverPreview[1].classList.remove("invisible");
   } else if (previewContainer[2].classList.contains("selected")) {
-    three = previewContainer[2].textContent;
+    three = parseInt(previewContainer[2].textContent);
+    if (yamsValid == true) {
+      let val = three + yamsValidBonus;
+      three = val;
+      if (yamsBonus == true) {
+        displayBonusYams[2].classList.remove("invisible");
+      }
+      resetYamsBonus();
+    }
+    previewContainer[2].classList.add("selectedForTotal");
+    previewContainer[2].classList.remove("selected");
+    coverPreview[2].classList.remove("invisible");
   } else if (previewContainer[3].classList.contains("selected")) {
-    four = previewContainer[3].textContent;
+    four = parseInt(previewContainer[3].textContent);
+    if (yamsValid == true) {
+      let val = four + yamsValidBonus;
+      four = val;
+      if (yamsBonus == true) {
+        displayBonusYams[3].classList.remove("invisible");
+      }
+      resetYamsBonus();
+    }
+    previewContainer[3].classList.add("selectedForTotal");
+    previewContainer[3].classList.remove("selected");
+    coverPreview[3].classList.remove("invisible");
   } else if (previewContainer[4].classList.contains("selected")) {
-    five = previewContainer[4].textContent;
+    five = parseInt(previewContainer[4].textContent);
+    if (yamsValid == true) {
+      let val = five + yamsValidBonus;
+      five = val;
+      if (yamsBonus == true) {
+        displayBonusYams[4].classList.remove("invisible");
+      }
+      resetYamsBonus();
+    }
+    previewContainer[4].classList.add("selectedForTotal");
+    previewContainer[4].classList.remove("selected");
+    coverPreview[4].classList.remove("invisible");
   } else if (previewContainer[5].classList.contains("selected")) {
-    six = previewContainer[5].textContent;
+    six = parseInt(previewContainer[5].textContent);
+    if (yamsValid == true) {
+      let val = six + yamsValidBonus;
+      six = val;
+      if (yamsBonus == true) {
+        displayBonusYams[5].classList.remove("invisible");
+      }
+      resetYamsBonus();
+    }
+    previewContainer[5].classList.add("selectedForTotal");
+    previewContainer[5].classList.remove("selected");
+    coverPreview[5].classList.remove("invisible");
   } else if (previewContainer[6].classList.contains("selected")) {
-    bre = previewContainer[6].textContent;
+    bre = parseInt(previewContainer[6].textContent);
+    if (yamsValid == true) {
+      let val = bre + yamsValidBonus;
+      bre = val;
+      if (yamsBonus == true) {
+        displayBonusYams[6].classList.remove("invisible");
+      }
+      resetYamsBonus();
+    }
+    previewContainer[6].classList.add("selectedForTotal");
+    previewContainer[6].classList.remove("selected");
+    coverPreview[6].classList.remove("invisible");
   } else if (previewContainer[7].classList.contains("selected")) {
-    carre = previewContainer[7].textContent;
+    carre = parseInt(previewContainer[7].textContent);
+    if (yamsValid == true) {
+      let val = carre + yamsValidBonus;
+      carre = val;
+      if (yamsBonus == true) {
+        displayBonusYams[7].classList.remove("invisible");
+      }
+      resetYamsBonus();
+    }
+    previewContainer[7].classList.add("selectedForTotal");
+    previewContainer[7].classList.remove("selected");
+    coverPreview[7].classList.remove("invisible");
   } else if (previewContainer[8].classList.contains("selected")) {
-    full = previewContainer[8].textContent;
+    full = parseInt(previewContainer[8].textContent);
+    if (yamsValid == true) {
+      let val = full + yamsValidBonus;
+      full = val;
+      if (yamsBonus == true) {
+        displayBonusYams[8].classList.remove("invisible");
+      }
+      resetYamsBonus();
+    }
+    previewContainer[8].classList.add("selectedForTotal");
+    previewContainer[8].classList.remove("selected");
+    coverPreview[8].classList.remove("invisible");
   } else if (previewContainer[9].classList.contains("selected")) {
-    small = previewContainer[9].textContent;
+    small = parseInt(previewContainer[9].textContent);
+    if (yamsValid == true) {
+      let val = small + yamsValidBonus;
+      small = val;
+      if (yamsBonus == true) {
+        displayBonusYams[9].classList.remove("invisible");
+      }
+      resetYamsBonus();
+    }
+    previewContainer[9].classList.add("selectedForTotal");
+    previewContainer[9].classList.remove("selected");
+    coverPreview[9].classList.remove("invisible");
   } else if (previewContainer[10].classList.contains("selected")) {
-    large = previewContainer[10].textContent;
+    large = parseInt(previewContainer[10].textContent);
+    if (yamsValid == true) {
+      let val = large + yamsValidBonus;
+      large = val;
+      if (yamsBonus == true) {
+        displayBonusYams[10].classList.remove("invisible");
+      }
+      resetYamsBonus();
+    }
+    previewContainer[10].classList.add("selectedForTotal");
+    previewContainer[10].classList.remove("selected");
+    coverPreview[10].classList.remove("invisible");
   } else if (previewContainer[11].classList.contains("selected")) {
-    yams = previewContainer[11].textContent;
+    yams = parseInt(previewContainer[11].textContent);
+    previewContainer[11].classList.add("selectedForTotal");
+    previewContainer[11].classList.remove("selected");
+    coverPreview[11].classList.remove("invisible");
     yamsValid = true;
   } else if (previewContainer[12].classList.contains("selected")) {
-    luck = previewContainer[12].textContent;
-  } else if (previewContainer[13].classList.contains("selected")) {
-    bonus = previewContainer[13].textContent;
+    luck = parseInt(previewContainer[12].textContent);
+    if (yamsValid == true) {
+      let val = luck + yamsValidBonus;
+      luck = val;
+      if (yamsBonus == true) {
+        displayBonusYams[12].classList.remove("invisible");
+      }
+      resetYamsBonus();
+    }
+    previewContainer[12].classList.add("selectedForTotal");
+    previewContainer[12].classList.remove("selected");
+    coverPreview[12].classList.remove("invisible");
   } else {
   }
 };
 
+const ptsTotal = () => {
+  bonusValid
+    ? ((bonus = 35), previewContainer[13].classList.add("selectedForTotal"))
+    : (bonus = 0);
+  scoreTotal =
+    one +
+    two +
+    three +
+    four +
+    five +
+    six +
+    bre +
+    carre +
+    small +
+    large +
+    full +
+    yams +
+    luck +
+    bonus;
+
+  let score = scoreTotal.toString();
+
+  totalContainer.textContent = score;
+};
+
 playBtn.addEventListener("click", () => {
+  diceFocused = false;
   verifyFocus();
-  ptsAttribute();
+  if (diceFocused == true) {
+    ptsAttribute();
+    verifyBonus();
+    ptsTotal();
+    coverLaunch.classList.add("invisible");
+    launchBtn.classList.remove("readOnly");
+    coverPlay.classList.remove("invisible");
+    playBtn.classList.add("readOnly");
+    count = undefined;
+    for (let i = 0; i < dices.length; i++) {
+      dicesNumber[i].textContent = "";
+      dices[i].classList.remove("diceSelected");
+    }
+  } else {
+    alert("Please chose one result");
+  }
+
+  focused = 0;
+  for (let i = 0; i < previewContainer.length - 1; i++) {
+    if (previewContainer[i].classList.contains("selectedForTotal")) {
+      focused++;
+    }
+  }
+  if (focused > 12) {
+    coverLaunch.classList.remove("invisible");
+    launchBtn.classList.add("readOnly");
+  }
+});
+
+resetBtn.addEventListener("click", () => {
+  reset();
 });
 
 const previewEvent = (e) => {
