@@ -295,16 +295,17 @@ body {
   .dice {
     width: 18%;
     height: auto;
-    min-height: 74px;
+    min-height: 64px;
   }
 
   .diceNumber {
-    font-size: 3em;
-    line-height: 70px;
+    font-size: 2.5em;
+    line-height: 60px;
   }
 
   .scoreTotal {
     width: 80%;
+    margin-bottom: 10px;
   }
 
   .scoreContainer {
@@ -315,6 +316,8 @@ body {
   .score,
   .bonus {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
 
   .score-img {
@@ -365,7 +368,7 @@ body {
 
   .launchDice:hover {
     background-color: initial;
-    cursor: none;
+    cursor: initial;
   }
 
   .play {
@@ -375,11 +378,11 @@ body {
 
   .play:hover {
     background-color: initial;
-    cursor: none;
+    cursor: initial;
   }
 
   .reset:hover {
     background-color: initial;
-    cursor: none;
+    cursor: initial;
   }
 }
