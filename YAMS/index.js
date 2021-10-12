@@ -801,7 +801,7 @@ playBtn.addEventListener("click", () => {
       dices[i].classList.remove("diceSelected");
     }
   } else {
-    alert("Please chose one result");
+    alert("Please chose one");
   }
 
   focused = 0;
