@@ -97,7 +97,6 @@ body {
   text-align: center;
   line-height: 40px;
   white-space: nowrap;
-  cursor: pointer;
   border-radius: 10px;
 }
 
@@ -277,4 +276,109 @@ body {
 
 #bonus {
   grid-area: 7/1/8/2;
+}
+
+@media screen and (max-width: 710px) {
+  body {
+    width: 100%;
+    align-items: center;
+  }
+
+  .diceContainer {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0 5px 0;
+  }
+
+  .dice {
+    width: 18%;
+    height: auto;
+    min-height: 74px;
+  }
+
+  .diceNumber {
+    font-size: 3em;
+    line-height: 70px;
+  }
+
+  .scoreTotal {
+    width: 80%;
+  }
+
+  .scoreContainer {
+    width: 90%;
+    grid-template: repeat(7, 70px) / repeat(2, 1fr);
+  }
+
+  .score,
+  .bonus {
+    width: 100%;
+  }
+
+  .score-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .score-img p {
+    line-height: 50px;
+  }
+
+  .score-preview-container {
+    margin-left: 5px;
+    height: 50px;
+    width: 50px;
+  }
+
+  .score-preview {
+    line-height: 50px;
+  }
+
+  .coverScorePreview {
+    position: absolute;
+    z-index: 100;
+    margin-left: 5px;
+    height: 50px;
+    width: 50px;
+  }
+
+  .score-name {
+    display: none;
+  }
+
+  .bonusYamsValid {
+    line-height: 20px;
+    margin: 14px 0 0 5px;
+  }
+
+  .btnContainer {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .launchDice {
+    width: 80px;
+  }
+
+  .launchDice:hover {
+    background-color: initial;
+    cursor: none;
+  }
+
+  .play {
+    width: 80px;
+    height: 40px;
+  }
+
+  .play:hover {
+    background-color: initial;
+    cursor: none;
+  }
+
+  .reset:hover {
+    background-color: initial;
+    cursor: none;
+  }
 }
