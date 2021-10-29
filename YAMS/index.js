@@ -240,6 +240,7 @@ const verifySmall = () => {
       value[2] == 1 &&
       value[3] == 1
     ) {
+      preview[9].textContent = "30";
     } else if (
       value[0] == 1 &&
       value[1] == 2 &&
