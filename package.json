@@ -2,10 +2,12 @@
   "name": "littles_games_app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://julabina.github.io/Littles_games",
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.3.0",
@@ -13,6 +15,12 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    
+    "predeploy": "npm run build",
+
+   "deploy": "gh-pages -b master -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
