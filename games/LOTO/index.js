@@ -38,6 +38,7 @@ function resetSelect() {
   }
 
   resultContainer.textContent = "";
+  selected = [0, 0, 0, 0, 0, 0];
 }
 
 const tirage = () => {
