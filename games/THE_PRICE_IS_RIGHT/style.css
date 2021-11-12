@@ -61,6 +61,11 @@ main {
   align-items: center;
 }
 
+.submitBtn:hover {
+  cursor: pointer;
+  background: rgb(76, 143, 76);
+}
+
 .submitIntern {
   border-radius: 5px;
   border: 2px solid black;
@@ -89,6 +94,7 @@ main {
 }
 
 .startGameBtn:hover {
+  cursor: pointer;
   background: #000;
   color: gray;
   border: gray 1px solid;
