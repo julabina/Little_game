@@ -1,0 +1,14 @@
+.number {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  text-align: center;
+  line-height: 30px;
+  white-space: nowrap;
+  border-radius: 5px;
+}
+
+.number:hover {
+  background: deepskyblue;
+  cursor: pointer;
+}

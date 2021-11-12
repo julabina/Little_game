@@ -11,8 +11,8 @@ body {
 
 .cardContainer {
   display: grid;
-  width: 50%;
-  grid-template: 1fr 1fr / 1fr 1fr;
+  width: auto;
+  grid-template: 1fr 1fr / 1fr 1fr 1fr;
 }
 
 .card {
