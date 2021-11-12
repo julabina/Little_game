@@ -1,5 +1,6 @@
 const numbers = document.querySelectorAll(".gridNumber");
 const selectedNumbers = document.querySelectorAll(".selectNumber");
+const bonuss = document.querySelectorAll(".bonusNumber");
 const randomNumber = document.querySelectorAll(".randomNumber");
 const selectedContainer = document.querySelectorAll(".selected");
 const resultContainer = document.querySelector(".result");
@@ -7,13 +8,25 @@ const launchBtn = document.getElementById("launchBtn");
 const resetBtn = document.getElementById("resetBtn");
 const resultSelectedContainer = document.querySelectorAll(".selectedResult");
 const numbersSelected = document.querySelectorAll(".numberSelected");
+const bonusSelected = document.querySelectorAll(".bonusSelected");
+const bonusResult = document.querySelector(".bonusResult");
+const bonusChoice = document.querySelector(".bonusChoice");
+const bonusMatch = document.querySelector(".bonusMatch");
+const bonusMatch2 = document.querySelector(".bonusMatch2");
 
 let result = 0;
 let randomed = [0, 0, 0, 0, 0];
 let selected = [0, 0, 0, 0, 0];
+let bonus = 0;
+let bonusChecked = 0;
 
 const random = () => {
   val = Math.ceil(Math.random() * 49);
+  return val;
+};
+
+const randomBonus = () => {
+  val = Math.ceil(Math.random() * 10);
   return val;
 };
 
@@ -25,11 +38,19 @@ function reset() {
     resultSelectedContainer[i].classList.add("invisible");
     numbersSelected[i].classList.add("invisible");
   }
+
+  bonusMatch.classList.add("invisible");
+  bonusMatch2.classList.add("invisible");
+  bonusResult.textContent = "";
 }
 
 function resetSelect() {
   for (let i = 0; i < selectedContainer.length; i++) {
     selectedContainer[i].classList.add("invisible");
+  }
+
+  for (let i = 0; i < bonuss.length; i++) {
+    bonusSelected[i].classList.add("invisible");
   }
 
   for (let i = 0; i < selectedNumbers.length; i++) {
@@ -39,6 +60,9 @@ function resetSelect() {
 
   resultContainer.textContent = "";
   selected = [0, 0, 0, 0, 0];
+  bonus = 0;
+  bonusChoice.textContent = "";
+  bonusChecked = 0;
 }
 
 const tirage = () => {
@@ -59,6 +83,11 @@ const tirage = () => {
       randomNumber[i].textContent = val;
     }
   }
+};
+
+const tirageBonus = () => {
+  val = randomBonus();
+  bonusResult.textContent = val;
 };
 
 const resultComp = () => {
@@ -86,7 +115,20 @@ const resultComp = () => {
     }
   }
 
-  resultContainer.textContent = result;
+  console.log(bonus);
+  console.log(bonusResult);
+
+  console.log(typeof bonus);
+  console.log(typeof bonusResult.textContent);
+  bonusResultTransform = parseInt(bonusResult.textContent);
+  console.log(typeof bonusRusltTransform);
+  if (bonusResultTransform === bonus) {
+    bonusMatch.classList.remove("invisible");
+    bonusMatch2.classList.remove("invisible");
+    resultContainer.textContent = result + " + 1";
+  } else {
+    resultContainer.textContent = result;
+  }
 };
 
 numbers[0].addEventListener("click", () => {
@@ -580,6 +622,87 @@ numbers[48].addEventListener("click", () => {
   }
 });
 
+bonuss[0].addEventListener("click", () => {
+  if (bonus === 0) {
+    bonus = 1;
+    bonusChoice.textContent = 1;
+    bonusSelected[0].classList.remove("invisible");
+    bonusChecked = 1;
+  }
+});
+bonuss[1].addEventListener("click", () => {
+  if (bonus === 0) {
+    bonus = 2;
+    bonusChoice.textContent = 2;
+    bonusSelected[1].classList.remove("invisible");
+    bonusChecked = 1;
+  }
+});
+bonuss[2].addEventListener("click", () => {
+  if (bonus === 0) {
+    bonus = 3;
+    bonusChoice.textContent = 3;
+    bonusSelected[2].classList.remove("invisible");
+    bonusChecked = 1;
+  }
+});
+bonuss[3].addEventListener("click", () => {
+  if (bonus === 0) {
+    bonus = 4;
+    bonusChoice.textContent = 4;
+    bonusSelected[3].classList.remove("invisible");
+    bonusChecked = 1;
+  }
+});
+bonuss[4].addEventListener("click", () => {
+  if (bonus === 0) {
+    bonus = 5;
+    bonusChoice.textContent = 5;
+    bonusSelected[4].classList.remove("invisible");
+    bonusChecked = 1;
+  }
+});
+bonuss[5].addEventListener("click", () => {
+  if (bonus === 0) {
+    bonus = 6;
+    bonusChoice.textContent = 6;
+    bonusSelected[5].classList.remove("invisible");
+    bonusChecked = 1;
+  }
+});
+bonuss[6].addEventListener("click", () => {
+  if (bonus === 0) {
+    bonus = 7;
+    bonusChoice.textContent = 7;
+    bonusSelected[6].classList.remove("invisible");
+    bonusChecked = 1;
+  }
+});
+bonuss[7].addEventListener("click", () => {
+  if (bonus === 0) {
+    bonus = 8;
+    bonusChoice.textContent = 8;
+    bonusSelected[7].classList.remove("invisible");
+    bonusChecked = 1;
+  }
+});
+bonuss[8].addEventListener("click", () => {
+  if (bonus === 0) {
+    bonus = 9;
+    bonusChoice.textContent = 9;
+    bonusSelected[8].classList.remove("invisible");
+    bonusChecked = 1;
+  }
+});
+bonuss[9].addEventListener("click", () => {
+  if (bonus === 0) {
+    bonus = 10;
+    bonusChoice.textContent = 10;
+    bonusSelected[9].classList.remove("invisible");
+    bonusChecked = 1;
+  }
+});
+
 launchBtn.addEventListener("click", () => {
   let val = 0;
   for (let i = 0; i < selected.length; i++) {
@@ -588,9 +711,10 @@ launchBtn.addEventListener("click", () => {
     }
   }
 
-  if (val === selected.length) {
+  if (val === selected.length && bonusChecked === 1) {
     reset();
     tirage();
+    tirageBonus();
     resultComp();
   }
 });

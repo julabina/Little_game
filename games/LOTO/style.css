@@ -94,3 +94,74 @@
   border-radius: 5px;
   background: rgba(0, 0, 255, 0.514);
 }
+
+.bonusNumber {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  border: black 1px solid;
+  text-align: center;
+  line-height: 45px;
+  white-space: nowrap;
+}
+
+.bonusNumber:hover {
+  cursor: pointer;
+  background: deepskyblue;
+}
+
+.bonusSelected {
+  position: absolute;
+  z-index: 100;
+  height: 45px;
+  width: 45px;
+  border-radius: 10px;
+  background: rgba(0, 0, 255, 0.514);
+}
+
+.bonusContainer {
+  display: grid;
+  grid-template: 45px 45px / repeat(5, 45px);
+}
+
+.bonusResult {
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+  border: black 4px solid;
+  margin-left: 5px;
+  text-align: center;
+  line-height: 35px;
+  white-space: nowrap;
+}
+
+.bonusChoice {
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+  border: black 4px solid;
+  margin-left: 5px;
+  text-align: center;
+  line-height: 35px;
+  white-space: nowrap;
+}
+
+.bonusMatch {
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+  margin-left: 5px;
+  position: absolute;
+  z-index: 100;
+  background: rgba(0, 0, 255, 0.514);
+}
+
+.bonusMatch2 {
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+  margin-left: 5px;
+  position: absolute;
+  z-index: 100;
+  background: rgba(0, 0, 255, 0.514);
+}
