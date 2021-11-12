@@ -1,4 +1,18 @@
-.number {
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gridNumberContainer {
+  display: grid;
+  grid-template: repeat(7, 40px) / repeat(7, 40px);
+  margin: 20px;
+}
+
+.gridNumber {
   width: 30px;
   height: 30px;
   border: 1px solid black;
@@ -6,9 +20,77 @@
   line-height: 30px;
   white-space: nowrap;
   border-radius: 5px;
+  z-index: 1;
 }
 
-.number:hover {
+.selected {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border-radius: 5px;
+  background: rgba(38, 2, 243, 0.582);
+  z-index: 100;
+}
+
+.gridNumber:hover {
   background: deepskyblue;
   cursor: pointer;
+}
+
+.selectNumber {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  text-align: center;
+  line-height: 40px;
+  white-space: nowrap;
+  border-radius: 5px;
+}
+
+.randomNumber {
+  width: 40px;
+  height: 40px;
+  border: 2px solid black;
+  text-align: center;
+  line-height: 40px;
+  white-space: nowrap;
+  border-radius: 5px;
+}
+
+.result {
+  border: 2px solid black;
+  border-radius: 10px;
+  height: 80px;
+  width: 80px;
+  line-height: 80px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.selectedNumberContainer {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.randomContainer {
+  display: flex;
+}
+
+#launchBtn {
+  height: 40px;
+  width: 80px;
+}
+
+.invisible {
+  display: none;
+}
+
+.numberSelected,
+.selectedResult {
+  z-index: 100;
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+  background: rgba(0, 0, 255, 0.514);
 }
