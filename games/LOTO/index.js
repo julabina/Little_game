@@ -9,8 +9,8 @@ const resultSelectedContainer = document.querySelectorAll(".selectedResult");
 const numbersSelected = document.querySelectorAll(".numberSelected");
 
 let result = 0;
-let randomed = [0, 0, 0, 0, 0, 0];
-let selected = [0, 0, 0, 0, 0, 0];
+let randomed = [0, 0, 0, 0, 0];
+let selected = [0, 0, 0, 0, 0];
 
 const random = () => {
   val = Math.ceil(Math.random() * 49);
@@ -19,7 +19,7 @@ const random = () => {
 
 function reset() {
   result = 0;
-  randomed = [0, 0, 0, 0, 0, 0];
+  randomed = [0, 0, 0, 0, 0];
 
   for (let i = 0; i < resultSelectedContainer.length; i++) {
     resultSelectedContainer[i].classList.add("invisible");
@@ -38,7 +38,7 @@ function resetSelect() {
   }
 
   resultContainer.textContent = "";
-  selected = [0, 0, 0, 0, 0, 0];
+  selected = [0, 0, 0, 0, 0];
 }
 
 const tirage = () => {
@@ -50,8 +50,7 @@ const tirage = () => {
       val === randomed[0] ||
       val === randomed[2] ||
       val === randomed[3] ||
-      val === randomed[4] ||
-      val === randomed[5]
+      val === randomed[4]
     ) {
       reset();
       tirage();
@@ -83,10 +82,6 @@ const resultComp = () => {
     } else if (selected[i] === randomed[4]) {
       result += 1;
       resultSelectedContainer[4].classList.remove("invisible");
-      numbersSelected[i].classList.remove("invisible");
-    } else if (selected[i] === randomed[5]) {
-      result += 1;
-      resultSelectedContainer[5].classList.remove("invisible");
       numbersSelected[i].classList.remove("invisible");
     }
   }
