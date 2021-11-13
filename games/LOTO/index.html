@@ -8,8 +8,11 @@
     <title>LOTO</title>
 </head>
 <body>
-<h1>LOTO</h1>
-
+    <header>
+        <h1 id="title">LOTO</h1>
+        <button id="resetBtn">Reset</button>
+    </header>
+<div class="firstGridContainer">
     <div class="gridNumberContainer">
         <div class="containGridNumber">
             <div class="selected invisible"></div>
@@ -251,8 +254,9 @@
             <div class="bonusNumber">10</div>
         </div>
     </div>
+   </div> 
 
-    <button id="resetBtn">Reset</button>
+   
 
     <div class="selectedNumberContainer">
         <div>
@@ -280,6 +284,8 @@
             <div class="bonusChoice"></div>
         </div>
     </div>
+
+    <button id="launchBtn">GO</button>
     
     <div class="randomContainer">
         <div>
@@ -307,7 +313,7 @@
             <div class="bonusResult"></div>
         </div>
         </div>
-    <button id="launchBtn">GO</button>
+    
     <div class="result"></div>
     
     <script src="index.js"></script>
