@@ -65,10 +65,16 @@ function resetSelect() {
   bonusChecked = 0;
 }
 
-const tirage = () => {
-  for (let i = 0; i < randomNumber.length; i++) {
-    val = random();
-    console.log(val);
+let ii = [1, 1, 1, 1, 1];
+let iiBonus = 1;
+
+const animation = (a, b) => {
+  setTimeout(function () {
+    if (b === undefined) {
+      val = random();
+    } else {
+      val = b;
+    }
     if (
       val === randomed[1] ||
       val === randomed[0] ||
@@ -77,17 +83,37 @@ const tirage = () => {
       val === randomed[4]
     ) {
       reset();
-      tirage();
+      return animation(a);
     } else {
-      randomed[i] = val;
-      randomNumber[i].textContent = val;
+      b = val;
+      c = random();
+      randomNumber[a].textContent = c;
     }
-  }
+
+    ii[a]++;
+    if (ii[a] < 20) {
+      animation(a, b);
+    } else {
+      randomed[a] = b;
+      randomNumber[a].textContent = b;
+    }
+  }, 50);
 };
 
 const tirageBonus = () => {
-  val = randomBonus();
-  bonusResult.textContent = val;
+  setTimeout(function () {
+    a = randomBonus();
+    bonusResult.textContent = a;
+
+    iiBonus++;
+    if (iiBonus < 20) {
+      tirageBonus();
+    } else {
+      val = randomBonus();
+      bonusResult.textContent = val;
+      console.log(val);
+    }
+  }, 50);
 };
 
 const resultComp = () => {
@@ -115,13 +141,7 @@ const resultComp = () => {
     }
   }
 
-  console.log(bonus);
-  console.log(bonusResult);
-
-  console.log(typeof bonus);
-  console.log(typeof bonusResult.textContent);
   bonusResultTransform = parseInt(bonusResult.textContent);
-  console.log(typeof bonusRusltTransform);
   if (bonusResultTransform === bonus) {
     bonusMatch.classList.remove("invisible");
     bonusMatch2.classList.remove("invisible");
@@ -713,9 +733,18 @@ launchBtn.addEventListener("click", () => {
 
   if (val === selected.length && bonusChecked === 1) {
     reset();
-    tirage();
+    ii = [1, 1, 1, 1, 1];
+    iiBonus = 1;
+
+    animation(0);
+    animation(1);
+    animation(2);
+    animation(3);
+    animation(4);
     tirageBonus();
-    resultComp();
+    setTimeout(function () {
+      resultComp();
+    }, 1200);
   }
 });
 
