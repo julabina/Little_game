@@ -273,6 +273,36 @@ body {
   grid-area: 7/1/8/2;
 }
 
+.backToHome {
+  position: fixed;
+  left: 0;
+  top: 20px;
+  height: 40px;
+  width: 40px;
+  border: 1px solid rgba(128, 128, 128, 0.289);
+  border-radius: 0 40px 40px 0;
+  background: rgba(128, 128, 128, 0.189);
+}
+
+.backToHome p {
+  line-height: 40px;
+  white-space: nowrap;
+  font-size: 0.7em;
+  margin-left: 3px;
+  color: rgba(0, 0, 0, 0.644);
+}
+
+.backToHome:hover {
+  border-right: black 1px solid;
+  border-top: black 1px solid;
+  border-bottom: black 1px solid;
+  cursor: pointer;
+}
+
+.backToHome:hover p {
+  color: black;
+}
+
 @media screen and (max-width: 710px) {
   body {
     width: 100%;
@@ -429,5 +459,20 @@ body {
 
   .readOnly:hover {
     background: initial;
+  }
+
+  .backToHome {
+    position: relative;
+    width: 60px;
+    border-radius: 40px;
+    background: rgba(128, 128, 128, 0.189);
+  }
+
+  .backToHome p {
+    line-height: 37px;
+    white-space: nowrap;
+    font-size: 0.7em;
+    margin-left: initial;
+    text-align: center;
   }
 }

@@ -39,6 +39,8 @@ body {
 .card a {
   text-decoration: none;
   color: black;
+  height: 100%;
+  width: 100%;
 }
 
 .card img {
@@ -55,6 +57,12 @@ body {
   border: solid 1px green;
   align-items: center;
   justify-content: center;
+}
+
+.card:hover a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card:hover img {
