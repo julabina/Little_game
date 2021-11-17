@@ -40,6 +40,11 @@ const randomizeDice = () => {
   return val;
 };
 
+const randomAnim = () => {
+  valu = Math.ceil(Math.random() * 6);
+  return valu;
+};
+
 function reset() {
   yamsValid = false;
   diceFocused = false;
@@ -590,15 +595,46 @@ dices[4].addEventListener("click", () => {
   }
 });
 
+let aze = [1, 1, 1, 1, 1];
+
+const animation = (a) => {
+  setTimeout(function () {
+    randomAnim();
+    dicesNumber[a].textContent = valu;
+    aze[a]++;
+    if (aze[a] < 10) {
+      animation(a);
+    } else {
+      randomizeDice();
+      dicesNumber[a].textContent = val;
+      verifyPts();
+    }
+  }, 50);
+};
+
 launchBtn.addEventListener("click", () => {
   resetFocused();
-  for (let i = 0; i < dicesNumber.length; i++) {
+  aze = [1, 1, 1, 1, 1];
+  !dices[0].classList.contains("diceSelected") ? animation(0) : null;
+  !dices[1].classList.contains("diceSelected") ? animation(1) : null;
+  !dices[2].classList.contains("diceSelected") ? animation(2) : null;
+  !dices[3].classList.contains("diceSelected") ? animation(3) : null;
+  !dices[4].classList.contains("diceSelected") ? animation(4) : null;
+
+  /*for (let i = 0; i < dicesNumber.length; i++) {
     if (!dices[i].classList.contains("diceSelected")) {
-      randomizeDice();
-      dicesNumber[i].textContent = val;
+      animation(i);
+       animation 
+      for (let ii = 0; ii < 10; ii++) {
+        setTimeout(function () {
+        randomAnim();
+        dicesNumber[i].textContent = valu;
+      }, 1000);
+      }
+      random 
     }
   }
-  verifyPts();
+  verifyPts();*/
   if (count == undefined) {
     count = 1;
     coverPlay.classList.add("invisible");
