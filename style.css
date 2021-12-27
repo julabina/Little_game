@@ -23,7 +23,7 @@ body {
 .cardContainer {
   display: grid;
   width: auto;
-  grid-template: 1fr 1fr / 1fr 1fr 1fr;
+  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
 }
 
 .card {
