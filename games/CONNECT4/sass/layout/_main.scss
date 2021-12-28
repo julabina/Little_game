@@ -1,0 +1,21 @@
+.game {
+    &__grid {
+        display: grid;
+        grid-template :auto / repeat(7, 60px);
+        &__column {
+            &__case {
+                height: 60px;width: 60px;
+                border: 5px blue solid;
+            }
+        }
+    }
+}
+
+
+.red {
+    background: red;
+}
+
+.yellow {
+    background: yellow;
+}

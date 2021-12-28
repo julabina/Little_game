@@ -1,0 +1,31 @@
+/*  Utils */
+/* Base */
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Componants */
+/* Layout */
+.game__grid {
+  display: grid;
+  grid-template: auto/repeat(7, 60px);
+}
+.game__grid__column__case {
+  height: 60px;
+  width: 60px;
+  border: 5px blue solid;
+}
+
+.red {
+  background: red;
+}
+
+.yellow {
+  background: yellow;
+}
+
+/* Page */
+
+/*# sourceMappingURL=style.css.map */
