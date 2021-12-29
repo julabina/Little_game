@@ -8,11 +8,25 @@
     <title>Connect 4</title>
 </head>
 <body>
-<header>
+<header class="header">
+    <img class="header__hamb" src="./images/icon-hamburger.svg" alt="Hamburger icon">
+    <div class="header__menu header__menu--off">
+        <img class="header__menu__close" src="./images/icon-close-menu.svg" alt="close icon menu">
+        <ul>
+            <li>Menu 1</li>
+            <li>Menu 1</li>
+            <a href="#"><li>Back to game choice</li></a>
+        </ul>
+    </div>
     <h1>CONNECT 4</h1>
 </header>
 <main>
     <div class="game">
+        <div class="game__result game__result--off">
+            <h2 class="game__result__title">RED PLAYER WIN</h2>
+            <button class="game__result__btn">OK</button>
+        </div>
+        <div class="game__darken game__result--off"></div>
         <div class="game__grid">
             <div class="game__grid__column">
                 <div class="game__grid__column__case game__grid__column__case__1"></div>

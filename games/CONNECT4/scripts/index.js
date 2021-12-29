@@ -7,10 +7,20 @@ const grid4 = document.querySelectorAll(".game__grid__column__case__4");
 const grid5 = document.querySelectorAll(".game__grid__column__case__5");
 const grid6 = document.querySelectorAll(".game__grid__column__case__6");
 const grid7 = document.querySelectorAll(".game__grid__column__case__7");
+const winMsgBox = document.querySelector(".game__result");
+const winMsg = document.querySelector(".game__result__title");
+const winDarken = document.querySelector(".game__darken");
+const winBtn = document.querySelector(".game__result__btn");
+/* menu start*/
+const hambBtn = document.querySelector(".header__hamb");
+const closeBtn = document.querySelector(".header__menu__close");
+const menu = document.querySelector(".header__menu");
+/* menu end */
+
+
 
 let gridAll = [grid1, grid2, grid3, grid4, grid5, grid6, grid7];
 let rounds = 0;
-let win = false;
 let victoryCount;
 
 const fill = (grd, val) => {
@@ -37,6 +47,37 @@ const fill = (grd, val) => {
     } 
 }
 
+const reset = () => {
+    for (let i = 0; i < grid1.length; i++) {
+        grid1[i].classList.remove("red");
+        grid1[i].classList.remove("yellow");
+    }
+    for (let i = 0; i < grid2.length; i++) {
+        grid2[i].classList.remove("red");
+        grid2[i].classList.remove("yellow");
+    }
+    for (let i = 0; i < grid3.length; i++) {
+        grid3[i].classList.remove("red");
+        grid3[i].classList.remove("yellow");
+    }
+    for (let i = 0; i < grid4.length; i++) {
+        grid4[i].classList.remove("red");
+        grid4[i].classList.remove("yellow");
+    }
+    for (let i = 0; i < grid5.length; i++) {
+        grid5[i].classList.remove("red");
+        grid5[i].classList.remove("yellow");
+    }
+    for (let i = 0; i < grid6.length; i++) {
+        grid6[i].classList.remove("red");
+        grid6[i].classList.remove("yellow");
+    }
+    for (let i = 0; i < grid7.length; i++) {
+        grid7[i].classList.remove("red");
+        grid7[i].classList.remove("yellow");
+    }
+}
+
 const verifyVertical = (grd, ind) => {
     let grid = grd;
     if (ind < 3) {
@@ -49,8 +90,8 @@ const verifyVertical = (grd, ind) => {
                 }
             }
             if (victoryCount === 4) {
-                console.log('red win');
-                win = true;
+                victory("red");
+
             } else {
                 victoryCount = 0;
             }
@@ -63,8 +104,7 @@ const verifyVertical = (grd, ind) => {
                 }
             }
             if (victoryCount === 4) {
-                console.log('yellow win');
-                win = true;
+                victory("yellow");
             } else {
                 victoryCount = 0;
             }
@@ -91,8 +131,7 @@ const verifyHorizontal = (ind, val) => {
             }
         }
         if (victoryCount === 4) {
-            console.log('red win');
-            win = true;
+            victory("red")
         } else {
             victoryCount = 0;
         }
@@ -113,8 +152,7 @@ const verifyHorizontal = (ind, val) => {
             }
         }
         if (victoryCount === 4) {
-            console.log('yellow win');
-            win = true;
+            victory("yellow");
         } else {
             victoryCount = 0;
         }
@@ -148,8 +186,7 @@ const verifyDiagonal = (ind, val) => {
                 }
             }   
             if (victoryCount === 4) {
-                console.log('red win');
-                win = true;
+                victory("red");
         } else {
                 victoryCount = 0;
         }
@@ -179,8 +216,7 @@ const verifyDiagonal = (ind, val) => {
             }
         }
         if (victoryCount === 4) {
-                console.log('red win');
-                win = true;
+                victory("red");
         } else {
                 victoryCount = 0;
         }
@@ -208,8 +244,7 @@ const verifyDiagonal = (ind, val) => {
                 }
             }   
             if (victoryCount === 4) {
-                console.log('yellow win');
-                win = true;
+                victory("yellow");
         } else {
                 victoryCount = 0;
         }
@@ -239,8 +274,7 @@ const verifyDiagonal = (ind, val) => {
             }
         }
         if (victoryCount === 4) {
-                console.log('yellow win');
-                win = true;
+                victory("yellow");
         } else {
                 victoryCount = 0;
         }
@@ -259,7 +293,11 @@ const verifyVictory = (grd, ind, val) => {
         verifyDiagonal(ind, val);
 }
 
-
+const victory = (color) => {
+    winMsgBox.classList.remove("game__result--off");
+    winDarken.classList.remove("game__result--off");
+    winMsg.textContent = color + " PLAYER WIN";
+}
 
 grids[0].addEventListener("click", () => {
     fill(grid1, 1);
@@ -295,3 +333,21 @@ grids[6].addEventListener("click", () => {
     fill(grid7, 7);
     rounds++;
 })
+
+winBtn.addEventListener("click", () => {
+    reset();
+    winDarken.classList.add("game__result--off");
+    winMsgBox.classList.add("game__result--off");    
+})
+
+/* menu start */
+
+hambBtn.addEventListener("click", () => {
+    menu.classList.remove("header__menu--off");  
+})
+
+closeBtn.addEventListener("click", () => {
+    menu.classList.add("header__menu--off")
+})
+
+/* menu end */

@@ -1,21 +1,75 @@
 /*  Utils */
 /* Base */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 *, ::before, ::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body, button {
+  font-family: "Poppins", sans-serif;
+}
+
 /* Componants */
 /* Layout */
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.game__result {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 400px;
+  z-index: 1000;
+}
+.game__result h2 {
+  text-align: center;
+  font-size: 4em;
+  color: white;
+  text-transform: uppercase;
+}
+.game__result__btn {
+  width: 120px;
+  height: 60px;
+  border: none;
+  border-radius: 60px;
+  margin-top: 15px;
+  font-size: 1.5em;
+}
+.game__result__btn:hover {
+  cursor: pointer;
+  border: solid 4px black;
+}
+.game__result--off {
+  display: none;
+}
+.game__darken {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: black;
+  opacity: 0.8;
+}
 .game__grid {
   display: grid;
-  grid-template: auto/repeat(7, 60px);
+  width: 950px;
+  border: 20px solid blue;
+  grid-template: auto/repeat(7, 130px);
+}
+.game__grid__column {
+  background: blue;
 }
 .game__grid__column__case {
-  height: 60px;
-  width: 60px;
+  height: 130px;
+  width: 130px;
   border: 5px blue solid;
+  border-radius: 130px;
+  background: white;
 }
 
 .red {
@@ -24,6 +78,53 @@
 
 .yellow {
   background: yellow;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 20px 0;
+}
+.header__hamb {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.header__hamb:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+.header__menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 17px 40px 40px 20px;
+  background: white;
+  border-radius: 0 0 15px 0;
+}
+.header__menu img {
+  width: 14px;
+  height: 15px;
+  margin-bottom: 10px;
+}
+.header__menu img:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+.header__menu a {
+  text-decoration: none;
+  color: black;
+}
+.header__menu li {
+  list-style: none;
+  margin-bottom: 8px;
+}
+.header__menu li:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+.header__menu--off {
+  display: none;
 }
 
 /* Page */
