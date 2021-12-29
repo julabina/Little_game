@@ -15,6 +15,10 @@ const winBtn = document.querySelector(".game__result__btn");
 const hambBtn = document.querySelector(".header__hamb");
 const closeBtn = document.querySelector(".header__menu__close");
 const menu = document.querySelector(".header__menu");
+const restartBtn = document.querySelector(".header__menu__restartBtn");
+const aboutBtn = document.querySelector(".header__menu__aboutBtn");
+const modaleAbout = document.querySelector(".modaleAbout");
+const modaleAboutClose = document.querySelector(".modaleAbout__container__img");
 /* menu end */
 
 
@@ -347,7 +351,23 @@ hambBtn.addEventListener("click", () => {
 })
 
 closeBtn.addEventListener("click", () => {
-    menu.classList.add("header__menu--off")
+    menu.classList.add("header__menu--off");
+})
+
+restartBtn.addEventListener("click", () => {
+    reset();
+    menu.classList.add("header__menu--off");
+})
+
+aboutBtn.addEventListener("click", () => {
+    winDarken.classList.remove("game__result--off");
+    modaleAbout.classList.remove("modaleAbout--off");
+    menu.classList.add("header__menu--off");
+})
+
+modaleAboutClose.addEventListener("click", () => {
+    winDarken.classList.add("game__result--off");
+    modaleAbout.classList.add("modaleAbout--off");
 })
 
 /* menu end */

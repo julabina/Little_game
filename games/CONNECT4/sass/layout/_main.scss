@@ -30,6 +30,10 @@
         &--off {
             display: none;
         }
+        @media screen and (max-width:1020px) {
+            top: 220px;
+            margin: 0 10px;
+        }
     }
     &__darken {
         position: fixed;
@@ -51,7 +55,25 @@
                 border: 5px blue solid;
                 border-radius: 130px;
                 background: white;
+                @media screen and (max-width:1020px) {
+                    height: 80px;width: 80px;
+                    border-radius: 80px;
+                }
+                @media screen and (max-width:620px) {
+                    height: 45px;width: 45px;
+                    border-radius: 45px;
+                }
             }
+        }
+        @media screen and (max-width:1020px) {
+            grid-template :auto / repeat(7, 80px);
+            width: 600px;
+        }
+        @media screen and (max-width:620px) {
+            grid-template :auto / repeat(7, 45px);
+            border: 5px solid blue;
+            width: 325px;
+       
         }
     }
 }
