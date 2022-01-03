@@ -20,6 +20,8 @@ const radioPlayer = document.getElementById("radioPlayer");
 const modeBtn = document.getElementById("modeChange");
 const botClassic = document.querySelector(".botContainer-classic");
 const botLizardSpock = document.querySelector(".botContainer-lizardSpock");
+const menuBtn = document.querySelector(".menuBtn");
+const menu = document.querySelector(".radioContainer");
 let choseCpu,
   result,
   status,
@@ -964,3 +966,13 @@ spockLS.addEventListener("click", () => {
     displayLizardSpock();
   }
 });
+
+// menu
+
+menuBtn.addEventListener("click", () => {
+  if (menu.classList.contains("menuOff")) {
+    menu.classList.remove("menuOff");
+  } else {
+    menu.classList.add("menuOff");
+  }
+})
