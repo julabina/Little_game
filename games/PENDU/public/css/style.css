@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .game__alphab {
   display: flex;
   flex-direction: column;
@@ -29,6 +34,101 @@
 }
 .game__alphab__line__letter--focus {
   background: red;
+}
+.game__hangedContainer {
+  width: 400px;
+  height: 400px;
+}
+.game__hangedContainer__part1 {
+  position: relative;
+  top: 360px;
+  left: 20px;
+}
+.game__hangedContainer__part1 img {
+  height: 10px;
+}
+.game__hangedContainer__part2 {
+  position: relative;
+  top: 77px;
+  left: 77px;
+}
+.game__hangedContainer__part2 img {
+  width: 10px;
+}
+.game__hangedContainer__part3 {
+  position: relative;
+  top: -206px;
+  left: 85px;
+}
+.game__hangedContainer__part4 {
+  position: relative;
+  z-index: 10;
+  top: -300px;
+  left: 280px;
+}
+.game__hangedContainer__part5 {
+  z-index: 5;
+  position: relative;
+  top: -350px;
+  left: 275px;
+}
+.game__hangedContainer__part5 img {
+  border-radius: 100px;
+  width: 80px;
+  transform: rotateZ(130deg);
+}
+.game__hangedContainer__part6 {
+  position: relative;
+  z-index: 5;
+  top: -375px;
+  left: 270px;
+}
+.game__hangedContainer__part6 img {
+  width: 6px;
+  transform: rotateZ(15deg);
+}
+.game__hangedContainer__part7 {
+  position: relative;
+  z-index: 1;
+  top: -455px;
+  left: 270px;
+}
+.game__hangedContainer__part7 img {
+  height: 6px;
+  transform: rotateZ(60deg);
+}
+.game__hangedContainer__part8 {
+  position: relative;
+  z-index: 1;
+  top: -478px;
+  left: 243px;
+}
+.game__hangedContainer__part8 img {
+  height: 6px;
+  transform: rotateZ(330deg);
+}
+.game__hangedContainer__part9 {
+  position: relative;
+  z-index: 1;
+  top: -422px;
+  left: 262px;
+}
+.game__hangedContainer__part9 img {
+  width: 6px;
+  transform: rotateZ(355deg);
+}
+.game__hangedContainer__part10 {
+  position: relative;
+  z-index: 1;
+  top: -495px;
+  left: 248px;
+}
+.game__hangedContainer__part10 img {
+  width: 6px;
+  transform: rotateZ(15deg);
+}
+.game__hangedContainer--off {
+  display: none;
 }
 .game--off {
   display: none;
