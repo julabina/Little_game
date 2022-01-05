@@ -6,4 +6,36 @@
   box-sizing: border-box;
 }
 
+.game__alphab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.game__alphab__line {
+  display: flex;
+}
+.game__alphab__line__letter {
+  width: 40px;
+  height: 40px;
+  background: blue;
+  border: 1px solid white;
+  color: white;
+  line-height: 38px;
+  text-align: center;
+}
+.game__alphab__line__letter:hover {
+  background: #2e2ebe;
+  cursor: pointer;
+}
+.game__alphab__line__letter--focus {
+  background: red;
+}
+.game--off {
+  display: none;
+}
+
+header {
+  display: flex;
+}
+
 /*# sourceMappingURL=style.css.map */
