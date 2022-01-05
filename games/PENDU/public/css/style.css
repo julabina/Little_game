@@ -1,9 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Signika+Negative:wght@500&display=swap");
 *,
 ::after,
 ::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.game__word {
+  font-family: "Signika Negative", sans-serif;
 }
 
 .game {
@@ -129,6 +138,36 @@
 }
 .game__hangedContainer--off {
   display: none;
+}
+.game__word {
+  display: flex;
+}
+.game__word__letterContainer {
+  width: 23px;
+}
+.game__word__letterContainer__letter {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.7em;
+}
+.game__word__letterContainer--off {
+  display: none;
+}
+.game__changeWordBtn {
+  border: initial;
+  height: 40px;
+  width: 130px;
+  background: blue;
+  font-size: 1.1em;
+  color: white;
+  border-radius: 40px;
+  margin-top: 40px;
+}
+.game__changeWordBtn:hover {
+  background: white;
+  border: blue 3px solid;
+  color: blue;
+  cursor: pointer;
 }
 .game--off {
   display: none;

@@ -119,6 +119,35 @@
             display: none;
         }
     }
+    &__word {
+        display: flex;
+        &__letterContainer {
+            width: 23px;
+            &__letter {
+                text-transform: uppercase;
+                text-align: center;
+                font-size: 1.7em;
+            }
+            &--off {
+                display: none;
+            }
+        }
+    }
+    &__changeWordBtn {
+        border: initial;
+        height: 40px;width: 130px;
+        background: blue;
+        font-size: 1.1em;
+        color: white;
+        border-radius: 40px;
+        margin-top: 40px;
+        &:hover {
+            background: white;
+            border : blue 3px solid;
+            color: blue;
+            cursor: pointer;
+        }
+    }
     &--off {
         display: none;
     }
