@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./public/css/style.css">
-    <title>Le pendu</title>
+    <title class="title"></title>
 </head>
 <body>
     <header>
@@ -13,12 +13,16 @@
         <div class="menu menu--off">
             <img class="menu__closeBtn" src="./assets/icon-close-menu.svg" alt="close icon">
             <ul>
-                <li class="menu__news">New game</li>
-                <a href="https://julabina.github.io/Littles_games/"><li>Back to games selection</li></a>
-                <li class="menu__about">About</li>
+                <li class="menu__news"></li>
+                <a href="https://julabina.github.io/Littles_games/"><li class="menu__back">Back to games selection</li></a>
+                <li class="menu__about"></li>
             </ul>
         </div>
-        <h1>LE PENDU</h1>
+        <h1 class="headerTitle"></h1>
+        <div class="flagsContainer">
+            <img src="./assets/fr.svg" alt="france flag" class="flagsContainer__flag flagsContainer__flag--selected">
+            <img src="./assets/gb.svg" alt="british flag" class="flagsContainer__flag">
+        </div>
     </header>
     <main>
         <div class="game">
@@ -129,12 +133,12 @@
             <div class="game__result game--off">
 
             </div>
-            <button class="game__changeWordBtn">Changer mot</button>
+            <button class="game__changeWordBtn"></button>
         </div>
         <div class="resultContainer resultContainer--off">
             <h1 class="resultContainer__result"></h1>
             <h3 class="resultContainer__word"></h3>
-            <button class="resultContainer__btn">Nouvelle partie</button>
+            <button class="resultContainer__btn"></button>
         </div>
     </main>
     
@@ -142,7 +146,7 @@
 
     <div class="modaleAbout modaleAbout--off">
         <div class="modaleAbout__container">
-            <h2>Le pendu</h2>
+            <h2 class="modaleAbout__container__title"></h2>
             <a href="https://github.com/julabina/Littles_games/tree/master/games/PENDU"><p>github repository</p></a>
             <a href="https://github.com/julabina"><p>github profil</p></a>
             <button class="modaleAbout__btn">ok</button>

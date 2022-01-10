@@ -48,3 +48,19 @@ header {
         }
     }
 }
+
+.flagsContainer {
+    position: absolute;
+    right: 15px;top: 15px;
+    &__flag {
+        opacity: 0.4;
+        margin-left: 3px;
+        &--selected {
+            opacity: 1;
+        }
+        &:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+    }
+}

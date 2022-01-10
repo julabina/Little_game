@@ -15,9 +15,16 @@ const newGameLink = document.querySelector(".menu__news");
 const about = document.querySelector(".menu__about");
 const modaleAbout = document.querySelector(".modaleAbout");
 const modaleBtn = document.querySelector(".modaleAbout__btn");
+// change language
+const flags = document.querySelectorAll(".flagsContainer__flag");
+const windowTitle = document.querySelector(".title");
+const headerTitle = document.querySelector(".headerTitle");
+const modaleTitle = document.querySelector(".modaleAbout__container__title");
+const menuBack = document.querySelector(".menu__back");
 
 let datas, word, pts ;
 let hangPts = 0;
+let french = true;
 
 
 fetch("../data/words.json")
@@ -27,6 +34,28 @@ fetch("../data/words.json")
         assemblyWord();
     }
 );
+
+const changeLanguage = () => {
+    if (french === true) {
+        windowTitle.textContent = 'PENDU';
+        headerTitle.textContent = 'LE PENDU';
+        changeWordBtn.textContent = 'Changer mot';
+        modaleTitle.textContent = 'Le pendu';
+        resultBtn.textContent = 'Nouvelle partie';
+        newGameLink.textContent = 'Nouvelle partie';
+        about.textContent = 'A propos';
+        menuBack.textContent = 'Retourner à la selection des jeux';
+    } else {
+        windowTitle.textContent = 'HANGMAN';
+        headerTitle.textContent = 'HANGMAN';
+        changeWordBtn.textContent = 'Change word';
+        modaleTitle.textContent = 'Hangman';
+        resultBtn.textContent = 'New game';
+        newGameLink.textContent = 'New game';
+        about.textContent = 'About';
+        menuBack.textContent = 'Back to games selection';
+    }
+}
 
 const resetWord = () => {
     for (let i = 0; i < wordLetterContainer.length; i++) {
@@ -47,8 +76,14 @@ const resetWord = () => {
 }
 
 const randomWord = () => {
-    a = (Math.ceil((Math.random() * datas.fr.length))) - 1;
-    word = datas.fr[a];
+    let a;
+    if (french === true) {
+        a = (Math.ceil((Math.random() * datas.fr.length))) - 1;
+        word = datas.fr[a];
+    } else {
+        a = (Math.ceil((Math.random() * datas.gb.length))) - 1;
+        word = datas.gb[a];
+    }   
 }
 
 const assemblyWord = () => {
@@ -85,9 +120,17 @@ const finalResult = (res) => {
     resultContainer.classList.remove("resultContainer--off");
     resultWord.textContent = word;
     if (res === true) {
-        result.textContent = "Gagné";
+        if (french === true) {
+            result.textContent = "Gagné";
+        } else {
+            result.textContent = "Win";          
+        }
     } else {
-        result.textContent = "Perdu";
+        if (french === true) {
+            result.textContent = "Perdu";
+        } else {
+            result.textContent = "Lose";
+        }
     }
 }
 
@@ -99,6 +142,8 @@ const makeHangman = () => {
         hangPts += 1;
     }
 }
+
+changeLanguage();
 
 changeWordBtn.addEventListener("click", () => {
     assemblyWord();
@@ -261,4 +306,20 @@ about.addEventListener("click", () => {
 modaleBtn.addEventListener("click", () => {
     console.log('test');
     modaleAbout.classList.add("modaleAbout--off");
+})
+
+flags[0].addEventListener("click", () => {
+    flags[0].classList.add("flagsContainer__flag--selected");
+    flags[1].classList.remove("flagsContainer__flag--selected");
+    french = true;
+    changeLanguage();
+    assemblyWord();
+})
+
+flags[1].addEventListener("click", () => {
+    flags[0].classList.remove("flagsContainer__flag--selected");
+    flags[1].classList.add("flagsContainer__flag--selected");
+    french = false;
+    changeLanguage();
+    assemblyWord();
 })

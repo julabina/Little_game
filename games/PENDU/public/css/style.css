@@ -171,7 +171,7 @@ body {
 .game__hangedContainer__part9 {
   position: relative;
   z-index: 1;
-  top: -422px;
+  top: -432px;
   left: 262px;
 }
 .game__hangedContainer__part9 img {
@@ -181,7 +181,7 @@ body {
 .game__hangedContainer__part10 {
   position: relative;
   z-index: 1;
-  top: -495px;
+  top: -505px;
   left: 248px;
 }
 .game__hangedContainer__part10 img {
@@ -321,6 +321,23 @@ header img {
 }
 .menu__closeBtn:hover {
   opacity: 0.7;
+  cursor: pointer;
+}
+
+.flagsContainer {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+.flagsContainer__flag {
+  opacity: 0.4;
+  margin-left: 3px;
+}
+.flagsContainer__flag--selected {
+  opacity: 1;
+}
+.flagsContainer__flag:hover {
+  opacity: 1;
   cursor: pointer;
 }
 
