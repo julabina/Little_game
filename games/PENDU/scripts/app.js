@@ -8,6 +8,9 @@ const result = document.querySelector(".resultContainer__result");
 const resultWord = document.querySelector(".resultContainer__word");
 const resultBtn = document.querySelector(".resultContainer__btn");
 const hangedPart = document.querySelectorAll(".game__hangedContainer__part");
+const hamburgerBtn = document.querySelector(".hamburgerBtn");
+const closeMenuBtn = document.querySelector(".menu__closeBtn");
+const menu = document.querySelector(".menu");
 
 let datas, word, pts ;
 let hangPts = 0;
@@ -233,3 +236,10 @@ alphLetters[25].addEventListener('click', () => {
     verifyLetter("z");
 })
 
+hamburgerBtn.addEventListener("click", () => {
+    menu.classList.remove("menu--off");
+})
+
+closeMenuBtn.addEventListener("click", () => {
+    menu.classList.add("menu--off");
+})

@@ -220,6 +220,43 @@ body {
 
 header {
   display: flex;
+  justify-content: center;
+  height: 100px;
+  padding-top: 10px;
+}
+header img {
+  height: 15px;
+}
+
+.hamburgerBtn {
+  position: absolute;
+  top: 17px;
+  left: 17px;
+}
+.hamburgerBtn:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 17px;
+  background: white;
+  border-right: solid black 2px;
+  border-bottom: solid black 2px;
+  border-radius: 0 0 25px 0;
+}
+.menu li {
+  list-style: none;
+}
+.menu--off {
+  display: none;
+}
+.menu__closeBtn:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
