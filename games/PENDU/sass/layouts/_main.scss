@@ -19,8 +19,11 @@
                     background: rgb(46, 46, 190);
                     cursor: pointer;
                 }
-                &--focus {
+                &--chosen {
                     background:red;
+                    &:hover {
+                        background:rgba(233, 21, 21, 0.726);
+                    }
                 }
             }
         }
@@ -134,19 +137,34 @@
         }
     }
     &__changeWordBtn {
-        border: initial;
-        height: 40px;width: 130px;
-        background: blue;
-        font-size: 1.1em;
-        color: white;
-        border-radius: 40px;
-        margin-top: 40px;
-        &:hover {
-            background: white;
-            border : blue 3px solid;
-            color: blue;
-            cursor: pointer;
-        }
+        @include btn;
+    }
+    &--off {
+        display: none;
+    }
+}
+
+.resultContainer {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    top: 0;left: 0;
+    width: 100%;height: 100%;
+    background: rgba(0, 0, 0, 0.938);
+    color: white;
+    h1 {
+        font-size: 4em;
+        margin-top: -250px;
+    }
+    h3 {
+        font-size: 2em;
+        margin: 40px 0 40px 0;
+    }
+    &__btn {
+        @include btn;
     }
     &--off {
         display: none;

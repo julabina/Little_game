@@ -1,0 +1,15 @@
+@mixin btn {
+    border: initial;
+        height: 40px;width: 130px;
+        background: blue;
+        font-size: 1.1em;
+        color: white;
+        border-radius: 40px;
+        margin-top: 40px;
+        &:hover {
+            background: white;
+            border : blue 3px solid;
+            color: blue;
+            cursor: pointer;
+        }
+}
