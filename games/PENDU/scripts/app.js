@@ -27,7 +27,7 @@ let hangPts = 0;
 let french = true;
 
 
-fetch("../data/words.json")
+fetch("data/words.json")
     .then((res) => res.json())
     .then((data) => {
         datas = data;
