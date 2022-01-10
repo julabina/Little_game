@@ -37,6 +37,11 @@ body {
   padding: 20px;
   border-radius: 15px;
 }
+@media screen and (max-width: 380px) {
+  .modaleAbout__container {
+    width: 300px;
+  }
+}
 .modaleAbout h2 {
   margin-bottom: 30px;
   font-size: 2.5em;
@@ -95,6 +100,13 @@ body {
 }
 .game__alphab__line__letter--chosen:hover {
   background: rgba(233, 21, 21, 0.726);
+}
+@media screen and (max-width: 380px) {
+  .game__alphab__line__letter {
+    width: 35px;
+    height: 35px;
+    line-height: 34px;
+  }
 }
 .game__hangedContainer {
   width: 400px;
@@ -265,6 +277,12 @@ body {
 }
 .resultContainer--off {
   display: none;
+}
+@media screen and (max-width: 600px) {
+  .resultContainer {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 a {
