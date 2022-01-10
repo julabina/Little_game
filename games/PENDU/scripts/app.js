@@ -98,13 +98,13 @@ const assemblyWord = () => {
 const verifyLetter = (letter) => {
     let a = 0;
     for (let i = 0; i < word.length; i++) {
-        if (letter === word[i]) {
-            wordLetter[i].textContent = letter;
-            pts += 1;
-            verifyWin();
-            a++;
+            if (letter === word[i]) {
+                wordLetter[i].textContent = letter;
+                pts += 1;
+                verifyWin();
+                a++;
+            }
         }
-    }
     if (a === 0) {
         makeHangman();
     }
@@ -156,133 +156,237 @@ resultBtn.addEventListener("click", () => {
 })
 
 alphLetters[0].addEventListener('click', () => {
-    alphLetters[0].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("a");
+    if (alphLetters[0].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[0].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("a");
+    }
 })
 
 alphLetters[1].addEventListener('click', () => {
-    alphLetters[1].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("b");
+    if (alphLetters[1].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[1].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("b");
+    }
 })
 
 alphLetters[2].addEventListener('click', () => {
-    alphLetters[2].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("c");
+    if (alphLetters[2].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[2].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("c");
+    }
 })
 
 alphLetters[3].addEventListener('click', () => {
-    alphLetters[3].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("d");
+    if (alphLetters[3].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[3].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("d");
+    }
 })
 
 alphLetters[4].addEventListener('click', () => {
-    alphLetters[4].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("e");
+    if (alphLetters[4].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[4].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("e");
+    }
 })
 
 alphLetters[5].addEventListener('click', () => {
-    alphLetters[5].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("f");
+    if (alphLetters[5].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[5].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("f");
+    }
 })
 
 alphLetters[6].addEventListener('click', () => {
-    alphLetters[6].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("g");
+    if (alphLetters[6].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[6].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("g");
+    }
 })
 
 alphLetters[7].addEventListener('click', () => {
-    alphLetters[7].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("h");
+    if (alphLetters[7].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[7].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("h");
+    }
 })
 
 alphLetters[8].addEventListener('click', () => {
-    alphLetters[8].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("i");
+    if (alphLetters[8].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[8].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("i");
+    }
 })
 
 alphLetters[9].addEventListener('click', () => {
-    alphLetters[9].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("j");
+    if (alphLetters[9].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[9].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("j");
+    }
 })
 
 alphLetters[10].addEventListener('click', () => {
-    alphLetters[10].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("k");
+    if (alphLetters[10].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[10].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("k");
+    }
 })
 
 alphLetters[11].addEventListener('click', () => {
-    alphLetters[11].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("l");
+    if (alphLetters[11].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[11].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("l");
+    }
 })
 
 alphLetters[12].addEventListener('click', () => {
-    alphLetters[12].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("m");
+    if (alphLetters[12].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[12].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("m");
+    }
 })
 
 alphLetters[13].addEventListener('click', () => {
-    alphLetters[13].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("n");
+    if (alphLetters[13].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[13].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("n");
+    }
 })
 
 alphLetters[14].addEventListener('click', () => {
-    alphLetters[14].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("o");
+    if (alphLetters[14].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[14].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("o");
+    }
 })
 
 alphLetters[15].addEventListener('click', () => {
-    alphLetters[15].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("p");
+    if (alphLetters[15].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[15].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("p");
+    }
 })
 
 alphLetters[16].addEventListener('click', () => {
-    alphLetters[16].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("q");
+    if (alphLetters[16].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[16].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("q");
+    }
 })
 
 alphLetters[17].addEventListener('click', () => {
-    alphLetters[17].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("r");
+    if (alphLetters[17].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[17].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("r");
+    }
 })
 
 alphLetters[18].addEventListener('click', () => {
-    alphLetters[18].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("s");
+    if (alphLetters[18].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[18].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("s");
+    }
 })
 
 alphLetters[19].addEventListener('click', () => {
-    alphLetters[19].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("t");
+    if (alphLetters[19].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[19].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("t");
+    }
 })
 
 alphLetters[20].addEventListener('click', () => {
-    alphLetters[20].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("u");
+    if (alphLetters[20].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[20].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("u");
+    }
 })
 
 alphLetters[21].addEventListener('click', () => {
-    alphLetters[21].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("v");
+    if (alphLetters[21].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[21].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("v");
+    }
 })
 
 alphLetters[22].addEventListener('click', () => {
-    alphLetters[22].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("w");
+    if (alphLetters[22].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[22].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("w");
+    }
 })
 
 alphLetters[23].addEventListener('click', () => {
-    alphLetters[23].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("x");
+    if (alphLetters[23].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[23].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("x");
+    }
 })
 
 alphLetters[24].addEventListener('click', () => {
-    alphLetters[24].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("y");
+    if (alphLetters[24].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[24].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("y");
+    }
 })
 
 alphLetters[25].addEventListener('click', () => {
-    alphLetters[25].classList.add("game__alphab__line__letter--chosen");
-    verifyLetter("z");
+    if (alphLetters[25].classList.contains("game__alphab__line__letter--chosen")) {
+        makeHangman();
+    } else {
+        alphLetters[25].classList.add("game__alphab__line__letter--chosen");
+        verifyLetter("z");
+    }
 })
 
 hamburgerBtn.addEventListener("click", () => {
