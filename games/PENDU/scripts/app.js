@@ -27,7 +27,7 @@ let hangPts = 0;
 let french = true;
 
 
-fetch("PENDU/data/words.json")
+fetch("words.json")
     .then((res) => res.json())
     .then((data) => {
         datas = data;
