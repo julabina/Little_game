@@ -11,6 +11,10 @@ const hangedPart = document.querySelectorAll(".game__hangedContainer__part");
 const hamburgerBtn = document.querySelector(".hamburgerBtn");
 const closeMenuBtn = document.querySelector(".menu__closeBtn");
 const menu = document.querySelector(".menu");
+const newGameLink = document.querySelector(".menu__news");
+const about = document.querySelector(".menu__about");
+const modaleAbout = document.querySelector(".modaleAbout");
+const modaleBtn = document.querySelector(".modaleAbout__btn");
 
 let datas, word, pts ;
 let hangPts = 0;
@@ -242,4 +246,19 @@ hamburgerBtn.addEventListener("click", () => {
 
 closeMenuBtn.addEventListener("click", () => {
     menu.classList.add("menu--off");
+})
+
+newGameLink.addEventListener("click", () => {
+    menu.classList.add("menu--off");
+    assemblyWord();
+})
+
+about.addEventListener("click", () => {
+    menu.classList.add("menu--off");
+    modaleAbout.classList.remove("modaleAbout--off");
+})
+
+modaleBtn.addEventListener("click", () => {
+    console.log('test');
+    modaleAbout.classList.add("modaleAbout--off");
 })
