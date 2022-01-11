@@ -18,8 +18,8 @@ Several small games coded in vanilla javascript.
 
 Simple quizz.
 
-![](./assets/screenQ1.png)
-![](./assets/screenQ2.png)
+![](./assets/screenshot/screenQ1.png)
+![](./assets/screenshot/screenQ2.png)
 
 <https://julabina.github.io/Littles_games/games/QUIZZ/index.html>
 
@@ -31,7 +31,7 @@ Simple quizz.
 
 Shifumy classic game.
 
-![](./assets/screenShi1.png)
+![](./assets/screenshot/screenShi1.png)
 
 <https://julabina.github.io/Littles_games/games/SHIFUMI/index.html>
 
@@ -43,7 +43,7 @@ Shifumy classic game.
 
 The goal is to find the right number in the allotted time.
 
-![](./assets/screenPrice2.png)
+![](./assets/screenshot/screenPrice2.png)
 
 <https://julabina.github.io/Littles_games/games/THE_PRICE_IS_RIGHT/index.html>
 
@@ -51,7 +51,7 @@ The goal is to find the right number in the allotted time.
 
 Classic yahtze game.
 
-![](./assets/screenYams.png)
+![](./assets/screenshot/screenYams.png)
 
 <https://julabina.github.io/Littles_games/games/YAMS/index.html>
 
@@ -59,7 +59,7 @@ Classic yahtze game.
 
 Simple loto game.
 
-![](./assets/screenLoto.png)
+![](./assets/screenshot/screenLoto.png)
 
 <https://julabina.github.io/Littles_games/games/LOTO/index.html>
 
@@ -67,7 +67,7 @@ Simple loto game.
 
 Like the classic game connect 4 from Hasbro.
 
-![](./assets/screenConnect.png)
+![](./assets/screenshot/screenConnect.png)
 
 <https://julabina.github.io/Littles_games/games/CONNECT4/index.html>
 
@@ -75,7 +75,7 @@ Like the classic game connect 4 from Hasbro.
 
 Classic hangman game.
 
-![](./assets/screenPendu.png)
+![](./assets/screenshot/screenPendu.png)
 
 <https://julabina.github.io/Littles_games/games/PENDU/index.html>
 
