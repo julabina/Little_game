@@ -6,7 +6,7 @@ Several small games coded in vanilla javascript.
 
 # Games 
 
-- [Quizz] (#quizz)
+- [Quizz](#quizz)
 - [Shifumy](#shifumy)
 - [The price is rigth](#the-price-is-rigth)
 - [Yams](#yams)
