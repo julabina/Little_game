@@ -4,7 +4,7 @@ Several small games coded in vanilla javascript.
 
 [Live site](https://julabina.github.io/Littles_games/)
 
-## Games 
+# Games 
 
 - [Quizz] (#quizz)
 - [Shifumy](#shifumy)
@@ -14,7 +14,7 @@ Several small games coded in vanilla javascript.
 - [Connect 4](#connect-4)
 - [Hangman](#hangman)
 
-### Quizz
+## Quizz
 
 Simple quizz.
 
@@ -23,11 +23,11 @@ Simple quizz.
 
 <https://julabina.github.io/Littles_games/games/QUIZZ/index.html>
 
-#### Features
+### Features
 
 - Manipulate JSON data 
 
-### Shifumy
+## Shifumy
 
 Shifumy classic game.
 
@@ -35,11 +35,11 @@ Shifumy classic game.
 
 <https://julabina.github.io/Littles_games/games/SHIFUMI/index.html>
 
-#### Features
+### Features
 
 - Simple AI
 
-### The price is rigth
+## The price is rigth
 
 The goal is to find the right number in the allotted time.
 
@@ -47,7 +47,7 @@ The goal is to find the right number in the allotted time.
 
 <https://julabina.github.io/Littles_games/games/THE_PRICE_IS_RIGHT/index.html>
 
-### Yams
+## Yams
 
 Classic yahtze game.
 
@@ -55,7 +55,7 @@ Classic yahtze game.
 
 <https://julabina.github.io/Littles_games/games/YAMS/index.html>
 
-### Loto
+## Loto
 
 Simple loto game.
 
@@ -63,7 +63,7 @@ Simple loto game.
 
 <https://julabina.github.io/Littles_games/games/LOTO/index.html>
 
-### Connect 4
+## Connect 4
 
 Like the classic game connect 4 from Hasbro.
 
@@ -71,7 +71,7 @@ Like the classic game connect 4 from Hasbro.
 
 <https://julabina.github.io/Littles_games/games/CONNECT4/index.html>
 
-### Hangman
+## Hangman
 
 Classic hangman game.
 
@@ -79,6 +79,6 @@ Classic hangman game.
 
 <https://julabina.github.io/Littles_games/games/PENDU/index.html>
 
-#### Features
+### Features
 
 - Multi language
