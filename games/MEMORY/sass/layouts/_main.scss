@@ -1,0 +1,44 @@
+.gameContainer {
+    display: grid;
+    grid-gap: 5px;
+    &--12 {
+        grid-template: 80px 80px 80px / 112.58px 112.58px 112.58px 112.58px;
+    }
+    &--16 {
+        grid-template: 80px 80px 80px 80px/ 112.58px 112.58px 112.58px 112.58px;      
+    }
+    &--20 {
+        grid-template: 80px 80px 80px 80px / 112.58px 112.58px 112.58px 112.58px 112.58px;
+    }
+    &__container {
+        &:hover {
+            cursor: pointer;
+        }
+        &__cards {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            &__front {
+                @include card;
+                border-radius: 5px;
+                img {
+                    width: 112.58px;
+                }
+            }
+            &__back {
+                border-radius: 5px;
+                width: 100%;height: 100%;
+                @include card; 
+                background-color: red;
+                color: white;
+                transform: rotateX(180deg);             
+            }
+        }
+    }
+}
+
+.turn .gameContainer__container__cards {
+            transform: rotateX(180deg);
+        }

@@ -6,4 +6,104 @@
   box-sizing: border-box;
 }
 
+#hambBtn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+#hambBtn:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+header img {
+  height: 15px;
+}
+header h1 {
+  text-align: center;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+}
+.menu__closeBtn {
+  margin: 12px 0 0 13px;
+}
+.menu__closeBtn:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.menu ul {
+  padding-left: 13px;
+  margin-top: 15px;
+}
+.menu ul li {
+  list-style: none;
+  margin: 5px;
+}
+.menu ul li:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.menu--off {
+  display: none;
+}
+
+.gameContainer {
+  display: grid;
+  grid-gap: 5px;
+}
+.gameContainer--12 {
+  grid-template: 80px 80px 80px/112.58px 112.58px 112.58px 112.58px;
+}
+.gameContainer--16 {
+  grid-template: 80px 80px 80px 80px/112.58px 112.58px 112.58px 112.58px;
+}
+.gameContainer--20 {
+  grid-template: 80px 80px 80px 80px/112.58px 112.58px 112.58px 112.58px 112.58px;
+}
+.gameContainer__container:hover {
+  cursor: pointer;
+}
+.gameContainer__container__cards {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.gameContainer__container__cards__front {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+  border-radius: 5px;
+}
+.gameContainer__container__cards__front img {
+  width: 112.58px;
+}
+.gameContainer__container__cards__back {
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+  background-color: red;
+  color: white;
+  transform: rotateX(180deg);
+}
+
+.turn .gameContainer__container__cards {
+  transform: rotateX(180deg);
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,48 @@
+
+#hambBtn {
+    position: absolute;
+    top: 12px;left: 12px;
+    &:hover {
+        opacity: 0.5;
+        cursor: pointer;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    img {
+        height: 15px;
+    }
+    h1 {
+        text-align: center;
+    }
+}
+
+.menu {
+    position: absolute;
+    top: 0;left: 0;
+    background: white;
+    &__closeBtn {
+        margin: 12px 0 0 13px;
+        &:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+    }
+    ul {
+        padding-left: 13px;
+        margin-top: 15px;
+        li {
+            list-style:none;
+            margin: 5px;
+            &:hover {
+                opacity: 0.5;
+                cursor: pointer;
+            }
+        }
+    }
+    &--off {
+        display: none;
+    }
+}

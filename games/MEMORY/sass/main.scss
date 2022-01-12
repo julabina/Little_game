@@ -1,6 +1,14 @@
 //utils
-
+@import './utils/mixin';
 
 //base
 
 @import './bases/reset';
+
+//component
+
+
+//layouts
+
+@import './layouts/header';
+@import './layouts/main';
