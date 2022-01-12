@@ -21,7 +21,7 @@ Simple quizz.
 ![](./assets/screenshot/screenQ1.png)
 ![](./assets/screenshot/screenQ2.png)
 
-<https://julabina.github.io/Littles_games/games/QUIZZ/index.html>
+[Link](https://julabina.github.io/Littles_games/games/QUIZZ/index.html)
 
 ### Features
 
@@ -33,7 +33,7 @@ Shifumy classic game.
 
 ![](./assets/screenshot/screenShi1.png)
 
-<https://julabina.github.io/Littles_games/games/SHIFUMI/index.html>
+[Link](https://julabina.github.io/Littles_games/games/SHIFUMI/index.html)
 
 ### Features
 
@@ -45,7 +45,7 @@ The goal is to find the right number in the allotted time.
 
 ![](./assets/screenshot/screenPrice2.png)
 
-<https://julabina.github.io/Littles_games/games/THE_PRICE_IS_RIGHT/index.html>
+[Link](https://julabina.github.io/Littles_games/games/THE_PRICE_IS_RIGHT/index.html)
 
 ## Yams
 
@@ -53,7 +53,7 @@ Classic yahtze game.
 
 ![](./assets/screenshot/screenYams.png)
 
-<https://julabina.github.io/Littles_games/games/YAMS/index.html>
+[Link](https://julabina.github.io/Littles_games/games/YAMS/index.html)
 
 ## Loto
 
@@ -61,7 +61,7 @@ Simple loto game.
 
 ![](./assets/screenshot/screenLoto.png)
 
-<https://julabina.github.io/Littles_games/games/LOTO/index.html>
+[Link](https://julabina.github.io/Littles_games/games/LOTO/index.html)
 
 ## Connect 4
 
@@ -69,7 +69,7 @@ Like the classic game connect 4 from Hasbro.
 
 ![](./assets/screenshot/screenConnect.png)
 
-<https://julabina.github.io/Littles_games/games/CONNECT4/index.html>
+[Link](https://julabina.github.io/Littles_games/games/CONNECT4/index.html)
 
 ## Hangman
 
@@ -77,7 +77,7 @@ Classic hangman game.
 
 ![](./assets/screenshot/screenPendu.png)
 
-<https://julabina.github.io/Littles_games/games/PENDU/index.html>
+[Link](https://julabina.github.io/Littles_games/games/PENDU/index.html)
 
 ### Features
 
