@@ -13,13 +13,14 @@ Several small games coded in vanilla javascript.
 - [Loto](#loto)
 - [Connect 4](#connect-4)
 - [Hangman](#hangman)
+- [Memory game](#memory-game)
 
 ## Quizz
 
 Simple quizz.
 
-![](./assets/screenshot/screenQ1.png)
-![](./assets/screenshot/screenQ2.png)
+![](./assets/screenshot/screenQ1.webp)
+![](./assets/screenshot/screenQ2.webp)
 
 [Link](https://julabina.github.io/Littles_games/games/QUIZZ/index.html)
 
@@ -31,7 +32,7 @@ Simple quizz.
 
 Shifumy classic game.
 
-![](./assets/screenshot/screenShi1.png)
+![](./assets/screenshot/screenShi1.webp)
 
 [Link](https://julabina.github.io/Littles_games/games/SHIFUMI/index.html)
 
@@ -43,7 +44,7 @@ Shifumy classic game.
 
 The goal is to find the right number in the allotted time.
 
-![](./assets/screenshot/screenPrice2.png)
+![](./assets/screenshot/screenPrice2.webp)
 
 [Link](https://julabina.github.io/Littles_games/games/THE_PRICE_IS_RIGHT/index.html)
 
@@ -51,7 +52,7 @@ The goal is to find the right number in the allotted time.
 
 Classic yahtze game.
 
-![](./assets/screenshot/screenYams.png)
+![](./assets/screenshot/screenYams.webp)
 
 [Link](https://julabina.github.io/Littles_games/games/YAMS/index.html)
 
@@ -59,7 +60,7 @@ Classic yahtze game.
 
 Simple loto game.
 
-![](./assets/screenshot/screenLoto.png)
+![](./assets/screenshot/screenLoto.webp)
 
 [Link](https://julabina.github.io/Littles_games/games/LOTO/index.html)
 
@@ -67,7 +68,7 @@ Simple loto game.
 
 Like the classic game connect 4 from Hasbro.
 
-![](./assets/screenshot/screenConnect.png)
+![](./assets/screenshot/screenConnect.webp)
 
 [Link](https://julabina.github.io/Littles_games/games/CONNECT4/index.html)
 
@@ -75,10 +76,18 @@ Like the classic game connect 4 from Hasbro.
 
 Classic hangman game.
 
-![](./assets/screenshot/screenPendu.png)
+![](./assets/screenshot/screenPendu.webp)
 
 [Link](https://julabina.github.io/Littles_games/games/PENDU/index.html)
 
 ### Features
 
 - Multi language
+
+## Memory game
+
+Simple memory game.
+
+![](./assets/screenshot/screenMemory.webp)
+
+[Link](https://julabina.github.io/Littles_games/games/MEMORY/index.html)
