@@ -6,6 +6,8 @@ const menu = document.querySelector(".menu");
 const menuNew = document.querySelector(".menu__list__new");
 const menuNbrs = document.querySelectorAll(".menu__list__nbrs");
 const menuAbout = document.querySelector(".menu__list__about");
+const modale = document.querySelector(".modale");
+const modaleCloseBtn=document.querySelector(".modale__container__closeBtn");
 
 let cardID = [];
 let cardIDRandom = [];
@@ -195,5 +197,10 @@ menuNbrs[5].addEventListener("click", () => {
 })
 
 menuAbout.addEventListener("click", () => {
+    modale.classList.remove("modale--off");
+    menu.classList.add("menu--off");
+})
 
+modaleCloseBtn.addEventListener("click", () => {
+    modale.classList.add("modale--off");
 })
