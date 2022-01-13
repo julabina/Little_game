@@ -9,21 +9,57 @@ main {
     grid-gap: 5px;
     &--12 {
         grid-template: 80px 80px 80px / 112.58px 112.58px 112.58px 112.58px;
+        @include tablet-only {
+            grid-template: 53.33px 53.33px 53.33px / 75.05px 75.05px 75.05px 75.05px;
+        }
+        @include mobile-only {
+            grid-template: 75.05px 75.05px 75.05px / 53.33px 53.33px 53.33px 53.33px;
+        }
     }
     &--16 {
         grid-template: 80px 80px 80px 80px/ 112.58px 112.58px 112.58px 112.58px;      
+        @include tablet-only {
+            grid-template:   53.33px 53.33px 53.33px 53.33px/ 75.05px 75.05px 75.05px 75.05px; 
+        }
+        @include mobile-only {
+            grid-template:   75.05px 75.05px 75.05px 75.05px/ 53.33px 53.33px 53.33px 53.33px; 
+        }
     }
     &--20 {
         grid-template: 80px 80px 80px 80px / 112.58px 112.58px 112.58px 112.58px 112.58px;
+        @include tablet-only {
+            grid-template: 53.33px 53.33px 53.33px 53.33px / 75.05px 75.05px 75.05px 75.05px 75.05px;
+        }
+        @include mobile-only {
+            grid-template: 75.05px 75.05px 75.05px 75.05px / 53.33px 53.33px 53.33px 53.33px 53.33px;
+        }
     }
     &--24 {
         grid-template: 80px 80px 80px 80px / 112.58px 112.58px 112.58px 112.58px 112.58px 112.58px;
+        @include tablet-only {
+            grid-template: 53.33px 53.33px 53.33px 53.33px / 75.05px 75.05px 75.05px 75.05px 75.05px 75.05px;
+        }
+        @include mobile-only {
+            grid-template: 75.05px 75.05px 75.05px 75.05px / 53.33px 53.33px 53.33px 53.33px 53.33px 53.33px;
+        }
     }
     &--30 {
         grid-template: 80px 80px 80px 80px 80px / 112.58px 112.58px 112.58px 112.58px 112.58px 112.58px;
+        @include tablet-only {
+            grid-template: 53.33px 53.33px 53.33px 53.33px 53.33px / 75.05px 75.05px 75.05px 75.05px 75.05px 75.05px;
+        }
+        @include mobile-only {
+            grid-template: 75.05px 75.05px 75.05px 75.05px 75.05px / 53.33px 53.33px 53.33px 53.33px 53.33px 53.33px;
+        }
     }
     &--36 {
         grid-template: 80px 80px 80px 80px 80px 80px / 112.58px 112.58px 112.58px 112.58px 112.58px 112.58px;
+        @include tablet-only {
+            grid-template: 53.33px 53.33px 53.33px 53.33px 53.33px 53.33px / 75.05px 75.05px 75.05px 75.05px 75.05px 75.05px;
+        }
+        @include mobile-only {
+            grid-template: 75.05px 75.05px 75.05px 75.05px 75.05px 75.05px / 53.33px 53.33px 53.33px 53.33px 53.33px 53.33px;
+        }
     }
     &__container {
         &:hover {
@@ -40,15 +76,23 @@ main {
                 border-radius: 5px;
                 img {
                     width: 112.58px;
+                    @include tablet-only {
+                        width: 75.05px;
+                    }
+                    @include mobile-only {
+                        transform:rotateZ(90deg) translateX(15%) translateY(21%);
+                    }
                 }
             }
             &__back {
+                background: white;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 border-radius: 5px;
                 width: 100%;height: 100%;
                 border : solid rgba(0, 0, 0, 0.247) 1px ;
+                -ms-transform: rotateX(180deg);  
                 transform: rotateX(180deg);  
                 @include card; 
                 &__value {
@@ -67,6 +111,7 @@ main {
 }
 
 .turn .gameContainer__container__cards {
+            -ms-transform: rotateX(180deg);
             transform: rotateX(180deg);
 }
 

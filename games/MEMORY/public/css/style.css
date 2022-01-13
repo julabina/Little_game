@@ -81,20 +81,80 @@ main {
 .gameContainer--12 {
   grid-template: 80px 80px 80px/112.58px 112.58px 112.58px 112.58px;
 }
+@media screen and (max-width: 750px) {
+  .gameContainer--12 {
+    grid-template: 53.33px 53.33px 53.33px/75.05px 75.05px 75.05px 75.05px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .gameContainer--12 {
+    grid-template: 75.05px 75.05px 75.05px/53.33px 53.33px 53.33px 53.33px;
+  }
+}
 .gameContainer--16 {
   grid-template: 80px 80px 80px 80px/112.58px 112.58px 112.58px 112.58px;
+}
+@media screen and (max-width: 750px) {
+  .gameContainer--16 {
+    grid-template: 53.33px 53.33px 53.33px 53.33px/75.05px 75.05px 75.05px 75.05px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .gameContainer--16 {
+    grid-template: 75.05px 75.05px 75.05px 75.05px/53.33px 53.33px 53.33px 53.33px;
+  }
 }
 .gameContainer--20 {
   grid-template: 80px 80px 80px 80px/112.58px 112.58px 112.58px 112.58px 112.58px;
 }
+@media screen and (max-width: 750px) {
+  .gameContainer--20 {
+    grid-template: 53.33px 53.33px 53.33px 53.33px/75.05px 75.05px 75.05px 75.05px 75.05px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .gameContainer--20 {
+    grid-template: 75.05px 75.05px 75.05px 75.05px/53.33px 53.33px 53.33px 53.33px 53.33px;
+  }
+}
 .gameContainer--24 {
   grid-template: 80px 80px 80px 80px/112.58px 112.58px 112.58px 112.58px 112.58px 112.58px;
+}
+@media screen and (max-width: 750px) {
+  .gameContainer--24 {
+    grid-template: 53.33px 53.33px 53.33px 53.33px/75.05px 75.05px 75.05px 75.05px 75.05px 75.05px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .gameContainer--24 {
+    grid-template: 75.05px 75.05px 75.05px 75.05px/53.33px 53.33px 53.33px 53.33px 53.33px 53.33px;
+  }
 }
 .gameContainer--30 {
   grid-template: 80px 80px 80px 80px 80px/112.58px 112.58px 112.58px 112.58px 112.58px 112.58px;
 }
+@media screen and (max-width: 750px) {
+  .gameContainer--30 {
+    grid-template: 53.33px 53.33px 53.33px 53.33px 53.33px/75.05px 75.05px 75.05px 75.05px 75.05px 75.05px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .gameContainer--30 {
+    grid-template: 75.05px 75.05px 75.05px 75.05px 75.05px/53.33px 53.33px 53.33px 53.33px 53.33px 53.33px;
+  }
+}
 .gameContainer--36 {
   grid-template: 80px 80px 80px 80px 80px 80px/112.58px 112.58px 112.58px 112.58px 112.58px 112.58px;
+}
+@media screen and (max-width: 750px) {
+  .gameContainer--36 {
+    grid-template: 53.33px 53.33px 53.33px 53.33px 53.33px 53.33px/75.05px 75.05px 75.05px 75.05px 75.05px 75.05px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .gameContainer--36 {
+    grid-template: 75.05px 75.05px 75.05px 75.05px 75.05px 75.05px/53.33px 53.33px 53.33px 53.33px 53.33px 53.33px;
+  }
 }
 .gameContainer__container:hover {
   cursor: pointer;
@@ -116,7 +176,18 @@ main {
 .gameContainer__container__cards__front img {
   width: 112.58px;
 }
+@media screen and (max-width: 750px) {
+  .gameContainer__container__cards__front img {
+    width: 75.05px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .gameContainer__container__cards__front img {
+    transform: rotateZ(90deg) translateX(15%) translateY(21%);
+  }
+}
 .gameContainer__container__cards__back {
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,6 +195,7 @@ main {
   width: 100%;
   height: 100%;
   border: solid rgba(0, 0, 0, 0.247) 1px;
+  -ms-transform: rotateX(180deg);
   transform: rotateX(180deg);
   position: absolute;
   -webkit-backface-visibility: hidden;
@@ -142,6 +214,7 @@ main {
 }
 
 .turn .gameContainer__container__cards {
+  -ms-transform: rotateX(180deg);
   transform: rotateX(180deg);
 }
 

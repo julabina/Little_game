@@ -3,3 +3,15 @@
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
 }
+
+@mixin tablet-only {
+    @media screen and (max-width: map-get($queries, tablet)) {
+        @content;
+      }
+}
+
+@mixin mobile-only {
+    @media screen and (max-width: map-get($queries, mobile)) {
+        @content;
+      }
+}
