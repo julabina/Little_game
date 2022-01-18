@@ -10,7 +10,7 @@ const statsAccuracy = document.querySelector(".statsContainer__acc");
 const statsWpm = document.querySelector(".statsContainer__wpm");
 const clock = document.querySelector(".clockContainer");
 
-let datas, rand;
+let datas, rand, lang;
 let start = false;
 let wordCount = 0;
 let goodWord = 0;
@@ -45,7 +45,7 @@ const language = () => {
         keystrokeLang = "Touches pressées";
         goodWordLang = "Mots corrects";
         wrongWordLang = "Mots incorrects";
-        
+        lang = "fr";
     } else {
         menuNew.textContent = "New game";
         menu1min.textContent = "1 minute game";
@@ -59,6 +59,7 @@ const language = () => {
         keystrokeLang = "Keystrokes";
         goodWordLang = "Correct word";
         wrongWordLang = "Wrong word";
+        lang = "gb";
     }
 }
 
@@ -107,7 +108,13 @@ const arrayRemove = (arr, value) => {
 }
 
 const makeArray = () => {
-    let a = datas.words.length;
+    
+    let a ;
+    if (lang === "fr") {
+        a = datas.words_fr.length;
+    } else {
+        a = datas.words_gb.length;
+    }
     let test = wordTemporary;
     for (let i = a; i > 0 ; i--) {
         random(i); 
@@ -119,7 +126,11 @@ const makeArray = () => {
 const assemblyWords = () => {
     reset();
     language();
-    wordTemporary = datas.words;
+    if (lang === "fr") {
+        wordTemporary = datas.words_fr;
+    } else {
+        wordTemporary = datas.words_gb;
+    }
     makeArray();
     for (let i = 0; i < wordsArray.length; i++) {
         textContainer.innerHTML += `
