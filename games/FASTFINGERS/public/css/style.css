@@ -4,7 +4,57 @@
   box-sizing: border-box;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+}
+header h1 {
+  text-align: center;
+}
+
+.hamburgerBtn {
+  position: fixed;
+  top: 25px;
+  left: 25px;
+}
+.hamburgerBtn:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  padding: 25px;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  border-radius: 0 0 15px 0;
+}
+.menu img:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.menu ul {
+  margin-top: 17px;
+}
+.menu li {
+  list-style: none;
+  margin: 5px;
+}
+.menu li:hover {
+  cursor: pointer;
+  color: #5c5757;
+}
+.menu--off {
+  display: none;
+}
+
 .flagsContainer {
+  position: fixed;
+  top: 25px;
+  right: 25px;
   display: flex;
   justify-content: space-between;
   width: 50px;

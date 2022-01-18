@@ -9,6 +9,9 @@ const statsKeystroke = document.querySelector(".statsContainer__keyStroke");
 const statsAccuracy = document.querySelector(".statsContainer__acc");
 const statsWpm = document.querySelector(".statsContainer__wpm");
 const clock = document.querySelector(".clockContainer");
+const menu = document.querySelector(".menu");
+const hambBtn = document.querySelector(".hamburgerBtn");
+const crossMenuBtn = document.querySelector(".menu__closeBtn");
 
 let datas, rand, lang;
 let start = false;
@@ -199,4 +202,12 @@ textEntry.addEventListener("keypress", (e) => {
 
 statsNewBtn.addEventListener("click", () => {
     assemblyWords();
+})
+
+hambBtn.addEventListener("click", () => {
+    menu.classList.remove("menu--off")
+})
+
+crossMenuBtn.addEventListener("click", () => {
+    menu.classList.add("menu--off")
 })

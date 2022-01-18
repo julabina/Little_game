@@ -1,4 +1,53 @@
+header {
+    display: flex;
+    justify-content: center;
+    h1 {
+        text-align: center;
+    }
+}
+
+.hamburgerBtn {
+    position: fixed;
+    top: 25px;left: 25px;
+    &:hover {
+        opacity: 0.5;
+        cursor: pointer;
+    }
+}
+
+.menu {
+    position: fixed;
+    top: 0;left: 0;
+    background: white;
+    padding: 25px;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    border-radius: 0 0 15px 0;
+    img {
+        &:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+    }
+    ul {
+        margin-top: 17px;
+    }
+    li {
+        list-style: none;
+        margin: 5px;
+        &:hover {
+            cursor: pointer;
+            color: rgb(92, 87, 87);
+        }
+    }
+    &--off {
+        display: none;
+    }
+}
+
 .flagsContainer {
+    position: fixed;
+    top: 25px;right: 25px;
     display: flex;
     justify-content: space-between;
     width: 50px;
