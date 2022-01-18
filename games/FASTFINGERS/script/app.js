@@ -5,11 +5,13 @@ const statsWrongWord = document.querySelector(".statsContainer__wrong");
 const statsKeyStrokeTotal = document.querySelector(".statsContainer__keyStroke__total");
 const statsKeyStrokeGood = document.querySelector(".statsContainer__keyStroke__good");
 const statsKeyStrokeBad = document.querySelector(".statsContainer__keyStroke__wrong");
+const statsKeystroke = document.querySelector(".statsContainer__keyStroke");
 const statsAccuracy = document.querySelector(".statsContainer__acc");
 const statsWpm = document.querySelector(".statsContainer__wpm");
+const clock = document.querySelector(".clockContainer");
 
 let datas, rand;
-let testt, testtt;
+let start = false;
 let wordCount = 0;
 let goodWord = 0;
 let keyStroke = 0;
@@ -27,18 +29,23 @@ const menuBack = document.querySelector(".menu__back");
 const menuAbout = document.querySelector(".menu__about");
 const statsExplain = document.querySelector(".statsContainer__explain");
 
-let wpmLang;
+let wpmLang, accuracyLang, keystrokeLang, goodWordLang, wrongWordLang;
 
 const language = () => {
     if (flags[0].classList.contains("flagsContainer--focus")) {
         menuNew.textContent = "Nouvelle partie";
-        menu1min.textContent = "1 minute";
-        menu2min.textContent = "2 minutes";
+        menu1min.textContent = "Classique - 1 minute";
+        menu2min.textContent = "Classique - 2 minutes";
         menuTextGame.textContent = "Suivre un texte";
         menuBack.textContent = "Retourner au menu de selection";
         menuAbout.textContent = "A propos";
         statsExplain.textContent = "(Mot par minute)";
         wpmLang = "MPM";
+        accuracyLang = "Précision";
+        keystrokeLang = "Touches pressées";
+        goodWordLang = "Mots corrects";
+        wrongWordLang = "Mots incorrects";
+        
     } else {
         menuNew.textContent = "New game";
         menu1min.textContent = "1 minute game";
@@ -48,6 +55,10 @@ const language = () => {
         menuAbout.textContent = "About";
         statsExplain.textContent = "(Word per minute)";
         wpmLang = "WPM";
+        accuracyLang = "Accuracy";
+        keystrokeLang = "Keystrokes";
+        goodWordLang = "Correct word";
+        wrongWordLang = "Wrong word";
     }
 }
 
@@ -72,7 +83,6 @@ fetch("data.json")
 .then(res => res.json())
 .then(data => {
     datas = data;  
-    testt = data.words;
     assemblyWords();
 })
 
@@ -83,6 +93,7 @@ const reset = () => {
     goodKeyStroke = 0;
     wordsArray = [];
     textContainer.innerHTML = ``;
+    start = false;
 }
 
 const random = (val) => {
@@ -138,20 +149,33 @@ const controlWord = (word) => {
 
 const statsDisplay = () => {
     let badKeyStroke = keyStroke - goodKeyStroke;
-    statsGoodWord.textContent = goodWord;
-    statsWrongWord.textContent = wordCount - goodWord;
-    statsKeyStrokeTotal.textContent = keyStroke;
-    statsKeyStrokeGood.textContent = goodKeyStroke;
-    statsKeyStrokeBad.textContent = badKeyStroke;
+    statsGoodWord.textContent = goodWordLang + " : " + goodWord;
+    statsWrongWord.textContent = wrongWordLang + " : " + (wordCount - goodWord);
+    statsKeystroke.innerHTML = `${keystrokeLang} : (<span class="statsContainer__keyStroke__good">${goodKeyStroke}</span>|<span class="statsContainer__keyStroke__wrong">${badKeyStroke}</span>) <span class="statsContainer__keyStroke__total">${keyStroke}</span>`; 
     statsWpm.textContent = wpmLang + " : " + wordCount;
     statsAccuracy.textContent = Math.round(((100 / keyStroke) * goodKeyStroke)*100) / 100;
 }
 
+const time = () => {
+    let timer = 59;
+   let theTimer = setInterval(() => {
+        clock.textContent = timer;
+        timer--;
+        if(timer < 0) {
+            clearInterval(theTimer);
+            statsDisplay();
+        }
+    }, 1000);
+}
+
 textEntry.addEventListener("keypress", (e) => {
+    if(start === false) {
+        time();
+        start = true;
+    }
     if (e.code === 'Space') {
         controlWord(textEntry.value);
         textEntry.value = '';
-        statsDisplay();
         keyStroke--;
     }
     keyStroke++;
