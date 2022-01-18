@@ -28,19 +28,23 @@
         </div>
     </header>
     <main>
-        <div class="clockContainer"></div>
-        <div class="textContainer"></div>
-        <input type="text" name="" id="textInput">
-        <div class="statsContainer">
-            <h2>Stats :</h2>
-            <h3 class="statsContainer__wpm"></h3>
-            <p class="statsContainer__explain"></p>
-            <p class="statsContainer__acc"></p>
-            <p class="statsContainer__keyStroke"></p>
-            <p class="statsContainer__good"></p>
-            <p class="statsContainer__wrong"></p>
-            <button class="statsContainer__newBtn"></button>
-        </div>
+        <section class="mainContainer">
+            <div class="textContainer"></div>
+            <div class="inputContainer">
+                <input class="inputContainer__inputText" type="text" name="" id="textInput">
+                <div class="inputContainer__clockContainer"></div>
+            </div>
+            <div class="statsContainer statsContainer--off">
+                <h2>Stats</h2>
+                <h3 class="statsContainer__wpm"></h3>
+                <p class="statsContainer__explain"></p>
+                <p class="statsContainer__acc"></p>
+                <p class="statsContainer__keyStroke"></p>
+                <p class="statsContainer__good"></p>
+                <p class="statsContainer__wrong"></p>
+                <button class="statsContainer__newBtn"></button>
+            </div>
+        </section>
     </main>
     <script src="./script/app.js"></script>
 </body>

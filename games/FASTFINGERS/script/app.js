@@ -1,5 +1,6 @@
 const textContainer = document.querySelector(".textContainer");
 const textEntry = document.getElementById("textInput");
+const statsContainer = document.querySelector(".statsContainer");
 const statsGoodWord = document.querySelector(".statsContainer__good");
 const statsWrongWord = document.querySelector(".statsContainer__wrong");
 const statsKeyStrokeTotal = document.querySelector(".statsContainer__keyStroke__total");
@@ -8,17 +9,19 @@ const statsKeyStrokeBad = document.querySelector(".statsContainer__keyStroke__wr
 const statsKeystroke = document.querySelector(".statsContainer__keyStroke");
 const statsAccuracy = document.querySelector(".statsContainer__acc");
 const statsWpm = document.querySelector(".statsContainer__wpm");
-const clock = document.querySelector(".clockContainer");
+const clock = document.querySelector(".inputContainer__clockContainer");
 const menu = document.querySelector(".menu");
 const hambBtn = document.querySelector(".hamburgerBtn");
 const crossMenuBtn = document.querySelector(".menu__closeBtn");
 
-let datas, rand, lang;
+let datas, rand, lang, wpm ;
 let start = false;
+let lineCount = 0;
 let wordCount = 0;
 let goodWord = 0;
 let keyStroke = 0;
 let goodKeyStroke = 0;
+let lettersCount = 0;
 let wordTemporary = [];
 let wordsArray = [];
 
@@ -65,7 +68,7 @@ const language = () => {
         goodWordLang = "Correct word";
         wrongWordLang = "Wrong word";
         lang = "gb";
-        statsNewBtn = "New game";
+        statsNewBtn.textContent = "New game";
     }
 }
 
@@ -103,6 +106,7 @@ const reset = () => {
     start = false;
     textEntry.value = "";
     textEntry.readOnly = false;
+    statsContainer.classList.add("statsContainer--off");
 }
 
 const random = (val) => {
@@ -157,21 +161,32 @@ const controlWord = (word) => {
         goodWord++;
         wordSpan[wordCount].classList.add("textContainer__word--good");
         goodKeyStroke += word.length;
+        let a = word.length + 1;
+        lettersCount += a;
     } else {
         wordSpan[wordCount].classList.add("textContainer__word--wrong");
     }
     wordSpan[wordCount].classList.remove("textContainer__word--focus");
     wordSpan[wordCount + 1].classList.add("textContainer__word--focus");
     wordCount++;
+    lineCount++
+    if (lineCount === 10) {
+        for (let i = 0; i < wordCount; i++) {
+            wordSpan[i].classList.add("textContainer__word--off");
+        }
+        lineCount = 0;
+    }
 }
 
 const statsDisplay = () => {
+    wpm = lettersCount / 5;
+    statsContainer.classList.remove("statsContainer--off");
     let badKeyStroke = keyStroke - goodKeyStroke;
     statsGoodWord.textContent = goodWordLang + " : " + goodWord;
     statsWrongWord.textContent = wrongWordLang + " : " + (wordCount - goodWord);
     statsKeystroke.innerHTML = `${keystrokeLang} : (<span class="statsContainer__keyStroke__good">${goodKeyStroke}</span>|<span class="statsContainer__keyStroke__wrong">${badKeyStroke}</span>) <span class="statsContainer__keyStroke__total">${keyStroke}</span>`; 
-    statsWpm.textContent = wpmLang + " : " + wordCount;
-    statsAccuracy.textContent = Math.round(((100 / keyStroke) * goodKeyStroke)*100) / 100;
+    statsWpm.textContent = wpmLang + " : " + wpm;
+    statsAccuracy.textContent = accuracyLang + " : " + (Math.round(((100 / keyStroke) * goodKeyStroke)*100) / 100);
 }
 
 const time = () => {
