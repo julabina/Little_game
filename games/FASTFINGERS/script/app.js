@@ -28,6 +28,7 @@ const menuTextGame = document.querySelector(".menu__text");
 const menuBack = document.querySelector(".menu__back");
 const menuAbout = document.querySelector(".menu__about");
 const statsExplain = document.querySelector(".statsContainer__explain");
+const statsNewBtn = document.querySelector(".statsContainer__newBtn");
 
 let wpmLang, accuracyLang, keystrokeLang, goodWordLang, wrongWordLang;
 
@@ -46,6 +47,7 @@ const language = () => {
         goodWordLang = "Mots corrects";
         wrongWordLang = "Mots incorrects";
         lang = "fr";
+        statsNewBtn.textContent = "Nouvelle partie"
     } else {
         menuNew.textContent = "New game";
         menu1min.textContent = "1 minute game";
@@ -60,6 +62,7 @@ const language = () => {
         goodWordLang = "Correct word";
         wrongWordLang = "Wrong word";
         lang = "gb";
+        statsNewBtn = "New game";
     }
 }
 
@@ -95,6 +98,8 @@ const reset = () => {
     wordsArray = [];
     textContainer.innerHTML = ``;
     start = false;
+    textEntry.value = "";
+    textEntry.readOnly = false;
 }
 
 const random = (val) => {
@@ -108,7 +113,6 @@ const arrayRemove = (arr, value) => {
 }
 
 const makeArray = () => {
-    
     let a ;
     if (lang === "fr") {
         a = datas.words_fr.length;
@@ -175,6 +179,7 @@ const time = () => {
         if(timer < 0) {
             clearInterval(theTimer);
             statsDisplay();
+            textEntry.readOnly = true;
         }
     }, 1000);
 }
@@ -190,4 +195,8 @@ textEntry.addEventListener("keypress", (e) => {
         keyStroke--;
     }
     keyStroke++;
+})
+
+statsNewBtn.addEventListener("click", () => {
+    assemblyWords();
 })
