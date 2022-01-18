@@ -1,3 +1,27 @@
+*, ::after, ::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.flagsContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 50px;
+}
+.flagsContainer__flag {
+  height: 16px;
+  opacity: 0.5;
+}
+.flagsContainer__flag:hover {
+  cursor: pointer;
+  border: 2px solid blue;
+  opacity: 1;
+}
+.flagsContainer--focus {
+  opacity: 1;
+}
+
 .textContainer__word--off {
   display: none;
 }

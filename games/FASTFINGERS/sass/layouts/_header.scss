@@ -1,0 +1,17 @@
+.flagsContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 50px;
+    &__flag {
+        height: 16px;
+        opacity: 0.5;
+        &:hover {
+            cursor: pointer;
+            border: 2px solid blue;
+            opacity: 1;
+        }
+    }
+    &--focus {
+        opacity: 1;
+    }
+}
