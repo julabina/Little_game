@@ -1,9 +1,18 @@
 const textContainer = document.querySelector(".textContainer");
 const textEntry = document.getElementById("textInput");
+const statsGoodWord = document.querySelector(".statsContainer__good");
+const statsWrongWord = document.querySelector(".statsContainer__wrong");
+const statsKeyStrokeTotal = document.querySelector(".statsContainer__keyStroke__total");
+const statsKeyStrokeGood = document.querySelector(".statsContainer__keyStroke__good");
+const statsKeyStrokeBad = document.querySelector(".statsContainer__keyStroke__wrong");
+const statsAccuracy = document.querySelector(".statsContainer__acc");
+const statsWpm = document.querySelector(".statsContainer__wpm");
 
 let datas, rand;
 let wordCount = 0;
 let goodWord = 0;
+let keyStroke = 0;
+let goodKeyStroke = 0;
 let wordTemporary = [];
 let wordsArray = [];
 
@@ -35,6 +44,8 @@ const assemblyWords = () => {
         <span class="textContainer__word word${i + 1}">${wordsArray[i]}</span>
         `
     }
+    const wordSpan = document.querySelectorAll(".textContainer__word");
+    wordSpan[wordCount].classList.add("textContainer__word--focus");
 }
 
 const controlWord = (word) => {
@@ -44,19 +55,33 @@ const controlWord = (word) => {
     }
     if (word === wordsArray[wordCount]) {
         goodWord++;
+        wordSpan[wordCount].classList.add("textContainer__word--good");
+        goodKeyStroke += word.length;
+    } else {
+        wordSpan[wordCount].classList.add("textContainer__word--wrong");
     }
-    wordSpan[wordCount].classList.add("textContainer__word--off");
+    wordSpan[wordCount].classList.remove("textContainer__word--focus");
+    wordSpan[wordCount + 1].classList.add("textContainer__word--focus");
     wordCount++;
 }
 
-const test = () => {
-    textEntry.value = '';
-
+const statsDisplay = () => {
+    let badKeyStroke = keyStroke - goodKeyStroke;
+    statsGoodWord.textContent = goodWord;
+    statsWrongWord.textContent = wordCount - goodWord;
+    statsKeyStrokeTotal.textContent = keyStroke;
+    statsKeyStrokeGood.textContent = goodKeyStroke;
+    statsKeyStrokeBad.textContent = badKeyStroke;
+    statsWpm.textContent = wordCount;
+    statsAccuracy.textContent = Math.round(((100 / keyStroke) * goodKeyStroke)*100) / 100;
 }
 
 textEntry.addEventListener("keypress", (e) => {
     if (e.code === 'Space') {
         controlWord(textEntry.value);
-        test();
+        textEntry.value = '';
+        statsDisplay();
+        keyStroke--;
     }
+    keyStroke++;
 })

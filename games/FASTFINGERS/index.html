@@ -18,10 +18,15 @@
     <main>
         <div class="textContainer"></div>
         <input type="text" name="" id="textInput">
-        <!-- <div class="gameContainer">
-            <textarea class="gameContainer__textArea" cols="30" rows="10"></textarea>
-            <button class="gameContainer__tryBtn">Try again</button>
-        </div> -->
+        <div class="statsContainer">
+            <h2>Stats :</h2>
+            <h3>WPM : <span class="statsContainer__wpm"></span></h3>
+            <p>(word per minute)</p>
+            <p class="statsContainer__acc"></p>
+            <p class="statsContainer__keyStroke">Keystrokes (<span class="statsContainer__keyStroke__good"></span>|<span class="statsContainer__keyStroke__wrong"></span>) <span class="statsContainer__keyStroke__total"></span></p>
+            <p class="statsContainer__good"></p>
+            <p class="statsContainer__wrong"></p>
+        </div>
     </main>
     <script src="./script/app.js"></script>
 </body>

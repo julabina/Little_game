@@ -3,5 +3,25 @@
         &--off {
             display: none;
         }
+        &--good {
+            color: green;
+        }
+        &--wrong {
+            color: red;
+        }
+        &--focus {
+            background: rgba(128, 128, 128, 0.459);
+        }
+    }
+}
+
+.statsContainer {
+    &__keyStroke {
+        &__good {
+            color: green;
+        }
+        &__wrong {
+            color: red;
+        }
     }
 }

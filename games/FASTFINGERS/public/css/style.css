@@ -1,5 +1,21 @@
 .textContainer__word--off {
   display: none;
 }
+.textContainer__word--good {
+  color: green;
+}
+.textContainer__word--wrong {
+  color: red;
+}
+.textContainer__word--focus {
+  background: rgba(128, 128, 128, 0.459);
+}
+
+.statsContainer__keyStroke__good {
+  color: green;
+}
+.statsContainer__keyStroke__wrong {
+  color: red;
+}
 
 /*# sourceMappingURL=style.css.map */
