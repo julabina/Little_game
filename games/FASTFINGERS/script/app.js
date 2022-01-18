@@ -9,6 +9,7 @@ const statsAccuracy = document.querySelector(".statsContainer__acc");
 const statsWpm = document.querySelector(".statsContainer__wpm");
 
 let datas, rand;
+let testt, testtt;
 let wordCount = 0;
 let goodWord = 0;
 let keyStroke = 0;
@@ -16,27 +17,97 @@ let goodKeyStroke = 0;
 let wordTemporary = [];
 let wordsArray = [];
 
+/* Multilanguage start*/
+const flags = document.querySelectorAll(".flagsContainer__flag");
+const menuNew = document.querySelector(".menu__newGame");
+const menu1min = document.querySelector(".menu__classic1min");
+const menu2min = document.querySelector(".menu__classic2min");
+const menuTextGame = document.querySelector(".menu__text");
+const menuBack = document.querySelector(".menu__back");
+const menuAbout = document.querySelector(".menu__about");
+const statsExplain = document.querySelector(".statsContainer__explain");
+
+let wpmLang;
+
+const language = () => {
+    if (flags[0].classList.contains("flagsContainer--focus")) {
+        menuNew.textContent = "Nouvelle partie";
+        menu1min.textContent = "1 minute";
+        menu2min.textContent = "2 minutes";
+        menuTextGame.textContent = "Suivre un texte";
+        menuBack.textContent = "Retourner au menu de selection";
+        menuAbout.textContent = "A propos";
+        statsExplain.textContent = "(Mot par minute)";
+        wpmLang = "MPM";
+    } else {
+        menuNew.textContent = "New game";
+        menu1min.textContent = "1 minute game";
+        menu2min.textContent = "2 minutes game";
+        menuTextGame.textContent = "Paragraph mod";
+        menuBack.textContent = "Back to game menu";
+        menuAbout.textContent = "About";
+        statsExplain.textContent = "(Word per minute)";
+        wpmLang = "WPM";
+    }
+}
+
+flags[0].addEventListener("click", () => {
+    flags[0].classList.add("flagsContainer--focus");
+    flags[1].classList.remove("flagsContainer--focus");
+    language();
+    assemblyWords();
+})
+
+flags[1].addEventListener("click", () => {
+    flags[1].classList.add("flagsContainer--focus");
+    flags[0].classList.remove("flagsContainer--focus");
+    language();
+    assemblyWords();
+})
+
+/* Multilanguage end */
+
+
 fetch("data.json")
 .then(res => res.json())
 .then(data => {
     datas = data;  
+    testt = data.words;
     assemblyWords();
 })
+
+const reset = () => {
+    wordCount = 0;
+    goodWord = 0;
+    keyStroke = 0;
+    goodKeyStroke = 0;
+    wordsArray = [];
+    textContainer.innerHTML = ``;
+}
 
 const random = (val) => {
     rand = Math.ceil(Math.random() * (val - 1));
 }
 
+const arrayRemove = (arr, value) => {
+   return arr.filter(function(el){
+        return el != value;
+    })
+}
+
 const makeArray = () => {
-    for (let i = datas.words.length; i > 0 ; i--) {
-        random(i);
-        wordsArray.push(wordTemporary[rand]);
-        wordTemporary.splice(rand,1)
+    let a = datas.words.length;
+    let test = wordTemporary;
+    for (let i = a; i > 0 ; i--) {
+        random(i); 
+        wordsArray.push(test[rand]);
+        test = arrayRemove(test, test[rand]);
     }
-    console.log(wordsArray);
 }
 
 const assemblyWords = () => {
+    reset();
+    language();
     wordTemporary = datas.words;
     makeArray();
     for (let i = 0; i < wordsArray.length; i++) {
@@ -72,7 +143,7 @@ const statsDisplay = () => {
     statsKeyStrokeTotal.textContent = keyStroke;
     statsKeyStrokeGood.textContent = goodKeyStroke;
     statsKeyStrokeBad.textContent = badKeyStroke;
-    statsWpm.textContent = wordCount;
+    statsWpm.textContent = wpmLang + " : " + wordCount;
     statsAccuracy.textContent = Math.round(((100 / keyStroke) * goodKeyStroke)*100) / 100;
 }
 
