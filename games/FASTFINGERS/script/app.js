@@ -13,6 +13,8 @@ const clock = document.querySelector(".inputContainer__clockContainer");
 const menu = document.querySelector(".menu");
 const hambBtn = document.querySelector(".hamburgerBtn");
 const crossMenuBtn = document.querySelector(".menu__closeBtn");
+const modale = document.querySelector(".modale");
+const modaleCloseBtn = document.querySelector(".modale__btnContainer__closeBtn");
 
 let datas, rand, lang, wpm , theTimer, timer ;
 let start = false;
@@ -36,6 +38,9 @@ const menuBack = document.querySelector(".menu__back");
 const menuAbout = document.querySelector(".menu__about");
 const statsExplain = document.querySelector(".statsContainer__explain");
 const statsNewBtn = document.querySelector(".statsContainer__newBtn");
+const modaleTitle = document.querySelector(".modale__title");
+const modaleCodedBy = document.querySelector(".modale__codedBy");
+const modaleGHLink = document.querySelector(".modale__gh__githubLink");
 
 let wpmLang, accuracyLang, keystrokeLang, goodWordLang, wrongWordLang;
 
@@ -54,7 +59,10 @@ const language = () => {
         goodWordLang = "Mots corrects";
         wrongWordLang = "Mots incorrects";
         lang = "fr";
-        statsNewBtn.textContent = "Nouvelle partie"
+        statsNewBtn.textContent = "Nouvelle partie";
+        modaleTitle.textContent = "A propos";
+        modaleCodedBy.textContent = "Développé par Lenfumé Julien";
+        modaleGHLink.textContent = "Profil Github : ";
     } else {
         menuNew.textContent = "New game";
         menu1min.textContent = "1 minute game";
@@ -70,6 +78,9 @@ const language = () => {
         wrongWordLang = "Wrong word";
         lang = "gb";
         statsNewBtn.textContent = "New game";
+        modaleTitle.textContent = "About";
+        modaleCodedBy.textContent = "Coded by Lenfume Julien";
+        modaleGHLink.textContent = "Github profil : ";
     }
 }
 
@@ -253,9 +264,15 @@ menu2min.addEventListener("click", () => {
 })
 
 menuTextGame.addEventListener("click", () => {
-
+    
+    menu.classList.add("menu--off");
 })
 
 menuAbout.addEventListener("click", () => {
+    modale.classList.remove("modale--off");
+    menu.classList.add("menu--off");
+})
 
+modaleCloseBtn.addEventListener("click", () => {
+    modale.classList.add("modale--off");
 })
