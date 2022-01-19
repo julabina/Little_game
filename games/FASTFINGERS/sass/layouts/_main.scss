@@ -16,6 +16,7 @@ main {
 .textContainer {
     height: 90px;
     overflow: hidden;
+    user-select: none;
     &__word {
         &--off {
             display: none;
@@ -45,6 +46,7 @@ main {
         align-items: center;
         width: 70px;
         border: 1px solid rgba(0, 0, 0, 0.432);
+        user-select: none;
     }
 }
 

@@ -14,8 +14,9 @@ const menu = document.querySelector(".menu");
 const hambBtn = document.querySelector(".hamburgerBtn");
 const crossMenuBtn = document.querySelector(".menu__closeBtn");
 
-let datas, rand, lang, wpm ;
+let datas, rand, lang, wpm , theTimer, timer ;
 let start = false;
+let classic1 = true;
 let lineCount = 0;
 let wordCount = 0;
 let goodWord = 0;
@@ -107,6 +108,8 @@ const reset = () => {
     textEntry.value = "";
     textEntry.readOnly = false;
     statsContainer.classList.add("statsContainer--off");
+    clearInterval(theTimer);
+    clock.textContent = "0";
 }
 
 const random = (val) => {
@@ -179,25 +182,30 @@ const controlWord = (word) => {
 }
 
 const statsDisplay = () => {
-    wpm = lettersCount / 5;
+    wpm = Math.round(lettersCount / 5);
     statsContainer.classList.remove("statsContainer--off");
     let badKeyStroke = keyStroke - goodKeyStroke;
     statsGoodWord.textContent = goodWordLang + " : " + goodWord;
     statsWrongWord.textContent = wrongWordLang + " : " + (wordCount - goodWord);
     statsKeystroke.innerHTML = `${keystrokeLang} : (<span class="statsContainer__keyStroke__good">${goodKeyStroke}</span>|<span class="statsContainer__keyStroke__wrong">${badKeyStroke}</span>) <span class="statsContainer__keyStroke__total">${keyStroke}</span>`; 
     statsWpm.textContent = wpmLang + " : " + wpm;
-    statsAccuracy.textContent = accuracyLang + " : " + (Math.round(((100 / keyStroke) * goodKeyStroke)*100) / 100);
+    statsAccuracy.textContent = accuracyLang + " : " + (Math.round(((100 / keyStroke) * goodKeyStroke)*100) / 100) + " %";
 }
 
 const time = () => {
-    let timer = 59;
-   let theTimer = setInterval(() => {
+    if (classic1 === true) {
+        timer = 59;
+    } else {
+        timer = 119;
+    }
+   theTimer = setInterval(() => {
         clock.textContent = timer;
         timer--;
-        if(timer < 0) {
+        if(timer === 0) {
             clearInterval(theTimer);
             statsDisplay();
             textEntry.readOnly = true;
+            clock.textContent= "0"
         }
     }, 1000);
 }
@@ -220,9 +228,34 @@ statsNewBtn.addEventListener("click", () => {
 })
 
 hambBtn.addEventListener("click", () => {
-    menu.classList.remove("menu--off")
+    menu.classList.remove("menu--off");
 })
 
 crossMenuBtn.addEventListener("click", () => {
-    menu.classList.add("menu--off")
+    menu.classList.add("menu--off");
+})
+
+menuNew.addEventListener("click", () => {
+    assemblyWords();
+    menu.classList.add("menu--off");
+})
+
+menu1min.addEventListener("click", () => {
+    assemblyWords();
+    menu.classList.add("menu--off");
+    classic1 = true;
+})
+
+menu2min.addEventListener("click", () => {
+    assemblyWords();
+    menu.classList.add("menu--off");
+    classic1 = false;
+})
+
+menuTextGame.addEventListener("click", () => {
+
+})
+
+menuAbout.addEventListener("click", () => {
+
 })

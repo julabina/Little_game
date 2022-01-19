@@ -22,6 +22,7 @@ header h1 {
   position: fixed;
   top: 25px;
   left: 25px;
+  user-select: none;
 }
 .hamburgerBtn:hover {
   opacity: 0.5;
@@ -37,6 +38,9 @@ header h1 {
   border-right: 2px solid black;
   border-bottom: 2px solid black;
   border-radius: 0 0 15px 0;
+}
+.menu img {
+  user-select: none;
 }
 .menu img:hover {
   opacity: 0.5;
@@ -64,6 +68,7 @@ header h1 {
   display: flex;
   justify-content: space-between;
   width: 50px;
+  user-select: none;
 }
 .flagsContainer__flag {
   height: 16px;
@@ -96,6 +101,7 @@ main {
 .textContainer {
   height: 90px;
   overflow: hidden;
+  user-select: none;
 }
 .textContainer__word--off {
   display: none;
@@ -124,6 +130,7 @@ main {
   align-items: center;
   width: 70px;
   border: 1px solid rgba(0, 0, 0, 0.432);
+  user-select: none;
 }
 
 .statsContainer {
