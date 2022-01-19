@@ -105,6 +105,7 @@ main {
 .textContainer {
   height: 90px;
   overflow: hidden;
+  text-align: center;
   user-select: none;
 }
 .textContainer__word--off {

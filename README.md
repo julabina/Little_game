@@ -82,7 +82,7 @@ Classic hangman game.
 
 ### Features
 
-- Multi language
+- Multi language.
 
 ## Memory game
 
@@ -91,3 +91,15 @@ Simple memory game.
 ![](./assets/screenshot/screenMemory.webp)
 
 [Link](https://julabina.github.io/Littles_games/games/MEMORY/index.html)
+
+## Fast fingers test
+
+- Typing test.
+
+![](./assets/screenshot/screenFast.webp)
+
+[Link](https://julabina.github.io/Littles_games/games/FASTFINGERS/index.html)
+
+### Feature 
+
+- Multi language.
