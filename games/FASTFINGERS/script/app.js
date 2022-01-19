@@ -73,8 +73,8 @@ const language = () => {
         modaleGHLink.textContent = "Profil Github : ";
     } else {
         menuNew.textContent = "New game";
-        menu1min.textContent = "1 minute game";
-        menu2min.textContent = "2 minutes game";
+        menu1min.textContent = "random word - 1 minute";
+        menu2min.textContent = "random word - 2 minutes";
         menuTextGame1.textContent = "Text - 1 minute";
         menuTextGame2.textContent = "Text - 2 minutes";
         menuTextGameFull.textContent = "Full text";
