@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+
+    <title>Shifumi</title>
+</head>
+<body>
+    <a href="../../index.html"><div class="backToHome"><p>Back</p></div></a>
+    <main>
+        <section class="topContainer">
+            <h1>SHIFUMI</h1>
+            <button class="menuBtn">Menu</button>
+        <div class="radioContainer menuOff">
+            <div class="radioContainer-round">
+                <div class="radioLabelContainer">
+                    <input type="radio" name="score" id="radioTraining">
+                    <label for="score">Training</label>
+                </div>
+                <div class="radioLabelContainer">
+                    <input type="radio" name="score" id="radioThreePts" checked>
+                    <label for="score">3 points win</label>    
+                </div>
+                <div class="radioLabelContainer">
+                    <input type="radio" name="score" id="radioTenPts">
+                    <label for="score">10 points win</label>    
+                </div>
+                <div class="radioLabelContainer">
+                    <input type="radio" name="score" id="radioXPts">
+                    <label for="score">25 points win</label>    
+                </div>
+            </div>
+            <div class="radioContainer-option">
+                <div class="radioContainer-option-difficulty">
+                    <div class="radioLabelContainer">
+                        <input type="radio" name="lvl" id="radioRandom" checked>
+                        <label for="lvl">Random difficulty</label>
+                    </div>
+                    <div class="radioLabelContainer">
+                        <input type="radio" name="lvl" id="radioNormal">
+                        <label for="lvl">Normal difficulty</label>
+                    </div>
+                </div>
+                <div class="radioContainer-option-players">
+                    <div class="radioLabelContainer">
+                        <input type="radio" name="P" id="radioCpu" checked>
+                        <label for="P">Player vs Cpu</label>
+                    </div>
+                    <div class="radioLabelContainer">
+                        <input type="radio" name="P" id="radioPlayer">
+                        <label for="P">Player vs Player</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="modeChange">Change game</button>
+    </section>
+    <section class="botContainer">
+        <div class="botContainer-classic">
+                <h2 class="h2Title">SHIFUMI CLASSIC</h2>
+                <div class="buttonContainer">
+                    <button class="choseBtn rock">Rock</button>
+                    <button class="choseBtn papper">Papper</button>
+                    <button class="choseBtn scissors">Scissors</button>
+                </div>
+                <div class="playerPlay invisible"></div>
+                <div class="resultContainer">
+                    
+                </div>
+        </div>
+        <div class="botContainer-lizardSpock">
+                <h2 class="h2Title">ROCK PAPPER SCISSORS LIZARD SPOCK</h2>
+                <div class="buttonContainer">
+                    <button class="choseBtn rockls">Rock</button>
+                    <button class="choseBtn papperls">Papper</button>
+                    <button class="choseBtn scissorsls">Scissors</button>
+                    <button class="choseBtn lizard">Lizard</button>
+                    <button class="choseBtn spock">Spock</button>
+                </div>
+                <div class="playerPlayLS invisible">
+                    
+                </div>
+                <div class="resultContainerLS">
+                    
+                </div>
+            </div>    
+    </section>
+</main>
+
+    <script src="index.js"></script>
+</body>
+</html>
