@@ -215,8 +215,6 @@ const controlWord = (word) => {
             wordSpan[wordCount].classList.add("textContainer__word--wrong");
         }
     wordSpan[wordCount].classList.remove("textContainer__word--focus");
-
-        /* wordSpan[wordCount + 1].classList.add("textContainer__word--focus"); */
         if (textMod === true) {
             if ((wordCount + 1) !== textarray.length) {
                 wordSpan[wordCount + 1].classList.add("textContainer__word--focus");
@@ -226,7 +224,6 @@ const controlWord = (word) => {
                 wordSpan[wordCount + 1].classList.add("textContainer__word--focus");
             }
         }
-    
     wordCount++;
     lineCount++
     if (lineCount === 10) {
