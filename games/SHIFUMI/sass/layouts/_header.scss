@@ -1,12 +1,100 @@
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+        margin: 20px 0 50px 0;
+    }
+}
+
 .menuContainer {
     &__btn {
-        height: 35px;
+        height: 20px;
+        width: 100%;
+        text-transform: uppercase;
+        &:hover {
+            background: $colorHover;
+            cursor: pointer;
+        }
     }
     &__menu {
         &__links {
+            border-right:solid black 1px;
+            border-left:solid black 1px;
             li {
                 list-style: none;
+                text-align: center;
+                margin: 5px;
+                &:hover {
+                    color: darken($color: $colorHover, $amount: 30);
+                    text-decoration:underline;
+                    cursor: pointer;
+                }
             }
+        }
+        &__options {
+            &__radios {
+                display: flex;
+                border : solid black 1px;
+                border-radius: 5px 5px 0 0;
+                &__left {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding: 10px;
+                    &__radioLabel {
+                        &:hover {
+                            color: darken($color: $colorHover, $amount: 30);  
+                        }
+                    }
+                }
+                &__right {
+                    border-left: black solid 1px;
+                    &__difficulty {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        border-bottom: solid black 1px;
+                        padding: 10px ;
+                        &__radioLabel {
+                            &:hover {
+                                color: darken($color: $colorHover, $amount: 30);  
+                            }
+                        }
+                    }
+                    &__versus {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        padding: 10px ;
+                        &__radioLabel {
+                            &:hover {
+                                color: darken($color: $colorHover, $amount: 30);  
+                            }
+                        }
+                    }
+                }
+            }
+            &__btns {
+                display: flex;
+                border : solid 1px black;
+                &__btn {
+                    width: 50%;
+                    min-height: 30px;
+                    background: white;
+                    border: initial;
+                    border-bottom: solid black 1px;
+                    border-left: solid black 1px;
+                    border-right: solid black 1px;
+                    &:hover {
+                        background: $colorHover;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        &--off {
+            display: none;
         }
     }
 }
