@@ -3,6 +3,9 @@ const scoreContainer = document.querySelectorAll(".gameContainer__game__scoreCon
 const resultStatus = document.querySelectorAll(".gameContainer__game__resultCont__result");
 const choseP1 = document.querySelector(".gameContainer__game_choice__player__p1");
 const choseP2 = document.querySelector(".gameContainer__game_choice__player__p2");
+const menuNew = document.querySelector(".menuContainer__menu__links__new");
+const menuAbout = document.querySelector(".menuContainer__menu__links__about");
+const menuAboutLs = document.querySelector(".menuContainer__menu__links__aboutLs");
 const menu = document.querySelector(".menuContainer__menu");
 const menuBtn = document.querySelector(".menuContainer__btn");
 const gameSelectBtn = document.querySelectorAll(".menuContainer__menu__options__btns__btn");
@@ -14,6 +17,10 @@ const radioVS = document.querySelectorAll(".menuContainer__menu__options__radios
 const modaleResult = document.querySelector(".modaleResult");
 const modaleResultText = document.querySelector(".modaleResult__modale__win");
 const modaleResultBtn = document.querySelector(".modaleResult__modale__btn");
+const modaleLs = document.querySelector(".modaleAboutLs");
+const modaleLsBtn = document.querySelector(".modaleAboutLs__modale__btnContainer__btn");
+const modaleAbout = document.querySelector(".modaleAbout");
+const modaleAboutBtn = document.querySelector(".modaleAbout__modale__btnContainer__btn");
 
 let result, choseCpu,choseAI,p1Choice, roundAI, prevChose, prevChoseEven, prevChoseOdd;
 let vsPlayer = false;
@@ -34,7 +41,7 @@ const startDisplay = () => {
         whoPlay.textContent = "Player 1 chose";
     }
     if (lsGame === true) {
-        title.textContent = "Rock Paper Scissors Lizard Spock";
+        title.textContent = "Lizard Spock version";
         choiceBtns[3].classList.remove("gameContainer__choiceBtn__btnContainer--off");
         choiceBtns[4].classList.remove("gameContainer__choiceBtn__btnContainer--off");
     } else {
@@ -737,6 +744,14 @@ modaleResultBtn.addEventListener("click", () => {
     startDisplay();
 })
 
+modaleLsBtn.addEventListener("click", () => {
+    modaleLs.classList.add("modaleAboutLs--off");
+})
+
+modaleAboutBtn.addEventListener("click", () => {
+    modaleAbout.classList.add("modaleAbout--off");
+})
+
 radioVictoryPts[1].addEventListener("click", () => {
     startDisplay();
 })
@@ -765,4 +780,16 @@ radioVS[0].addEventListener("click", () => {
 radioVS[1].addEventListener("click", () => {
     vsPlayer = true;
     startDisplay();
+})
+
+menuNew.addEventListener("click", () => {
+    startDisplay();
+})
+
+menuAboutLs.addEventListener("click", () => {
+    modaleLs.classList.remove("modaleAboutLs--off");
+})
+
+menuAbout.addEventListener("click", () => {
+    modaleAbout.classList.remove("modaleAbout--off");
 })

@@ -15,11 +15,11 @@
             <div class="menuContainer__menu">
                 <div class="menuContainer__menu__links">
                     <ul>
-                        <li>New game</li>
-                        <li>Play to v1</li>
-                        <li>Back to game selection</li>
-                        <li>About Lizard Spock version</li>
-                        <li>About</li>
+                        <li class="menuContainer__menu__links__new">New game</li>
+                        <a href="./V1_old/index.html"><li>Play old version - v1</li></a>
+                        <a href="https://julabina.github.io/Littles_games/"><li>Back to game selection</li></a>
+                        <li class="menuContainer__menu__links__aboutLs">About Lizard Spock version</li>
+                        <li class="menuContainer__menu__links__about">About</li>
                     </ul>
                 </div>
                 <div class="menuContainer__menu__options">
@@ -132,10 +132,31 @@
     </section>
     <!-- modale result end -->
     
-    <!-- modale about start -->
-    <section class="modaleAbout">
-        <div class="modaleAbout__modale">
+    <!-- modale aboutLs start -->
+    <section class="modaleAboutLs modaleAboutLs--off">
+        <div class="modaleAboutLs__modale">
+            <img class="modaleAboutLs__modale__rock" src="./assets/Rock.svg" alt="Rock">
+            <img class="modaleAboutLs__modale__paper" src="./assets/Paper.svg" alt="Paper">
+            <img class="modaleAboutLs__modale__scissors" src="./assets/Scissors.svg" alt="Scissors">
+            <img class="modaleAboutLs__modale__lizard" src="./assets/Lizard.svg" alt="Lizard">
+            <img class="modaleAboutLs__modale__spock" src="./assets/Spock.svg" alt="Spock">
+            <img class="modaleAboutLs__modale__base" src="./assets/RPSLS Arrows.svg" alt="base for explains">
+            <div class="modaleAboutLs__modale__btnContainer">
+                <button class="modaleAboutLs__modale__btnContainer__btn">OK</button>
+            </div>
+        </div>
+    </section>
+    <!-- modale aboutLs end -->
 
+    <!-- modale about start -->
+    <section class="modaleAbout modaleAbout--off">
+        <div class="modaleAbout__modale">
+            <h2>About</h2>
+            <p>Coded by Lenfumé Julien</p>
+            <p>Github profil : <a href="https://github.com/julabina">Link</a></p>
+            <div class="modaleAbout__modale__btnContainer">
+                <button class="modaleAbout__modale__btnContainer__btn">OK</button>
+            </div>
         </div>
     </section>
     <!-- modale about end -->

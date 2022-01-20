@@ -19,13 +19,93 @@
             margin: 30px 0 45px 0;
         }
         &__btn {
-            height: 25px;width: 50px;
-            border: black 1px solid;
-            background: white;
+            @include btnModaleAbout;
             text-transform: uppercase;
-            &:hover {
-                background: $colorHover;
-                cursor: pointer;
+        }
+    }
+    &--off {
+        display: none;
+    }
+}
+
+.modaleAboutLs {
+    @include modaleBase;
+    &__modale {
+        width: 360px;
+        padding: 30px;
+        background: white;
+        border-radius: 10px;
+        &__base {
+            width: 300px;
+        }
+        &__rock {
+            height: 50px;
+            position: relative;
+            top: 20px;
+            left: 125px;
+        }
+        &__paper {
+            height: 50px;
+            position: relative;
+            top: 128px;
+            left: 217px;
+            
+        }
+        &__lizard {
+            height: 50px;
+            position: relative;
+            top: 128px;
+            left: -185px;
+            
+        }
+        &__scissors {
+            height: 50px;
+            position: relative;
+            top: 300px;
+            left: 107px;
+            
+        }
+        &__spock {
+            height: 50px;
+            position: relative;
+            top: 300px;
+            left: -183px;
+
+        }
+        &__btnContainer {
+            display: flex;
+            justify-content: center;
+            &__btn {
+                @include btnModaleAbout;
+                margin-top: 20px;
+                
+            }
+        }
+    }
+    &--off {
+        display: none;
+    }
+}
+
+.modaleAbout {
+    @include modaleBase;
+    &__modale {
+        text-align: center;
+        background: white;
+        height: 200px;width: 250px;
+        border-radius: 10px;
+        h2 {
+            margin: 15px 0 25px 0;
+        }
+        p {
+            margin: 10px;
+        }
+        &__btnContainer {
+            display: flex;
+            justify-content: center;
+            &__btn {
+                @include btnModaleAbout;
+                margin-top: 20px;
             }
         }
     }
