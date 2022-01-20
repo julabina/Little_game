@@ -94,7 +94,7 @@ header {
                         cursor: pointer;
                     }
                     &--selected {
-                        background: lighten($color: $colorHover, $amount: 15)
+                        background: lighten($color: $colorHover, $amount: 10)
                     }
                 }
             }

@@ -102,7 +102,7 @@ header h1 {
   cursor: pointer;
 }
 .menuContainer__menu__options__btns__btn--selected {
-  background: rgba(187, 187, 255, 0.5);
+  background: rgba(161, 161, 255, 0.5);
 }
 .menuContainer__menu--off {
   display: none;

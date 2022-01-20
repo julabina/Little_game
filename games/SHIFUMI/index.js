@@ -7,24 +7,32 @@ const menu = document.querySelector(".menuContainer__menu");
 const menuBtn = document.querySelector(".menuContainer__btn");
 const gameSelectBtn = document.querySelectorAll(".menuContainer__menu__options__btns__btn");
 const title = document.querySelector(".gameTitle");
+const whoPlay = document.querySelector(".gameContainer__game__scoreCont__pChose");
 const radioVictoryPts = document.querySelectorAll(".menuContainer__menu__options__radios__left__radioLabel__partyType");
+const radioAI = document.querySelectorAll(".menuContainer__menu__options__radios__right__difficulty__radioLabel__lvl");
+const radioVS = document.querySelectorAll(".menuContainer__menu__options__radios__right__versus__radioLabel__vs");
 const modaleResult = document.querySelector(".modaleResult");
 const modaleResultText = document.querySelector(".modaleResult__modale__win");
 const modaleResultBtn = document.querySelector(".modaleResult__modale__btn");
 
-let result, choseCpu;
+let result, choseCpu,choseAI,p1Choice, roundAI, prevChose, prevChoseEven, prevChoseOdd;
 let vsPlayer = false;
 let lsGame = false;
 let scoreP1 = 0;
 let scoreP2 = 0;
+let vsRound = 0;
 
 const reset = () => {
     scoreP1 = 0;
     scoreP2 = 0;
+    roundAI = 0;
 }
 
 const startDisplay = () => {
     reset();
+    if (vsPlayer === true) {
+        whoPlay.textContent = "Player 1 chose";
+    }
     if (lsGame === true) {
         title.textContent = "Rock Paper Scissors Lizard Spock";
         choiceBtns[3].classList.remove("gameContainer__choiceBtn__btnContainer--off");
@@ -44,11 +52,16 @@ const startDisplay = () => {
     `
 }
 
+
+/* ------------------------CODE FROM OLD VERSION V1 start----------------------- */
+
+
 const random = (int) => {
     return Math.floor(Math.random() * int);
 };
 
 const AIRandom = () => {
+    let a;
     if (lsGame === true) {
         a = random(5);
     } else {
@@ -68,8 +81,356 @@ const AIRandom = () => {
     return choseCpu;
   };
 
+  const AIClassic = () => {
+      let a;
+    if (roundAI === 1) {
+      a = random(100);
+      if (a < 38) {
+        choseAI = "scissors";
+      } else if (a > 45) {
+        choseAI = "paper";
+      } else {
+        choseAI = "rock";
+      }
+    } else if (roundAI === 2) {
+      if (scoreP2 === 1) {
+        if (choseAI === "scissors") {
+          choseAI = "rock";
+        } else if (choseAI === "paper") {
+          choseAI = "scissors";
+        } else {
+          choseAI = "paper";
+        }
+      } else {
+        a = random(100);
+        if (a <= 35) {
+          choseAI = "rock";
+        } else if (a >= 65) {
+          choseAI = "scissors";
+        } else {
+          choseAI = "paper";
+        }
+      }
+    } else {
+      if (prevChoseEven === prevChoseOdd) {
+        if (prevChoseOdd === "rock") {
+          a = random(100);
+          if (a <= 50) {
+            choseAI = "paper";
+          } else {
+            choseAI = "scissors";
+          }
+        } else if (prevChoseOdd === "scissors") {
+          a = random(100);
+          if (a <= 50) {
+            choseAI = "paper";
+          } else {
+            choseAI = "rock";
+          }
+        } else {
+          a = random(100);
+          if (a <= 50) {
+            choseAI = "scissors";
+          } else {
+            choseAI = "rock";
+          }
+        }
+      } else if (result === 0) {
+        if (prevChose === "rock") {
+          b = random(100);
+          if (b <= 50) {
+            choseAI = "scissors";
+          } else if (b >= 75) {
+            choseAI = "paper";
+          } else {
+            choseAI = "rock";
+          }
+        } else if (prevChose === "scissors") {
+          b = random(100);
+          if (b <= 50) {
+            choseAI = "paper";
+          } else if (b >= 75) {
+            choseAI = "scissors";
+          } else {
+            choseAI = "rock";
+          }
+        } else {
+          b = random(100);
+          if (b <= 50) {
+            choseAI = "rock";
+          } else if (b >= 75) {
+            choseAI = "paper";
+          } else {
+            choseAI = "scissors";
+          }
+        }
+      } else {
+        b = random(100);
+        if (b <= 35) {
+          choseAI = "rock";
+        } else if (b >= 65) {
+          choseAI = "scissors";
+        } else {
+          choseAI = "paper";
+        }
+      }
+    }
+    if (roundAI % 2 === 0) {
+      prevChoseOdd = choseP1;
+    } else {
+      prevChoseEven = choseP1;
+    }
+    prevChose = choseP1;
+    roundAI++;
+    choseCpu = choseAI;
+  };  
+
+  const AILizardSpock = () => {
+    if (prevChoseEven === prevChoseOdd) {
+      if (prevChoseOdd === "rock") {
+        a = random(4);
+        if (a === 1) {
+          choseAi = "paper";
+        } else if (a === 2) {
+          choseAi = "scissors";
+        } else if (a === 3) {
+          choseAi = "lizard";
+        } else {
+          choseAi = "spock";
+        }
+      } else if (prevChoseOdd === "paper") {
+        a = random(4);
+        if (a === 1) {
+          choseAi = "rock";
+        } else if (a === 2) {
+          choseAi = "scissors";
+        } else if (a === 3) {
+          choseAi = "lizard";
+        } else {
+          choseAi = "spock";
+        }
+      } else if (prevChoseOdd === "scissors") {
+        a = random(4);
+        if (a === 1) {
+          choseAi = "rock";
+        } else if (a === 2) {
+          choseAi = "paper";
+        } else if (a === 3) {
+          choseAi = "lizard";
+        } else {
+          choseAi = "spock";
+        }
+      } else if (prevChoseOdd === "lizard") {
+        a = random(4);
+        if (a === 1) {
+          choseAi = "rock";
+        } else if (a === 2) {
+          choseAi = "paper";
+        } else if (a === 3) {
+          choseAi = "scissors";
+        } else {
+          choseAi = "spock";
+        }
+      } else {
+        a = random(4);
+        if (a === 1) {
+          choseAi = "rock";
+        } else if (a === 2) {
+          choseAi = "paper";
+        } else if (a === 3) {
+          choseAi = "scissors";
+        } else {
+          choseAi = "lizard";
+        }
+      }
+    } else if (result === 0) {
+      a = random(100);
+      if (choseP1 === "rock") {
+        if (choseCpu === "paper") {
+          if (a < 45) {
+            choseAi = "scissors";
+          } else if (a >= 45 && a < 70) {
+            choseAi = "spock";
+          } else if (a >= 70 && a < 80) {
+            choseAi = "rock";
+          } else if (a >= 80 && a < 90) {
+            choseAi = "lizard";
+          } else {
+            choseAi = "paper";
+          }
+        } else {
+          if (a < 45) {
+            choseAi = "lizard";
+          } else if (a >= 45 && a < 70) {
+            choseAi = "paper";
+          } else if (a >= 70 && a < 80) {
+            choseAi = "rock";
+          } else if (a >= 80 && a < 90) {
+            choseAi = "scissors";
+          } else {
+            choseAi = "spock";
+          }
+        }
+      } else if (choseP1 === "paper") {
+        if (choseCpu === "scissors") {
+          if (a < 45) {
+            choseAi = "rock";
+          } else if (a >= 45 && a < 70) {
+            choseAi = "spock";
+          } else if (a >= 70 && a < 80) {
+            choseAi = "paper";
+          } else if (a >= 80 && a < 90) {
+            choseAi = "lizard";
+          } else {
+            choseAi = "scissors";
+          }
+        } else {
+          if (a < 45) {
+            choseAi = "rock";
+          } else if (a >= 45 && a < 70) {
+            choseAi = "scissors";
+          } else if (a >= 70 && a < 80) {
+            choseAi = "paper";
+          } else if (a >= 80 && a < 90) {
+            choseAi = "spock";
+          } else {
+            choseAi = "lizard";
+          }
+        }
+      } else if (choseP1 === "scissors") {
+        if (choseCpu === "rock") {
+          if (a < 45) {
+            choseAi = "paper";
+          } else if (a >= 45 && a < 70) {
+            choseAi = "spock";
+          } else if (a >= 70 && a < 80) {
+            choseAi = "lizard";
+          } else if (a >= 80 && a < 90) {
+            choseAi = "scissors";
+          } else {
+            choseAi = "rock";
+          }
+        } else {
+          if (a < 45) {
+            choseAi = "lizard";
+          } else if (a >= 45 && a < 70) {
+            choseAi = "paper";
+          } else if (a >= 70 && a < 80) {
+            choseAi = "rock";
+          } else if (a >= 80 && a < 90) {
+            choseAi = "spock";
+          } else {
+            choseAi = "scissors";
+          }
+        }
+      } else if (choseP1 === "lizard") {
+        if (choseCpu === "rock") {
+          if (a < 45) {
+            choseAi = "paper";
+          } else if (a >= 45 && a < 70) {
+            choseAi = "spock";
+          } else if (a >= 70 && a < 80) {
+            choseAi = "scissors";
+          } else if (a >= 80 && a < 90) {
+            choseAi = "lizard";
+          } else {
+            choseAi = "rock";
+          }
+        } else {
+          if (a < 45) {
+            choseAi = "spock";
+          } else if (a >= 45 && a < 70) {
+            choseAi = "rock";
+          } else if (a >= 70 && a < 80) {
+            choseAi = "paper";
+          } else if (a >= 80 && a < 90) {
+            choseAi = "lizard";
+          } else {
+            choseAi = "scissors";
+          }
+        }
+      } else {
+        if (choseCpu === "paper") {
+          if (a < 45) {
+            choseAi = "scissors";
+          } else if (a >= 45 && a < 70) {
+            choseAi = "lizard";
+          } else if (a >= 70 && a < 80) {
+            choseAi = "rock";
+          } else if (a >= 80 && a < 90) {
+            choseAi = "spock";
+          } else {
+            choseAi = "paper";
+          }
+        } else {
+          if (a < 45) {
+            choseAi = "rock";
+          } else if (a >= 45 && a < 70) {
+            choseAi = "scissors";
+          } else if (a >= 70 && a < 80) {
+            choseAi = "paper";
+          } else if (a >= 80 && a < 90) {
+            choseAi = "lizard";
+          } else {
+            choseAi = "scissors";
+          }
+        }
+      }
+    } else {
+      a = random(100);
+      if (a < 25) {
+        choseAi = "lizard";
+      } else if (a >= 25 && a < 50) {
+        choseAi = "spock";
+      } else if (a >= 50 && a < 70) {
+        choseAi = "rock";
+      } else if (a >= 70 && a < 90) {
+        choseAi = "scissors";
+      } else {
+        choseAi = "paper";
+      }
+    }
+    if (roundAI % 2 === 0) {
+      prevChoseOdd = choseP1;
+    } else {
+      prevChoseEven = choseP1;
+    }
+    roundAI++;
+    prevChose = choseP1;
+    choseCpu = choseAi;
+  };
+
+
+/* ------------------------CODE FROM OLD VERSION V1 end----------------------- */
+
+
 const play = (chosen) => {
-    AIRandom();
+    if (vsPlayer === true) {
+        if (vsRound === 1) {
+            choseCpu = chosen;
+            compareGame(p1Choice);
+            vsRound = 0;
+            whoPlay.textContent = "Player 1 chose";
+        } else {
+            p1Choice = chosen;
+            vsRound = 1;
+            whoPlay.textContent = "Player 2 chose";
+        }
+    } else {
+        if (radioAI[0].checked) {
+            if (lsGame === true) {
+                AILizardSpock();
+            } else {
+                AIClassic();
+            }
+        } else {
+            AIRandom();
+        }
+        compareGame(chosen);
+    }
+}
+
+const compareGame = (chosen) => {
     if (chosen === "rock") {
         choseP1.innerHTML = `
         <img class="gameContainer__game__choice__player__img" src="./assets/Rock.svg" alt="Rock"></img>
@@ -247,9 +608,13 @@ const verifyWin = () => {
     if (radioVictoryPts[1].checked) {
         if (scoreP1 === 3 || scoreP2 === 3) {
             if (scoreP1 === 3) {
-                pla = "Player 1"
+                pla = "Player 1";
             } else {
-                pla = "CPU"
+                if (vsPlayer === true) {
+                    pla = "Player 2";
+                } else {
+                    pla = "CPU";
+                }
             }
             modaleResultText.textContent = pla + " WIN";
             modaleResult.classList.remove("modaleResult--off");
@@ -257,9 +622,13 @@ const verifyWin = () => {
     } else if (radioVictoryPts[2].checked) {
         if (scoreP1 === 10 || scoreP2 === 10) {
             if (scoreP1 === 3) {
-                pla = "Player 1"
+                pla = "Player 1";
             } else {
-                pla = "CPU"
+                if (vsPlayer === true) {
+                    pla = "Player 2";
+                } else {
+                    pla = "CPU";
+                }
             }
             modaleResultText.textContent = pla + " WIN";
             modaleResult.classList.remove("modaleResult--off");  
@@ -267,16 +636,19 @@ const verifyWin = () => {
     } else if (radioVictoryPts[3].checked) {
         if (scoreP1 === 20 || scoreP2 === 20) {
             if (scoreP1 === 3) {
-                pla = "Player 1"
+                pla = "Player 1";
             } else {
-                pla = "CPU"
+                if (vsPlayer === true) {
+                    pla = "Player 2";
+                } else {
+                    pla = "CPU";
+                }
             }
             modaleResultText.textContent = pla + " WIN";
             modaleResult.classList.remove("modaleResult--off");   
         }
     } 
 }
-
 startDisplay();
 
 choiceBtns[0].addEventListener("click", () => {
@@ -362,5 +734,35 @@ gameSelectBtn[1].addEventListener("click", () => {
 
 modaleResultBtn.addEventListener("click", () => {
     modaleResult.classList.add("modaleResult--off");
+    startDisplay();
+})
+
+radioVictoryPts[1].addEventListener("click", () => {
+    startDisplay();
+})
+
+radioVictoryPts[2].addEventListener("click", () => {
+    startDisplay();
+})
+
+radioVictoryPts[3].addEventListener("click", () => {
+    startDisplay();
+})
+
+radioAI[0].addEventListener("click", () => {
+    startDisplay();
+})
+
+radioAI[1].addEventListener("click", () => {
+    startDisplay();
+})
+
+radioVS[0].addEventListener("click", () => {
+    vsPlayer = false;
+    startDisplay();
+})
+
+radioVS[1].addEventListener("click", () => {
+    vsPlayer = true;
     startDisplay();
 })
