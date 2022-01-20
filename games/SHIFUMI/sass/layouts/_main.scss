@@ -1,0 +1,33 @@
+.gameContainer {
+    &__choiceBtn {
+        display: flex;
+        &__btnContainer {
+            &__btn {
+                height: 40px;
+            }
+        }
+    }
+    &__game {
+        &__scoreCont {
+            display: flex;
+            &__score {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 30px;width: 30px;
+                border-radius: 30px;
+                border: 1px solid black;
+            }
+        }
+        &__choice {
+            display: flex;
+            &__player {
+                display: flex;
+                flex-direction: column;
+                &__img {
+                    height: 80px;
+                }
+            }
+        }
+    }
+}

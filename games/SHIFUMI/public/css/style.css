@@ -1,3 +1,30 @@
-
+.gameContainer__choiceBtn {
+  display: flex;
+}
+.gameContainer__choiceBtn__btnContainer__btn {
+  height: 40px;
+}
+.gameContainer__game__scoreCont {
+  display: flex;
+}
+.gameContainer__game__scoreCont__score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  border: 1px solid black;
+}
+.gameContainer__game__choice {
+  display: flex;
+}
+.gameContainer__game__choice__player {
+  display: flex;
+  flex-direction: column;
+}
+.gameContainer__game__choice__player__img {
+  height: 80px;
+}
 
 /*# sourceMappingURL=style.css.map */
