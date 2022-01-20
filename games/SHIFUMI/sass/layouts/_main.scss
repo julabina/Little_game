@@ -1,15 +1,37 @@
+.gameTitle {
+    text-align: center;
+    margin: 40px 0 30px 0;
+}
+
 .gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     &__choiceBtn {
         display: flex;
+        justify-content: space-around;
+        width: 380px;
+        margin-bottom: 60px;
         &__btnContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             &__btn {
                 height: 40px;
+                &:hover {
+                    background: $colorHover;
+                    border-radius: 40px;
+                    cursor: pointer;
+                }
             }
         }
     }
     &__game {
         &__scoreCont {
             display: flex;
+            justify-content: space-around;    
+            width: 500px;
+            padding: 0 35px;
             &__score {
                 display: flex;
                 align-items: center;
@@ -18,16 +40,28 @@
                 border-radius: 30px;
                 border: 1px solid black;
             }
+            &__pChose {
+                text-align: center;
+                line-height: 30px;
+                width: 120px;
+            }
         }
         &__choice {
             display: flex;
             &__player {
                 display: flex;
                 flex-direction: column;
+                align-items: center;
+                width: 250px;
                 &__img {
                     height: 80px;
                 }
             }
+        }
+        &__resultCont {
+            display: flex;
+            width: 500px;
+            justify-content: space-around;
         }
     }
 }
