@@ -30,6 +30,8 @@ Simple quizz.
 
 ## Shifumy
 
+V.2
+
 Shifumy classic game.
 
 ![](./assets/screenshot/screenShi1.webp)
