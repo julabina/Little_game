@@ -52,10 +52,10 @@ const startDisplay = () => {
     scoreContainer[0].textContent = scoreP1;
     scoreContainer[1].textContent = scoreP2;
     choseP1.innerHTML = `
-            <div class="test">?</div>
+            <div class="notIcon">?</div>
     `
     choseP2.innerHTML = `
-            <div class="test">?</div>
+            <div class="notIcon">?</div>
     `
 }
 
@@ -660,10 +660,10 @@ startDisplay();
 
 choiceBtns[0].addEventListener("click", () => {
     choseP1.innerHTML = `
-            <div class="test"></div>
+            <div class="notIcon"></div>
     `
     choseP2.innerHTML = `
-            <div class="test"></div>
+            <div class="notIcon"></div>
     `
     setTimeout(() => {
         play("rock");
@@ -672,10 +672,10 @@ choiceBtns[0].addEventListener("click", () => {
 
 choiceBtns[1].addEventListener("click", () => {
     choseP1.innerHTML = `
-            <div class="test"></div>
+            <div class="notIcon"></div>
     `
     choseP2.innerHTML = `
-            <div class="test"></div>
+            <div class="notIcon"></div>
     `
     setTimeout(() => {
         play("paper");
@@ -684,10 +684,10 @@ choiceBtns[1].addEventListener("click", () => {
 
 choiceBtns[2].addEventListener("click", () => {
     choseP1.innerHTML = `
-            <div class="test"></div>
+            <div class="notIcon"></div>
     `
     choseP2.innerHTML = `
-            <div class="test"></div>
+            <div class="notIcon"></div>
     `
     setTimeout(() => {
         play("scissors");
@@ -696,10 +696,10 @@ choiceBtns[2].addEventListener("click", () => {
 
 choiceBtns[3].addEventListener("click", () => {
     choseP1.innerHTML = `
-            <div class="test"></div>
+            <div class="notIcon"></div>
     `
     choseP2.innerHTML = `
-            <div class="test"></div>
+            <div class="notIcon"></div>
     `
     setTimeout(() => {
         play("lizard");
@@ -708,10 +708,10 @@ choiceBtns[3].addEventListener("click", () => {
 
 choiceBtns[4].addEventListener("click", () => {
     choseP1.innerHTML = `
-            <div class="test"></div>
+            <div class="notIcon"></div>
     `
     choseP2.innerHTML = `
-            <div class="test"></div>
+            <div class="notIcon"></div>
     `
     setTimeout(() => {
         play("spock");
