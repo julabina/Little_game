@@ -35,6 +35,9 @@
                 display: none;
             }
         }
+        @media screen and (max-width: 500px) {
+            width: 300px; 
+         }
     }
     &__game {
         &__scoreCont {
@@ -55,6 +58,10 @@
                 line-height: 30px;
                 width: 120px;
             }
+            @media screen and (max-width: 500px) {
+               width: 300px; 
+               justify-content: space-between;
+            }
         }
         &__choice {
             display: flex;
@@ -67,11 +74,17 @@
                     height: 80px;
                 }
             }
+            @media screen and (max-width: 500px) {
+                width: 300px; 
+             }
         }
         &__resultCont {
             display: flex;
             width: 500px;
             justify-content: space-around;
+            @media screen and (max-width: 500px) {
+                width: 300px; 
+             }
         }
     }
 }
