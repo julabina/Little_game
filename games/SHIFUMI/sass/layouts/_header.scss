@@ -1,0 +1,12 @@
+.menuContainer {
+    &__btn {
+        height: 35px;
+    }
+    &__menu {
+        &__links {
+            li {
+                list-style: none;
+            }
+        }
+    }
+}

@@ -18,15 +18,51 @@
                         <li>New game</li>
                         <li>Back to game selection</li>
                         <li>Play to v1</li>
+                        <li>About Lizard Spock version</li>
                         <li>About</li>
                     </ul>
                 </div>
                 <div class="menuContainer__menu__options">
                     <div class="menuContainer__menu__options__radios">
-                        <div class="menuContainer__menu__options__radios__left"></div>
+                        <div class="menuContainer__menu__options__radios__left">
+                            <div class="menuContainer__menu__options__radios__left__radioLabel">
+                                <input type="radio" name="type" class="menuContainer__menu__options__radios__left__radioLabel__partyType">
+                                <label for="type">Training</label>
+                            </div>
+                            <div class="menuContainer__menu__options__radios__left__radioLabel">
+                                <input type="radio" name="type" class="menuContainer__menu__options__radios__left__radioLabel__partyType" checked>
+                                <label for="type">3 Points win</label>
+                            </div>
+                            <div class="menuContainer__menu__options__radios__left__radioLabel">
+                                <input type="radio" name="type" class="menuContainer__menu__options__radios__left__radioLabel__partyType">
+                                <label for="type">10 points win</label>
+                            </div>
+                            <div class="menuContainer__menu__options__radios__left__radioLabel">
+                                <input type="radio" name="type" class="menuContainer__menu__options__radios__left__radioLabel__partyType">
+                                <label for="type">25 points win</label>
+                            </div>
+                        </div>
                         <div class="menuContainer__menu__options__radios__right">
-                            <div class="menuContainer__menu__options__radios__right__difficulty"></div>
-                            <div class="menuContainer__menu__options__radios__right__vs"></div>
+                            <div class="menuContainer__menu__options__radios__right__difficulty">
+                                <div class="menuContainer__menu__options__radios__right__difficulty__radioLabel">
+                                    <input type="radio" name="lvl" class="menuContainer__menu__options__radios__right__difficulty__radioLabel__lvl">
+                                    <label for="lvl">Random</label>
+                                </div>
+                                <div class="menuContainer__menu__options__radios__right__difficulty__radioLabel">
+                                    <input type="radio" name="lvl" class="menuContainer__menu__options__radios__right__difficulty__radioLabel__lvl" checked>
+                                    <label for="lvl">Normal</label>
+                                </div>
+                            </div>
+                            <div class="menuContainer__menu__options__radios__right__versus">
+                                <div class="menuContainer__menu__options__radios__right__versus__radioLabel">
+                                    <input type="radio" name="player" class="menuContainer__menu__options__radios__right__versus__radioLabel__vs" checked>
+                                    <label for="player">vs CPU</label>
+                                </div> 
+                                <div class="menuContainer__menu__options__radios__right__versus__radioLabel">
+                                    <input type="radio" name="player" class="menuContainer__menu__options__radios__right__versus__radioLabel__vs">
+                                    <label for="player">vs Player</label>
+                                </div> 
+                            </div>
                         </div>
                     </div>
                     <div class="menuContainer__menu__options__btns">
@@ -38,7 +74,7 @@
         </div>
     </header>
     <main>
-        <h1 class="gameTitle">TEST-TITLE</h1>
+        <h2 class="gameTitle">TEST-TITLE</h2>
         <div class="gameContainer">
             <div class="gameContainer__choiceBtn">
                 <div class="gameContainer__choiceBtn__btnContainer">
