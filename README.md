@@ -14,6 +14,7 @@ Several small games coded in vanilla javascript.
 - [Connect 4](#connect-4)
 - [Hangman](#hangman)
 - [Memory game](#memory-game)
+- [Fast fingers](#fast-fingers-test)
 
 ## Quizz
 
