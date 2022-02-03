@@ -1,5 +1,6 @@
 @mixin simonBtn {
-    height: 150px;width: 150px;
+    height: 155px;width: 155px;
+    user-select: none;
     &:hover {
         cursor: pointer;
     }

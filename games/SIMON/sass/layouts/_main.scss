@@ -1,12 +1,45 @@
+main {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    h1 {
+        margin-left: -2px;
+    }
+}
+
+#playBtn {
+    width: 100px;height: 60px;
+    background: rgb(8, 2, 92);
+    color: rgb(230, 230, 230);
+    border: initial;
+    border-radius: 5px;
+    user-select: none;
+    margin-top: 30px;
+    &:hover {
+        opacity: 0.9;
+        cursor: pointer;
+    }
+}
+
 .game {
     display: grid;
     grid-template: 160px 160px / 160px 160px;
+    grid-gap: 5px;
+    background: rgb(22, 22, 22);
+    width: 350px;height: 350px;
+    padding: 15px;
+    border-radius: 340px;
     &__green {
-        background: rgb(32, 145, 32);
+        background: rgb(32, 145, 75);
         border-radius: 160px 0 0 0;
         @include simonBtn;
         &--selected {
             background: rgb(0, 255, 0);
+        }
+        &--disabled {
+            pointer-events: none;
         }
     }
     &__red {
@@ -16,6 +49,9 @@
         &--selected {
             background: rgb(255, 0, 0);
         }
+        &--disabled {
+            pointer-events: none;
+        }
     }
     &__yellow {
         background: rgb(161, 161, 0);
@@ -24,6 +60,9 @@
         &--selected {
             background: rgb(255, 255, 0);
         }
+        &--disabled {
+            pointer-events: none;
+        }
     }
     &__blue {
         background: rgb(68, 68, 255);
@@ -31,6 +70,9 @@
         @include simonBtn;
         &--selected {
             background: rgb(0, 0, 255);
+        }
+        &--disabled {
+            pointer-events: none;
         }
     }
 }

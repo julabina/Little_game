@@ -2,6 +2,7 @@ const greenBtn = document.querySelector(".game__green");
 const blueBtn = document.querySelector(".game__blue");
 const yellowBtn = document.querySelector(".game__yellow");
 const redBtn = document.querySelector(".game__red");
+const playBtn = document.getElementById("playBtn");
 
 let simonOrder = [];
 let playerOrder = [];
@@ -18,13 +19,29 @@ const resetColors = () => {
     yellowBtn.classList.remove("game__yellow--selected");
 }
 
+const eventNone = () => {
+    redBtn.classList.add("game__red--disabled");
+    greenBtn.classList.add("game__green--disabled");
+    blueBtn.classList.add("game__blue--disabled");
+    yellowBtn.classList.add("game__yellow--disabled");
+}
+
+const eventOk = () => {
+    redBtn.classList.remove("game__red--disabled");
+    greenBtn.classList.remove("game__green--disabled");
+    blueBtn.classList.remove("game__blue--disabled");
+    yellowBtn.classList.remove("game__yellow--disabled");
+}
+
 const playSimon = () => {
     let i = 0;
+    eventNone();
     let interv = setInterval(() => {
         resetColors();
         setTimeout(() => {
         if (i === simonOrder.length) {
             clearInterval(interv);
+            eventOk();
             setTimeout(() => {
                 resetColors();
             }, 1000);
@@ -44,20 +61,21 @@ const playSimon = () => {
 }
 
 const verify = () => {
-        for (let i = 0; i < playerOrder.length; i++) {
-            if (simonOrder[i] === playerOrder[i]) {
-                console.log("ok");
-            } else {
-                console.log("lose");
-                playerOrder = [];      
-                simonOrder = [];
-            }
-        }
-        if (simonOrder.length === playerOrder.length) {
+    for (let i = 0; i < playerOrder.length; i++) {
+        if (simonOrder[i] === playerOrder[i]) {
+            console.log("ok");
+        } else {
+            console.log("lose");
             playerOrder = [];      
-            console.log('test');
-            playGoodOrder();
+            simonOrder = [];
+            eventNone();
+            return;
         }
+    }
+    if (simonOrder.length === playerOrder.length) {
+        playerOrder = [];      
+        playGoodOrder();
+    }
 }
 
 const playersChoice = (choice) => {
@@ -75,16 +93,38 @@ const playGoodOrder = () => {
 
 greenBtn.addEventListener("click", () => {
     playersChoice(1);
+    greenBtn.classList.add("game__green--selected");
+    setTimeout(() => {
+        greenBtn.classList.remove("game__green--selected");     
+    }, 200);
 })
 
 redBtn.addEventListener("click", () => {
     playersChoice(2);
+    redBtn.classList.add("game__red--selected");
+    setTimeout(() => {
+        redBtn.classList.remove("game__red--selected");     
+    }, 200);
 })
 
 yellowBtn.addEventListener("click", () => {
     playersChoice(3);
+    yellowBtn.classList.add("game__yellow--selected");
+    setTimeout(() => {
+        yellowBtn.classList.remove("game__yellow--selected");     
+    }, 200);
 })
 
 blueBtn.addEventListener("click", () => {
     playersChoice(4);
+    blueBtn.classList.add("game__blue--selected");
+    setTimeout(() => {
+        blueBtn.classList.remove("game__blue--selected");     
+    }, 200);
+})
+
+playBtn.addEventListener("click", () => {
+    playerOrder = [];      
+    simonOrder = [];
+    playGoodOrder();
 })

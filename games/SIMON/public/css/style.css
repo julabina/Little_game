@@ -4,15 +4,56 @@
   box-sizing: border-box;
 }
 
+body, html {
+  height: 100%;
+}
+
+body {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+main {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+main h1 {
+  margin-left: -2px;
+}
+
+#playBtn {
+  width: 100px;
+  height: 60px;
+  background: #08025c;
+  color: #e6e6e6;
+  border: initial;
+  border-radius: 5px;
+  user-select: none;
+  margin-top: 30px;
+}
+#playBtn:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
 .game {
   display: grid;
   grid-template: 160px 160px/160px 160px;
+  grid-gap: 5px;
+  background: #161616;
+  width: 350px;
+  height: 350px;
+  padding: 15px;
+  border-radius: 340px;
 }
 .game__green {
-  background: #209120;
+  background: #20914b;
   border-radius: 160px 0 0 0;
-  height: 150px;
-  width: 150px;
+  height: 155px;
+  width: 155px;
+  user-select: none;
 }
 .game__green:hover {
   cursor: pointer;
@@ -20,11 +61,15 @@
 .game__green--selected {
   background: lime;
 }
+.game__green--disabled {
+  pointer-events: none;
+}
 .game__red {
   background: #fa3a3a;
   border-radius: 0 160px 0 0;
-  height: 150px;
-  width: 150px;
+  height: 155px;
+  width: 155px;
+  user-select: none;
 }
 .game__red:hover {
   cursor: pointer;
@@ -32,11 +77,15 @@
 .game__red--selected {
   background: red;
 }
+.game__red--disabled {
+  pointer-events: none;
+}
 .game__yellow {
   background: #a1a100;
   border-radius: 0 0 0 160px;
-  height: 150px;
-  width: 150px;
+  height: 155px;
+  width: 155px;
+  user-select: none;
 }
 .game__yellow:hover {
   cursor: pointer;
@@ -44,17 +93,24 @@
 .game__yellow--selected {
   background: yellow;
 }
+.game__yellow--disabled {
+  pointer-events: none;
+}
 .game__blue {
   background: #4444ff;
   border-radius: 0 0 160px 0;
-  height: 150px;
-  width: 150px;
+  height: 155px;
+  width: 155px;
+  user-select: none;
 }
 .game__blue:hover {
   cursor: pointer;
 }
 .game__blue--selected {
   background: blue;
+}
+.game__blue--disabled {
+  pointer-events: none;
 }
 
 /*# sourceMappingURL=style.css.map */
