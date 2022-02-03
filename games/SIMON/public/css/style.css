@@ -4,4 +4,57 @@
   box-sizing: border-box;
 }
 
+.game {
+  display: grid;
+  grid-template: 160px 160px/160px 160px;
+}
+.game__green {
+  background: #209120;
+  border-radius: 160px 0 0 0;
+  height: 150px;
+  width: 150px;
+}
+.game__green:hover {
+  cursor: pointer;
+}
+.game__green:hover {
+  background: lime;
+}
+.game__red {
+  background: #fa3a3a;
+  border-radius: 0 160px 0 0;
+  height: 150px;
+  width: 150px;
+}
+.game__red:hover {
+  cursor: pointer;
+}
+.game__red:hover {
+  background: red;
+}
+.game__yellow {
+  background: #a1a100;
+  border-radius: 0 0 0 160px;
+  height: 150px;
+  width: 150px;
+}
+.game__yellow:hover {
+  cursor: pointer;
+}
+.game__yellow:hover {
+  background: yellow;
+}
+.game__blue {
+  background: #4444ff;
+  border-radius: 0 0 160px 0;
+  height: 150px;
+  width: 150px;
+}
+.game__blue:hover {
+  cursor: pointer;
+}
+.game__blue:hover {
+  background: blue;
+}
+
 /*# sourceMappingURL=style.css.map */

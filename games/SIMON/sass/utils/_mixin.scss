@@ -1,0 +1,6 @@
+@mixin simonBtn {
+    height: 150px;width: 150px;
+    &:hover {
+        cursor: pointer;
+    }
+}

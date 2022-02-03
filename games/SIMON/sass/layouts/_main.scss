@@ -1,0 +1,36 @@
+.game {
+    display: grid;
+    grid-template: 160px 160px / 160px 160px;
+    &__green {
+        background: rgb(32, 145, 32);
+        border-radius: 160px 0 0 0;
+        @include simonBtn;
+        &:hover {
+            background: rgb(0, 255, 0);
+        }
+    }
+    &__red {
+        background: rgb(250, 58, 58);
+        border-radius: 0 160px 0 0;
+        @include simonBtn;
+        &:hover {
+            background: rgb(255, 0, 0);
+        }
+    }
+    &__yellow {
+        background: rgb(161, 161, 0);
+        border-radius: 0 0 0 160px;
+        @include simonBtn;
+        &:hover {
+            background: rgb(255, 255, 0);
+        }
+    }
+    &__blue {
+        background: rgb(68, 68, 255);
+        border-radius: 0 0 160px 0;
+        @include simonBtn;
+        &:hover {
+            background: rgb(0, 0, 255);
+        }
+    }
+}
