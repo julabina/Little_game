@@ -1,0 +1,60 @@
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    h1 {
+        margin: 30px 0 40px 0;
+    }
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    label {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &__turn {
+        @include radioCont;
+        &__radioCont {
+            width: 47px;
+        }
+    }
+    &__timer {
+        @include radioCont;
+        &__radioCont {
+            width: 70px;
+        }
+    }
+    &__player {
+        @include radioCont;
+        &__radioCont {
+            width: 28px;
+        }
+    }
+    &__difficulty {
+        @include radioCont;
+        &__radioCont {
+            width: 70px;
+        }
+    }
+    &__btnCont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &__playBtn {
+            border: 2px solid rgb(20, 20, 20);
+            background: rgb(207, 207, 207);
+            border-radius: 15px;
+            width: 50px;height: 50px;
+            &:hover {
+                background: white;
+                border : 4px solid rgb(20, 20, 20);
+                cursor: pointer;
+            }
+        }
+    }
+}
