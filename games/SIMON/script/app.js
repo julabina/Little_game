@@ -3,6 +3,7 @@ const blueBtn = document.querySelector(".game__blue");
 const yellowBtn = document.querySelector(".game__yellow");
 const redBtn = document.querySelector(".game__red");
 const playBtn = document.getElementById("playBtn");
+const resultCont = document.querySelector(".result");
 
 let simonOrder = [];
 let playerOrder = [];
@@ -41,36 +42,36 @@ const playSimon = () => {
         setTimeout(() => {
         if (i === simonOrder.length) {
             clearInterval(interv);
-            eventOk();
             setTimeout(() => {
                 resetColors();
             }, 1000);
         }
-            if (simonOrder[i] === 1) {
-                greenBtn.classList.add("game__green--selected");
-            } else if (simonOrder[i] === 2) {
-                redBtn.classList.add("game__red--selected");
-            } else if (simonOrder[i] === 3) {
-                yellowBtn.classList.add("game__yellow--selected");
-            } else if (simonOrder[i] === 4) {
-                blueBtn.classList.add("game__blue--selected");
-            }
-            i++;
-        }, 600);
+        if (simonOrder[i] === 1) {
+            greenBtn.classList.add("game__green--selected");
+        } else if (simonOrder[i] === 2) {
+            redBtn.classList.add("game__red--selected");
+        } else if (simonOrder[i] === 3) {
+            yellowBtn.classList.add("game__yellow--selected");
+        } else if (simonOrder[i] === 4) {
+            blueBtn.classList.add("game__blue--selected");
+        }
+        i++;
+    }, 600);
+    if (i === simonOrder.length) {
+        eventOk();
+        }
     }, 1000);
 }
 
 const verify = () => {
     for (let i = 0; i < playerOrder.length; i++) {
-        if (simonOrder[i] === playerOrder[i]) {
-            console.log("ok");
-        } else {
-            console.log("lose");
+        if (simonOrder[i] !== playerOrder[i]) {
+            resultCont.textContent = "LOSE - " + simonOrder.length + " turn";
             playerOrder = [];      
             simonOrder = [];
             eventNone();
             return;
-        }
+        } 
     }
     if (simonOrder.length === playerOrder.length) {
         playerOrder = [];      
@@ -79,9 +80,7 @@ const verify = () => {
 }
 
 const playersChoice = (choice) => {
-    playerOrder.push(choice);
-    console.log(simonOrder);
-    console.log(playerOrder);
+    playerOrder.push(choice); 
     verify();
 }
 
@@ -126,5 +125,6 @@ blueBtn.addEventListener("click", () => {
 playBtn.addEventListener("click", () => {
     playerOrder = [];      
     simonOrder = [];
+    resultCont.textContent = "";
     playGoodOrder();
 })

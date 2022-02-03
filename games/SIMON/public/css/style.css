@@ -113,4 +113,11 @@ main h1 {
   pointer-events: none;
 }
 
+.result {
+  width: 100%;
+  text-align: center;
+  font-size: 2.4em;
+  font-weight: bold;
+}
+
 /*# sourceMappingURL=style.css.map */
