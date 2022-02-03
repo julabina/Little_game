@@ -15,6 +15,7 @@ Several small games coded in vanilla javascript.
 - [Hangman](#hangman)
 - [Memory game](#memory-game)
 - [Fast fingers](#fast-fingers-test)
+- [Simon](#simon)
 
 ## Quizz
 
@@ -97,7 +98,7 @@ Simple memory game.
 
 ## Fast fingers test
 
-- Typing test.
+Typing test.
 
 ![](./assets/screenshot/screenFast.webp)
 
@@ -106,3 +107,11 @@ Simple memory game.
 ### Feature 
 
 - Multi language.
+
+## Simon
+
+Like the classic simon game.
+
+![](./assets/screenshot/screenSimon.webp)
+
+[Link](https://julabina.github.io/Littles_games/games/SIMON/index.html)
