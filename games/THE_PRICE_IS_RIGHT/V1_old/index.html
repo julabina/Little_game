@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+   
+    <title>The Price is Right</title>
+</head>
+<body>
+    <a href="../../index.html"><div class="backToHome"><p>Back</p></div></a>
+    <h1>The price is right</h1>
+
+    <nav>
+        <div class="navDiv nav-turnByTurn">
+            <h2>Turn mod</h2>
+            <div class="radioContainer radioContainerTurn">
+                <div class="radioContainer-container navTurn1">
+                    <input type="radio" name="gameMod" id="turn1" checked>
+                    <label for="">20</label>
+                </div>
+                <div class="radioContainer-container navTurn2">
+                    <input type="radio" name="gameMod" id="turn2">
+                    <label for="">10</label>
+                </div>
+                <div class="radioContainer-container navTurn3">
+                    <input type="radio" name="gameMod" id="turn3">
+                    <label for="">5</label>
+                </div>
+                <div class="radioContainer-container navTurn4">
+                    <input type="radio" name="gameMod" id="turn4">
+                    <label for="">3</label>
+                </div>
+            </div>
+        </div>
+        <div class="navDiv nav-timer">
+            <h2>Timer mod</h2>
+            <div class="radioContainer">
+                <div class="radioContainer-container">
+                    <input type="radio" name="gameMod" id="timer1">
+                    <label for="">2 min</label>
+                </div>
+                <div class="radioContainer-container">
+                    <input type="radio" name="gameMod" id="timer2">
+                    <label for="">1 min</label>
+                </div>
+                <div class="radioContainer-container">
+                    <input type="radio" name="gameMod" id="timer2">
+                    <label for="">40 sec</label>
+                </div>
+                <div class="radioContainer-container">
+                    <input type="radio" name="gameMod" id="timer2">
+                    <label for="">20 sec</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="startGameBtn"><p>Play</p></div>
+
+        <div class="navDiv nav-player">
+            <h2>Player</h2>
+            <div class="radioContainer">
+                <div class="radioContainer-container">
+                    <input type="radio" name="players" id="player1" checked>
+                    <label for="">1</label>
+                </div>
+                <div class="radioContainer-container">
+                    <input type="radio" name="players" id="player2">
+                    <label for="">2</label>
+                </div>
+            </div>
+        </div>
+        <div class="navDiv nav-lvl">
+            <h2>Difficulty</h2>
+            <div class="radioContainer">
+                <div class="radioContainer-container">
+                    <input type="radio" name="lvl" id="lvl1" checked>
+                    <label for="">100</label>
+                </div>
+                <div class="radioContainer-container">
+                    <input type="radio" name="lvl" id="lvl2">
+                    <label for="">1000</label>
+                </div>
+                <div class="radioContainer-container">
+                    <input type="radio" name="lvl" id="lvl2">
+                    <label for="">10000</label>
+                </div>
+                <div class="radioContainer-container">
+                    <input type="radio" name="lvl" id="lvl2">
+                    <label for="">100000</label>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- <div class="transparentBg"></div> -->
+    <main>
+        <div class="recovery invisible"></div>
+        <input type="text" name="" id="playerPropose" placeholder="Enter the good price"> 
+        <div class="submitBtn"> <div class="submitIntern"><p>$</p></div> </div>
+        <h3 class="lastPropose"></h3>
+        <p class="resultStatus"></p>
+        <div class="leftContainer invisible">
+            <p class="statusLeft">LESS</p>
+        </div>
+        <div class="rightContainer invisible">
+            <p class="statusRight">MORE</p>
+        </div>
+        <div class="countContainer">
+            <p class="leftCount">Play left : </p>
+            <p class="count"></p>
+        </div>
+        <div><p id="timer" class="hidden"></p></div>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
