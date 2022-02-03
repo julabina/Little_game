@@ -17,7 +17,7 @@
 .game__green:hover {
   cursor: pointer;
 }
-.game__green:hover {
+.game__green--selected {
   background: lime;
 }
 .game__red {
@@ -29,7 +29,7 @@
 .game__red:hover {
   cursor: pointer;
 }
-.game__red:hover {
+.game__red--selected {
   background: red;
 }
 .game__yellow {
@@ -41,7 +41,7 @@
 .game__yellow:hover {
   cursor: pointer;
 }
-.game__yellow:hover {
+.game__yellow--selected {
   background: yellow;
 }
 .game__blue {
@@ -53,7 +53,7 @@
 .game__blue:hover {
   cursor: pointer;
 }
-.game__blue:hover {
+.game__blue--selected {
   background: blue;
 }
 

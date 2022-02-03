@@ -5,7 +5,7 @@
         background: rgb(32, 145, 32);
         border-radius: 160px 0 0 0;
         @include simonBtn;
-        &:hover {
+        &--selected {
             background: rgb(0, 255, 0);
         }
     }
@@ -13,7 +13,7 @@
         background: rgb(250, 58, 58);
         border-radius: 0 160px 0 0;
         @include simonBtn;
-        &:hover {
+        &--selected {
             background: rgb(255, 0, 0);
         }
     }
@@ -21,7 +21,7 @@
         background: rgb(161, 161, 0);
         border-radius: 0 0 0 160px;
         @include simonBtn;
-        &:hover {
+        &--selected {
             background: rgb(255, 255, 0);
         }
     }
@@ -29,7 +29,7 @@
         background: rgb(68, 68, 255);
         border-radius: 0 0 160px 0;
         @include simonBtn;
-        &:hover {
+        &--selected {
             background: rgb(0, 0, 255);
         }
     }
