@@ -4,3 +4,17 @@
     align-items: center;
     width: 120px;
 }
+
+@mixin moreLess {
+    text-align: center;
+    width: 65px;
+    border-radius: 3px;
+    p {
+        line-height: 50px;
+    }
+}
+
+@mixin gameResult {
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}

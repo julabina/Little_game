@@ -85,4 +85,95 @@ header h1 {
   cursor: pointer;
 }
 
+main {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 50px 0;
+}
+.game__top {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 50px;
+}
+.game__top__turnLeft {
+  width: 98px;
+}
+.game__top__timer {
+  width: 98px;
+}
+.game__top__input {
+  width: 40%;
+  height: 30px;
+  text-align: center;
+}
+.game__mid {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin: 50px 0;
+}
+.game__mid__btn {
+  width: 90px;
+  height: 50px;
+  border-radius: 10px;
+  border: black 2px solid;
+  background: #c2c2f8;
+}
+.game__mid__btn:hover {
+  cursor: pointer;
+}
+.game__mid__less {
+  text-align: center;
+  width: 65px;
+  border-radius: 3px;
+  background: #a33333;
+}
+.game__mid__less p {
+  line-height: 50px;
+}
+.game__mid__more {
+  text-align: center;
+  width: 65px;
+  border-radius: 3px;
+  background: #198319;
+}
+.game__mid__more p {
+  line-height: 50px;
+}
+.game__bot {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 40%;
+  height: 180px;
+  text-align: center;
+  overflow: scroll;
+}
+.game__bot__less {
+  font-size: 1.3em;
+  margin-bottom: 5px;
+  background: #a33333;
+}
+.game__bot__more {
+  font-size: 1.3em;
+  margin-bottom: 5px;
+  background: #198319;
+}
+.game--off {
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.5;
+}
+
 /*# sourceMappingURL=style.css.map */

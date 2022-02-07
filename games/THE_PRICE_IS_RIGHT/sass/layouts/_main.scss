@@ -1,0 +1,76 @@
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 50px 0;
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 50px;
+        &__turnLeft {
+            width: 98px;
+        }
+        &__timer {
+            width: 98px;
+        }
+        &__input {
+            width: 40%;
+            height: 30px;
+            text-align: center;
+        }
+    }
+    &__mid {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        margin: 50px 0;
+        &__btn {
+            width: 90px;height: 50px;
+            border-radius: 10px;
+            border: black 2px solid;
+            background: rgb(194, 194, 248);
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        &__less {
+            @include moreLess;
+            background: rgb(163, 51, 51);
+        }
+        &__more {
+            @include moreLess;
+            background: rgb(25, 131, 25);
+        }
+    }
+    &__bot {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        width: 40%;height: 180px;
+        text-align: center;
+        overflow:scroll;
+        &__less {
+            @include gameResult;
+            background: rgb(163, 51, 51);
+        }
+        &__more {
+            @include gameResult;
+            background: rgb(25, 131, 25);
+        }
+    }
+    &--off {
+        pointer-events: none;
+        user-select: none;
+        opacity: 0.5;
+    }
+}
