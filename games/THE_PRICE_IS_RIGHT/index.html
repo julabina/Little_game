@@ -85,22 +85,30 @@
         </div>
     </header>
     <main>
-        <div class="game game--off">
+        <div class="game">
             <div class="game__top">
-                <div class="game__top__turnLeft">Turn left : 20</div>
-                <input type="number" class="game__top__input" placeholder="Enter the good price">
+                <div class="game__top__turnLeft"></div>
+                <input type="number" class="game__top__input game__top__input--off" placeholder="Enter the good price">
                 <div class="game__top__timer"></div>
             </div>
             <div class="game__mid">
-                <div class="game__mid__less"><p>LESS</p></div>
-                <button class="game__mid__btn">Propose</button>
-                <div class="game__mid__more"><p>MORE</p></div>
+                <div class="game__mid__less"></div>
+                <button class="game__mid__btn game__mid__btn--off">Propose</button>
+                <div class="game__mid__more"></div>
             </div>
             <div class="game__bot">
                 
             </div>
         </div>
     </main>
+    <div class="modaleP2 modaleP2--off">
+        <div class="modaleP2__cont">
+            <h2>Player 1 :</h2>
+            <h3 class="modaleP2__cont__msg"></h3>
+            <input type="number" class="modaleP2__cont__input">
+            <button class="modaleP2__cont__btn">OK</button>
+        </div>
+    </div>
     <script src="./script/app.js"></script>
 </body>
 </html>

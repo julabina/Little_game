@@ -1,0 +1,38 @@
+.modaleP2 {
+    position: fixed;
+    top: 0;left: 0;
+    width: 100%;height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.753);
+    color: rgba(0, 0, 0, 0.938);
+    &__cont {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: white;
+        padding: 35px;
+        border-radius: 10px;
+        user-select: none;
+        &__input {
+            margin: 30px 0 20px 0;
+            height: 40px;
+            font-size: 1.4em;
+            text-align: center;
+        }
+        &__btn {
+            width: 60px;height: 40px;
+            border: 2px solid rgba(0, 0, 0, 0.938);
+            border-radius: 10px;
+            &:hover {
+                border : 4px solid rgba(0, 0, 0, 0.938);
+                cursor: pointer;
+            }
+        }
+    }
+    &--off {
+        display: none;
+    }
+}

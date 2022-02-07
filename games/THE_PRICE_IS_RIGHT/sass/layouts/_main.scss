@@ -26,7 +26,12 @@ main {
         &__input {
             width: 40%;
             height: 30px;
+            font-size: 1.4em;
             text-align: center;
+            &--off {
+                pointer-events: none;
+                user-select: none;
+            }
         }
     }
     &__mid {
@@ -42,14 +47,22 @@ main {
             &:hover {
                 cursor: pointer;
             }
+            &--off {
+                pointer-events: none;
+                user-select: none;
+            }
         }
         &__less {
             @include moreLess;
-            background: rgb(163, 51, 51);
+            p {
+                background: rgb(163, 51, 51);
+            }
         }
         &__more {
             @include moreLess;
-            background: rgb(25, 131, 25);
+            p {
+                background: rgb(25, 131, 25);
+            }
         }
     }
     &__bot {
@@ -67,10 +80,18 @@ main {
             @include gameResult;
             background: rgb(25, 131, 25);
         }
-    }
-    &--off {
-        pointer-events: none;
-        user-select: none;
-        opacity: 0.5;
+        &__good {
+            @include gameResult;
+            background: rgb(32, 250, 250);
+        }
+        &__status {
+            font-size: 1.7em;
+            &--win {
+                color: rgb(14, 116, 14);
+            }
+            &--lose {
+                color: rgb(185, 5, 5);
+            }
+        }
     }
 }

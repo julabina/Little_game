@@ -5,6 +5,16 @@
   box-sizing: border-box;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 body {
   font-family: "Kumbh Sans", sans-serif;
 }
@@ -115,7 +125,12 @@ main {
 .game__top__input {
   width: 40%;
   height: 30px;
+  font-size: 1.4em;
   text-align: center;
+}
+.game__top__input--off {
+  pointer-events: none;
+  user-select: none;
 }
 .game__mid {
   display: flex;
@@ -133,23 +148,31 @@ main {
 .game__mid__btn:hover {
   cursor: pointer;
 }
+.game__mid__btn--off {
+  pointer-events: none;
+  user-select: none;
+}
 .game__mid__less {
   text-align: center;
   width: 65px;
   border-radius: 3px;
-  background: #a33333;
 }
 .game__mid__less p {
   line-height: 50px;
+}
+.game__mid__less p {
+  background: #a33333;
 }
 .game__mid__more {
   text-align: center;
   width: 65px;
   border-radius: 3px;
-  background: #198319;
 }
 .game__mid__more p {
   line-height: 50px;
+}
+.game__mid__more p {
+  background: #198319;
 }
 .game__bot {
   display: flex;
@@ -170,10 +193,61 @@ main {
   margin-bottom: 5px;
   background: #198319;
 }
-.game--off {
-  pointer-events: none;
+.game__bot__good {
+  font-size: 1.3em;
+  margin-bottom: 5px;
+  background: #20fafa;
+}
+.game__bot__status {
+  font-size: 1.7em;
+}
+.game__bot__status--win {
+  color: #0e740e;
+}
+.game__bot__status--lose {
+  color: #b90505;
+}
+
+.modaleP2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.753);
+  color: rgba(0, 0, 0, 0.938);
+}
+.modaleP2__cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  padding: 35px;
+  border-radius: 10px;
   user-select: none;
-  opacity: 0.5;
+}
+.modaleP2__cont__input {
+  margin: 30px 0 20px 0;
+  height: 40px;
+  font-size: 1.4em;
+  text-align: center;
+}
+.modaleP2__cont__btn {
+  width: 60px;
+  height: 40px;
+  border: 2px solid rgba(0, 0, 0, 0.938);
+  border-radius: 10px;
+}
+.modaleP2__cont__btn:hover {
+  border: 4px solid rgba(0, 0, 0, 0.938);
+  cursor: pointer;
+}
+.modaleP2--off {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
