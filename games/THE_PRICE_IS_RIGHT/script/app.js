@@ -203,7 +203,7 @@ proposeBtn.addEventListener("click", () => {
 })
 
 inputPropose.addEventListener("keypress", (e) => {
-    if (e.code === 'Enter') {
+    if (e.code === 'Enter' || e.code === 'NumpadEnter') {
         if (inputPropose.value !== "" && gameOn === true) {
             verifyPrice(parseInt(inputPropose.value));
             inputPropose.value = '';
@@ -225,7 +225,7 @@ modaleBtn.addEventListener("click", () => {
 })
 
 modaleInput.addEventListener("keypress", (e) => {
-    if (e.code === 'Enter') {
+    if (e.code === 'Enter' || e.code === 'NumpadEnter') {
         p2Chose();
     }
 })
