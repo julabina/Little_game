@@ -19,9 +19,17 @@ main {
         padding: 0 50px;
         &__turnLeft {
             width: 98px;
+            text-align: center;
+            @include mobileOnly {
+                margin-top: 7px;
+            }
         }
         &__timer {
             width: 98px;
+            text-align: center;
+            @include mobileOnly {
+                margin-bottom: 7px;
+            }
         }
         &__input {
             width: 40%;
@@ -32,6 +40,22 @@ main {
                 pointer-events: none;
                 user-select: none;
             }
+            @include tabletOnly {
+                width: 55%;
+            }
+            @include mobileOnly {
+                width: 100%;
+                height: 40px;
+            }
+        }
+        @include tabletOnly {
+            padding: 0 15px;
+        }
+        @include mobileOnly {
+            flex-direction: column-reverse;
+            align-items: center;
+            width: 100%; 
+            padding: 0 10px; 
         }
     }
     &__mid {
@@ -51,6 +75,9 @@ main {
                 pointer-events: none;
                 user-select: none;
             }
+            @include mobileOnly {
+                width: 70px;
+            }
         }
         &__less {
             @include moreLess;
@@ -63,6 +90,9 @@ main {
             p {
                 background: rgb(25, 131, 25);
             }
+        }
+        @include mobileOnly {
+            margin: 15px 0;      
         }
     }
     &__bot {
@@ -94,5 +124,15 @@ main {
                 color: rgb(185, 5, 5);
             }
         }
+        @include tabletOnly {
+            width: 75%;
+            overflow: hidden;
+        }
+        @include mobileOnly {
+            width: 90%;      
+        }
+    }
+    @include mobileOnly {
+        padding: 10px 0;          
     }
 }

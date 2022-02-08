@@ -14,6 +14,11 @@ const modale = document.querySelector(".modaleP2");
 const modaleInput = document.querySelector(".modaleP2__cont__input");
 const modaleBtn = document.querySelector(".modaleP2__cont__btn");
 const modaleMsg = document.querySelector(".modaleP2__cont__msg");
+const hideBtn = document.querySelector(".menuMobileBtn");
+const menuTurn = document.querySelector(".menu__turn");
+const menuTimer = document.querySelector(".menu__timer");
+const menuPlayer = document.querySelector(".menu__player");
+const menuDiff = document.querySelector(".menu__difficulty");
 
 let goodPrice, playerPrice, turn, time, val, timerInterval ;
 let gameOn = false;
@@ -97,7 +102,16 @@ const timerGo = () => {
         time--;
         timer.textContent = "Time : " + time;
         if (time < 1) {
-            console.log('fini');
+            resultContainer.innerHTML += `
+            <div class="game__bot__status game__bot__status--lose">LOSE</div>
+            <div class="game__bot__good">The good price was ${goodPrice}</div>
+            `;
+            resultContainer.scrollTop = resultContainer.scrollHeight;
+            less.innerHTML = ``;
+            more.innerHTML = ``;
+            inputPropose.classList.add("game__top__input--off");
+            proposeBtn.classList.add("game__mid__btn--off");
+            gameOn = false;
             clearInterval(timerInterval);
         }
     }, 1000);
@@ -213,5 +227,19 @@ modaleBtn.addEventListener("click", () => {
 modaleInput.addEventListener("keypress", (e) => {
     if (e.code === 'Enter') {
         p2Chose();
+    }
+})
+
+hideBtn.addEventListener("click", () => {
+    if (menuTurn.classList.contains("menu__turn--hide")) {
+        menuTurn.classList.remove("menu__turn--hide");
+        menuTimer.classList.remove("menu__timer--hide");
+        menuDiff.classList.remove("menu__difficulty--hide");
+        menuPlayer.classList.remove("menu__player--hide");
+    } else {
+        menuTurn.classList.add("menu__turn--hide");
+        menuTimer.classList.add("menu__timer--hide");
+        menuDiff.classList.add("menu__difficulty--hide");
+        menuPlayer.classList.add("menu__player--hide");
     }
 })

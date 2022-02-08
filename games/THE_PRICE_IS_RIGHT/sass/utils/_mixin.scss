@@ -18,3 +18,15 @@
     font-size: 1.3em;
     margin-bottom: 5px;
 }
+
+@mixin tabletOnly {
+    @media screen and (max-width: map-get($queries, tablet)) {
+        @content;
+    }
+}
+
+@mixin mobileOnly {
+    @media screen and (max-width: map-get($queries, mobile)) {
+        @content;
+    }
+}

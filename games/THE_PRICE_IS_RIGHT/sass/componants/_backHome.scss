@@ -23,5 +23,8 @@
         border-bottom: black 1px solid;
         cursor: pointer;
     }
+    @include mobileOnly {
+        top: 65px;          
+    }
   }
   

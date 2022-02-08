@@ -8,6 +8,20 @@ header {
     }
 }
 
+.menuMobileBtn {
+    display: none;
+    width: 90%;height: 30px;
+    text-align: center;
+    background: rgb(196, 196, 196);
+    line-height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    @include mobileOnly {
+        display: initial;
+    }
+}
+
 .menu {
     display: flex;
     justify-content: space-between;
@@ -22,11 +36,27 @@ header {
         &__radioCont {
             width: 47px;
         }
+        &--hide {
+            @include mobileOnly {
+                display: none;
+            }
+        }
+        @include mobileOnly {
+            grid-area: 1 / 1 / 2 / 2;
+        }
     }
     &__timer {
         @include radioCont;
         &__radioCont {
             width: 70px;
+        }
+        &--hide {
+            @include mobileOnly {
+                display: none;
+            }
+        }
+        @include mobileOnly {
+            grid-area: 1 / 2 / 2 / 3;
         }
     }
     &__player {
@@ -34,11 +64,27 @@ header {
         &__radioCont {
             width: 28px;
         }
+        &--hide {
+            @include mobileOnly {
+                display: none;
+            }
+        }
+        @include mobileOnly {
+            grid-area: 2 / 1 / 3 / 2;
+        }
     }
     &__difficulty {
         @include radioCont;
         &__radioCont {
             width: 70px;
+        }
+        &--hide {
+            @include mobileOnly {
+                display: none;
+            }
+        }
+        @include mobileOnly {
+            grid-area: 2 / 2 / 3 / 3;
         }
     }
     &__btnCont {
@@ -55,6 +101,26 @@ header {
                 border : 4px solid rgb(20, 20, 20);
                 cursor: pointer;
             }
+            @include mobileOnly {
+                width: 100%;
+                margin-top: 10px;
+            }
         }
+        @include mobileOnly {
+            grid-area: 3 / 1 / 4 / 3;
+            
+        }
+    }
+    @include tabletOnly {
+        width: 88%;
+    }
+    @include mobileOnly {
+        display: grid;
+        grid-area: auto, auto, auto / repeat(2, 1fr) ;
+        border-left: solid black 1px;
+        border-right: solid black 1px;
+        border-bottom: solid black 1px;
+        border-radius: 15px;
+        padding-top: 15px;
     }
 }

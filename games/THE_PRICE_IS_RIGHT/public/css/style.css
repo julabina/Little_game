@@ -33,6 +33,23 @@ header h1 {
   margin: 30px 0 40px 0;
 }
 
+.menuMobileBtn {
+  display: none;
+  width: 90%;
+  height: 30px;
+  text-align: center;
+  background: #c4c4c4;
+  line-height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+@media screen and (max-width: 630px) {
+  .menuMobileBtn {
+    display: initial;
+  }
+}
+
 .menu {
   display: flex;
   justify-content: space-between;
@@ -50,6 +67,16 @@ header h1 {
 .menu__turn__radioCont {
   width: 47px;
 }
+@media screen and (max-width: 630px) {
+  .menu__turn--hide {
+    display: none;
+  }
+}
+@media screen and (max-width: 630px) {
+  .menu__turn {
+    grid-area: 1/1/2/2;
+  }
+}
 .menu__timer {
   display: flex;
   flex-direction: column;
@@ -58,6 +85,16 @@ header h1 {
 }
 .menu__timer__radioCont {
   width: 70px;
+}
+@media screen and (max-width: 630px) {
+  .menu__timer--hide {
+    display: none;
+  }
+}
+@media screen and (max-width: 630px) {
+  .menu__timer {
+    grid-area: 1/2/2/3;
+  }
 }
 .menu__player {
   display: flex;
@@ -68,6 +105,16 @@ header h1 {
 .menu__player__radioCont {
   width: 28px;
 }
+@media screen and (max-width: 630px) {
+  .menu__player--hide {
+    display: none;
+  }
+}
+@media screen and (max-width: 630px) {
+  .menu__player {
+    grid-area: 2/1/3/2;
+  }
+}
 .menu__difficulty {
   display: flex;
   flex-direction: column;
@@ -76,6 +123,16 @@ header h1 {
 }
 .menu__difficulty__radioCont {
   width: 70px;
+}
+@media screen and (max-width: 630px) {
+  .menu__difficulty--hide {
+    display: none;
+  }
+}
+@media screen and (max-width: 630px) {
+  .menu__difficulty {
+    grid-area: 2/2/3/3;
+  }
 }
 .menu__btnCont {
   display: flex;
@@ -93,6 +150,33 @@ header h1 {
   background: white;
   border: 4px solid #141414;
   cursor: pointer;
+}
+@media screen and (max-width: 630px) {
+  .menu__btnCont__playBtn {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 630px) {
+  .menu__btnCont {
+    grid-area: 3/1/4/3;
+  }
+}
+@media screen and (max-width: 970px) {
+  .menu {
+    width: 88%;
+  }
+}
+@media screen and (max-width: 630px) {
+  .menu {
+    display: grid;
+    grid-area: auto, auto, auto/repeat(2, 1fr);
+    border-left: solid black 1px;
+    border-right: solid black 1px;
+    border-bottom: solid black 1px;
+    border-radius: 15px;
+    padding-top: 15px;
+  }
 }
 
 main {
@@ -118,9 +202,21 @@ main {
 }
 .game__top__turnLeft {
   width: 98px;
+  text-align: center;
+}
+@media screen and (max-width: 630px) {
+  .game__top__turnLeft {
+    margin-top: 7px;
+  }
 }
 .game__top__timer {
   width: 98px;
+  text-align: center;
+}
+@media screen and (max-width: 630px) {
+  .game__top__timer {
+    margin-bottom: 7px;
+  }
 }
 .game__top__input {
   width: 40%;
@@ -131,6 +227,30 @@ main {
 .game__top__input--off {
   pointer-events: none;
   user-select: none;
+}
+@media screen and (max-width: 970px) {
+  .game__top__input {
+    width: 55%;
+  }
+}
+@media screen and (max-width: 630px) {
+  .game__top__input {
+    width: 100%;
+    height: 40px;
+  }
+}
+@media screen and (max-width: 970px) {
+  .game__top {
+    padding: 0 15px;
+  }
+}
+@media screen and (max-width: 630px) {
+  .game__top {
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+  }
 }
 .game__mid {
   display: flex;
@@ -151,6 +271,11 @@ main {
 .game__mid__btn--off {
   pointer-events: none;
   user-select: none;
+}
+@media screen and (max-width: 630px) {
+  .game__mid__btn {
+    width: 70px;
+  }
 }
 .game__mid__less {
   text-align: center;
@@ -173,6 +298,11 @@ main {
 }
 .game__mid__more p {
   background: #198319;
+}
+@media screen and (max-width: 630px) {
+  .game__mid {
+    margin: 15px 0;
+  }
 }
 .game__bot {
   display: flex;
@@ -207,6 +337,22 @@ main {
 }
 .game__bot__status--lose {
   color: #b90505;
+}
+@media screen and (max-width: 970px) {
+  .game__bot {
+    width: 75%;
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: 630px) {
+  .game__bot {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 630px) {
+  .game {
+    padding: 10px 0;
+  }
 }
 
 .modaleP2 {
@@ -283,6 +429,11 @@ main {
   border-top: black 1px solid;
   border-bottom: black 1px solid;
   cursor: pointer;
+}
+@media screen and (max-width: 630px) {
+  .backToHome {
+    top: 65px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
