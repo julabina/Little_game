@@ -21,6 +21,13 @@
             height: 40px;
             font-size: 1.4em;
             text-align: center;
+            &--error {
+                border: 2px solid rgb(211, 3, 3);
+                color: rgb(211, 3, 3) ;
+            }
+            &:focus {
+                outline-style: none;
+            }
         }
         &__btn {
             width: 60px;height: 40px;
