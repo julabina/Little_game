@@ -84,7 +84,7 @@ header h1 {
   width: 120px;
 }
 .menu__timer__radioCont {
-  width: 70px;
+  width: 75px;
 }
 @media screen and (max-width: 630px) {
   .menu__timer--hide {
@@ -122,7 +122,7 @@ header h1 {
   width: 120px;
 }
 .menu__difficulty__radioCont {
-  width: 70px;
+  width: 75px;
 }
 @media screen and (max-width: 630px) {
   .menu__difficulty--hide {

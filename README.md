@@ -46,9 +46,11 @@ Shifumy classic game.
 
 ## The price is rigth
 
+V.2
+
 The goal is to find the right number in the allotted time.
 
-![](./assets/screenshot/screenPrice2.webp)
+![](./assets/screenshot/screenPrice.webp)
 
 [Link](https://julabina.github.io/Littles_games/games/THE_PRICE_IS_RIGHT/index.html)
 

@@ -48,7 +48,7 @@ header {
     &__timer {
         @include radioCont;
         &__radioCont {
-            width: 70px;
+            width: 75px;
         }
         &--hide {
             @include mobileOnly {
@@ -76,7 +76,7 @@ header {
     &__difficulty {
         @include radioCont;
         &__radioCont {
-            width: 70px;
+            width: 75px;
         }
         &--hide {
             @include mobileOnly {
