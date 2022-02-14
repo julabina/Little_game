@@ -8,7 +8,7 @@ Several small games coded in vanilla javascript.
 
 - [Quizz](#quizz)
 - [Shifumy](#shifumy)
-- [The price is rigth](#the-price-is-rigth)
+- [Guess my number](#guess-my-number)
 - [Yams](#yams)
 - [Loto](#loto)
 - [Connect 4](#connect-4)
@@ -44,7 +44,7 @@ Shifumy classic game.
 
 - Simple AI
 
-## The price is rigth
+## Guess my number
 
 V.2
 
@@ -52,7 +52,7 @@ The goal is to find the right number in the allotted time.
 
 ![](./assets/screenshot/screenPrice.webp)
 
-[Link](https://julabina.github.io/Littles_games/games/THE_PRICE_IS_RIGHT/index.html)
+[Link](https://julabina.github.io/Littles_games/games/GUESS_MY_NUMBER/index.html)
 
 ## Yams
 
