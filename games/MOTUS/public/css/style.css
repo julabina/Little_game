@@ -1,3 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;700&display=swap");
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: "Oswald", sans-serif;
+}
+
+/* font-family: 'Bebas Neue', cursive; */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.hamb {
+  height: 20px;
+}
+
+.menu {
+  display: none;
+}
+
+.lang {
+  display: flex;
+  width: 70px;
+  justify-content: space-between;
+}
+.lang img {
+  width: 30px;
+}
+
+.game__pChose {
+  display: flex;
+  flex-direction: column;
+}
+.game__pChose__input {
+  width: 150px;
+  height: 40px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  font-family: "Bebas Neue", cursive;
+  font-size: 2em;
+  text-align: center;
+}
+.game__pChose__btn {
+  width: 40px;
+  height: 30px;
+}
+.game__container__rows {
+  display: flex;
+}
+.game__container__rows__cols {
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  font-family: "Bebas Neue", cursive;
+}
+.game__container__rows__cols--good {
+  background: green;
+}
+.game__container__rows__cols--false {
+  background: yellow;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.hamb {
+    height: 20px;
+}
+
+.menu {
+    display: none;
+}
+
+.lang {
+    display: flex;
+    width: 70px;
+    justify-content: space-between;
+    img {
+        width: 30px;
+    }
+}
