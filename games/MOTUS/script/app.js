@@ -79,6 +79,7 @@ const startGame = () => {
     input.maxLength = letterDiff;
     buildCase(letterDiff);
     randomWord();
+    input.focus();
 }
 
 const verifyLetters = () => {
