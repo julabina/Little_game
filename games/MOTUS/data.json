@@ -5,7 +5,52 @@
         "paire",
         "fille",
         "koala",
+        "piano",
+        "foret"
+    ],
+    [
+        "sangle",
+        "soleil",
+        "filtre",
+        "saumon",
+        "nougat",
+        "filtre"
+    ],
+    [
+        "oranger",
+        "saturne",
+        "clavier",
+        "guitare",
+        "brochet",
+        "canette"
+    ]
+],
+"en" : [
+    [
+        "glass",
+        "horse",
+        "yellow",
+        "cream",
+        "phone",
         "piano"
+    ],
+    [
+        "sister",
+        "french",
+        "always",
+        "screen",
+        "forest",
+        "bottle"
+        
+    ],
+    [
+        "opacity",
+        "battery",
+        "history",
+        "network",
+        "parking",
+        "walking"
+
     ]
 ]
 }

@@ -9,22 +9,31 @@
 </head>
 <body>
     <header>
-        <div class="menu">
-            <img src="./assets/icon-close-menu.svg" alt="cross to close menu">
-            
+        <div class="menu menu--off">
+            <img class="menu__closeBtn" src="./assets/icon-close-menu.svg" alt="cross to close menu">
+            <ul>
+                <li class="menu__list"></li>
+                <li class="menu__list"></li>
+                <li class="menu__list"></li>
+                <li class="menu__list"></li>
+                <a href="https://julabina.github.io/Littles_games/"><li class="menu__list"></li></a>
+                <li class="menu__list"></li>
+            </ul>
         </div>
         <img class="hamb" src="./assets/icon-hamburger.svg" alt="hamburger icon">
         <h1>MOTUS</h1>
         <div class="lang">
-            <img src="./assets/fr.svg" alt="french flag">
-            <img src="./assets/gb.svg" alt="british flag">
+            <img class="lang__img lang__img--selected" src="./assets/fr.svg" alt="french flag">
+            <img class="lang__img" src="./assets/gb.svg" alt="british flag">
         </div>
     </header>
     <main>
         <div class="game">
             <div class="game__pChose">
-                <h2 class="game__pChose__title">Test d une phrase</h2>
-                <input type="text" class="game__pChose__input">
+                <div class="game__pChose__contError">
+                    <input type="text" class="game__pChose__contError__input">
+                    <span class="game__pChose__contError__span game__pChose__contError__span--off"></span>
+                </div>
                 <button class="game__pChose__btn">OK</button>
             </div>
             <div class="game__container">
@@ -43,6 +52,14 @@
             </div>
         </div>
     </main>
+    <div class="modalResult" role="dialog">
+        <div class="modalResult__cover"></div>
+        <div class="modalResult__container">
+            <h2 class="modalResult__container__title"></h2>
+            <h3 class="modalResult__container__goodWord"></h3>
+            <button class="modalResult__container__btn"></button>
+        </div>
+    </div>
     <script src="./script/app.js"></script>
 </body>
 </html>
