@@ -13,14 +13,22 @@ h1 {
 .hamb {
     height: 20px;
     cursor: pointer;
-    z-index: 1;
     &:hover {
         opacity: 0.7;
     }
 }
 
+.menu.menu--off {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 300ms, opacity 300ms;
+}
+
 .menu {
     position: fixed;
+    visibility: visible;
+    transition: visibility 300ms, opacity 300ms;
+    opacity: 1;
     z-index: 10;
     top: 0;left: 0;
     padding: 17px 30px 30px 10px;
@@ -35,9 +43,6 @@ h1 {
         &:hover {
             opacity: 0.7;
         }
-    }
-    &--off {
-        display: none;
     }
     &__list {
         margin-top: 5px;

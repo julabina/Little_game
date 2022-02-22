@@ -11,6 +11,10 @@ const modalTrigger = document.querySelector(".modalResult__cover");
 const modalContainer = document.querySelector(".modalResult__container");
 const modalBtn = document.querySelector(".modalResult__container__btn");
 const errorSpan = document.querySelector(".game__pChose__contError__span");
+const modalAbout = document.querySelector(".modalAbout");
+const modalAboutTrigger = document.querySelector(".modalAbout__cover");
+const modalAboutContainer = document.querySelector(".modalAbout__container");
+const modalAboutBtn = document.querySelector(".modalAbout__container__btn");
 
 let letterDiff = 5;
 let round = 0;
@@ -126,6 +130,8 @@ const verifyLetters = () => {
 }
 
 const changeLang = () => {
+    const modalAboutList = document.querySelectorAll(".modalAbout__container__list");
+    const modalAboutTitle = document.querySelector(".modalAbout__container__title");
     if (langEn === true) {
         menuList[0].textContent = "New game";
         menuList[1].textContent = "Word length : 5";
@@ -135,6 +141,9 @@ const changeLang = () => {
         menuList[5].textContent = "About";
         modalBtn.textContent = "New game";
         errorSpan.textContent = "Only letters";
+        modalAboutList[0].textContent = "Project repository"; 
+        modalAboutList[1].textContent = "Github profil"; 
+        modalAboutTitle.textContent = "About";
     } else {
         menuList[0].textContent = "Nouvelle partie";
         menuList[1].textContent = "Longueur du mot : 5";
@@ -144,6 +153,9 @@ const changeLang = () => {
         menuList[5].textContent = "A propos de";
         modalBtn.textContent = "Nouvelle partie";
         errorSpan.textContent = "Seulement des lettres";
+        modalAboutList[0].textContent = "Dépot distant"; 
+        modalAboutList[1].textContent = "Profil github"; 
+        modalAboutTitle.textContent = "A propos de";
     }
 }
 
@@ -174,6 +186,12 @@ const closeModalResult = () => {
     modal.classList.remove("modalResult--active");
     modalTrigger.classList.remove("modalResult--active");
     modalContainer.classList.remove("modalResult--active");
+}
+
+const closeModalAbout = () => {
+    modalAbout.classList.remove("modalAbout--active");
+    modalAboutTrigger.classList.remove("modalAbout--active");
+    modalAboutContainer.classList.remove("modalAbout--active");
 }
 
 validBtn.addEventListener("click", () => {
@@ -261,6 +279,10 @@ modalBtn.addEventListener("click", () => {
     startGame();
 })
 
+modalAboutBtn.addEventListener("click", () => {
+    closeModalAbout();
+})
+
 // Menu
 
 menuList[0].addEventListener("click", () => {
@@ -287,6 +309,8 @@ menuList[3].addEventListener("click", () => {
 })
 
 menuList[5].addEventListener("click", () => {
-    
+    modalAbout.classList.add("modalAbout--active");
+    modalAboutTrigger.classList.add("modalAbout--active");
+    modalAboutContainer.classList.add("modalAbout--active");
     menu.classList.add("menu--off");
 })
