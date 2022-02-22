@@ -16,6 +16,7 @@ Several small games coded in vanilla javascript.
 - [Memory game](#memory-game)
 - [Fast fingers](#fast-fingers-test)
 - [Simon](#simon)
+- [Motus](#motus)
 
 ## Quizz
 
@@ -117,3 +118,11 @@ Like the classic simon game.
 ![](./assets/screenshot/screenSimon.webp)
 
 [Link](https://julabina.github.io/Littles_games/games/SIMON/index.html)
+
+## Motus
+
+Like the classic french tv-game Motus
+
+![](./assets/screenshot/screenMotus.webp)
+
+[Link](https://julabina.github.io/Littles_games/games/MOTUS/index.html)
