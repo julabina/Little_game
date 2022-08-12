@@ -126,3 +126,9 @@ Like the classic french tv-game Motus
 ![](./assets/screenshot/screenMotus.webp)
 
 [Link](https://julabina.github.io/Littles_games/games/MOTUS/index.html)
+
+# About
+
+- [Github](https://github.com/julabina)
+- [Linkedin](https://www.linkedin.com/in/julien-lenfum%C3%A9-bb2979215/)
+- [Portfolio](https://julienlenfume.com/)
