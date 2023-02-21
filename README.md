@@ -127,6 +127,14 @@ Like the classic french tv-game Motus
 
 [Link](https://julabina.github.io/Littles_games/games/MOTUS/index.html)
 
+## Blackjack
+
+Like the classic french tv-game Motus
+
+![](./assets/screenshot/screenBj.webp)
+
+[Link](https://julabina.github.io/blackjack_ts/)
+
 # About
 
 - [Github](https://github.com/julabina)
