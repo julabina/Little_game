@@ -134,6 +134,7 @@ Like the classic french tv-game Motus
 ![](./assets/screenshot/screenBj.webp)
 
 [Link](https://julabina.github.io/blackjack_ts/)
+[Code](https://github.com/julabina/blackjack_ts)
 
 # About
 
